@@ -4,8 +4,10 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Random;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class VocabularyModel {
@@ -129,5 +131,20 @@ public class VocabularyModel {
 
     public void setId_topic(String id_topic) {
         this.id_topic = id_topic;
+    }
+
+    public ArrayList<String> randomAnswer(ArrayList<VocabularyModel> VocaList, boolean englishMode){
+        ArrayList<String> answer = new ArrayList<String>();
+        Random rand = new Random();
+        if(!VocaList.isEmpty()){
+           answer.add(englishMode?this.vietnamese:this.english); // add correct answer
+           for (int i = 0; i<3; i++){
+               int randInt = rand.nextInt(VocaList.size());
+               while(this.equals(VocaList.get(randInt))) randInt = rand.nextInt(VocaList.size());
+               //add random answer
+               answer.add(englishMode? VocaList.get(randInt).vietnamese : VocaList.get(randInt).english);
+           }
+        }
+        return answer;
     }
 }
