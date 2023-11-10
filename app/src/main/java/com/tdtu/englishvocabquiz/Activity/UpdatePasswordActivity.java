@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

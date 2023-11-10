@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".Activity.ProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,24 +21,10 @@
             android:layout_height="250dp"
             android:background="@drawable/background_02"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/uploadImgView"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_marginStart="150dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="150dp"
-                android:layout_marginBottom="94dp"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/ic_avt_default"
-                tools:visibility="visible" />
 
 
             <ImageButton
@@ -62,6 +48,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_logout" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeBtn">
+
+                <ImageView
+                    android:id="@+id/uploadImgView"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/baseline_person_24"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+            </RelativeLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -87,7 +89,7 @@
                 android:layout_marginEnd="36dp"
                 android:gravity="center"
                 android:text="10"
-                android:textColor="@color/main_back"
+                android:textColor="@color/white"
                 android:textSize="34dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +103,7 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:text="123"
-                android:textColor="@color/main_back"
+                android:textColor="@color/white"
                 android:textSize="34dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +116,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="15dp"
                 android:text="Topics"
-                android:textColor="@color/main_back"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/topicCount" />
 
@@ -125,7 +127,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="40dp"
                 android:text="Tuổi tài khoản"
-                android:textColor="@color/main_back"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -136,7 +138,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="50dp"
                 android:text="Tên người dùng"
-                android:textColor="@color/main_back"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -182,7 +184,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="34dp"
                 android:text="Số điện thoại"
-                android:textColor="@color/main_back"
+                android:textColor="@color/white"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/oldPass" />
@@ -195,7 +197,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="34dp"
                 android:text="Giới tính"
-                android:textColor="@color/main_back"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
 

@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,17 +9,14 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.tdtu.englishvocabquiz.databinding.ActivityLoginBinding;
-import com.tdtu.englishvocabquiz.databinding.ActivitySignUpBinding;
 
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
@@ -39,6 +36,9 @@ public class LoginActivity extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         ref = db.getReference("users");
         //submit sign up btn
+
+        binding.emailEdt.setText("tt@gmail.com");
+        binding.passEdt.setText("123456");
         binding.loginBtn.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                                         String uid = user.getUid();
 
                                         Toast.makeText(LoginActivity.this,"Đăng nhập thành công",Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(LoginActivity.this,ProfileActivity.class);
+                                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                         //send uid
                                         intent.putExtra("uid",uid);
 

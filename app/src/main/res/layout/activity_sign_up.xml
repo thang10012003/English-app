@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".Activity.SignUpActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,8 +24,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@drawable/background_02"
+            android:layout_height="230dp"
+            android:background="@drawable/wave1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -83,8 +83,10 @@
             android:ems="10"
             android:hint=" Mật khẩu"
             android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColor="@color/hint"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"
+            android:drawablePadding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,33 +97,38 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/input_01"
             android:drawableLeft="@drawable/ic_key"
             android:ems="10"
             android:hint="Xác nhận mật khẩu"
             android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColor="@color/hint"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"
+            android:drawablePadding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailEdt" />
+            app:layout_constraintTop_toBottomOf="@+id/passEdt" />
 
         <EditText
             android:id="@+id/nameEdt"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/input_01"
             android:ems="10"
             android:hint="Họ Tên"
+            android:padding="15dp"
             android:inputType="text"
-            android:padding="10dp"
-            android:textColor="@color/hint"
+            android:drawableLeft="@drawable/baseline_person_outline_24"
+            android:drawablePadding="10dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
@@ -137,11 +144,13 @@
             android:background="@drawable/input_01"
 
             android:drawableLeft="@drawable/ic_user"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint=" Email"
             android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:textColor="@color/hint"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
@@ -149,16 +158,22 @@
 
         <Button
             android:id="@+id/signUpBtn"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="28dp"
             android:text="Xác Nhận"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:padding="20dp"
+            android:backgroundTint="@color/green"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.473"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confPassEdt"
+            android:layout_marginTop="40dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

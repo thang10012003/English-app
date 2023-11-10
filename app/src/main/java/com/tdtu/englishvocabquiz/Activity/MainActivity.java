@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.google.firebase.FirebaseApp;
 import com.tdtu.englishvocabquiz.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

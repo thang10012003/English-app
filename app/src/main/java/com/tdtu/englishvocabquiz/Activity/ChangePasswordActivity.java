@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Activity;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
@@ -19,9 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.core.view.Change;
 import com.tdtu.englishvocabquiz.databinding.ActivityChangePasswordBinding;
-import com.tdtu.englishvocabquiz.databinding.ActivityProfileBinding;
 
 public class ChangePasswordActivity extends AppCompatActivity {
     ActivityChangePasswordBinding binding;
@@ -83,7 +81,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful()){
                                                     Toast.makeText(ChangePasswordActivity.this,"Cập nhật thành công !",Toast.LENGTH_LONG).show();
-                                                    startActivity(new Intent(ChangePasswordActivity.this,MainActivity.class));
+                                                    startActivity(new Intent(ChangePasswordActivity.this, MainActivity.class));
                                                     finish();
                                                 }else{
                                                     Toast.makeText(ChangePasswordActivity.this,"Không thể cập nhất mới mật khẩu !",Toast.LENGTH_LONG).show();

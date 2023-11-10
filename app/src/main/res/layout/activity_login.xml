@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".Activity.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,20 +13,24 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        android:background="@drawable/background_01"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@drawable/background_02"
+            android:layout_height="230dp"
+            android:background="@drawable/wave1"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
@@ -69,18 +73,21 @@
 
         <EditText
             android:id="@+id/passEdt"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/input_01"
             android:drawableLeft="@drawable/ic_key"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint=" Mật khẩu"
             android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColor="@color/hint"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"
+            android:textColorHint="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
@@ -88,19 +95,23 @@
 
         <EditText
             android:id="@+id/emailEdt"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/input_01"
             android:drawableLeft="@drawable/ic_user"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint=" Email"
+            android:fontFamily="sans-serif"
+            android:textColorHint="@color/grey"
+
 
             android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:textColor="@color/hint"
+            android:padding="20dp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
@@ -108,15 +119,31 @@
 
         <Button
             android:id="@+id/loginBtn"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="37dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="20dp"
-            android:text="Xác Nhận"
+            android:backgroundTint="@color/green"
+            android:text="Đăng nhập"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passEdt" />
+            app:layout_constraintTop_toBottomOf="@+id/passEdt"
+            android:fontFamily="sans-serif"
+            android:padding="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/loginBtn"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/blue"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:text="Forgot Password?"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment"
+    tools:context=".Fragment.HomeFragment"
     android:background="@color/green_dark">
 
     <!-- TODO: Update blank fragment layout -->
@@ -36,6 +36,9 @@
         android:background="@drawable/rounded_background"
         android:drawableLeft="@drawable/baseline_search_black_24"
         android:paddingLeft="20dp"
+        android:hint="Tìm kiếm khóa học"
+        android:maxLines="1"
+        android:inputType="text"
         />
     <ImageView
         android:layout_width="wrap_content"
@@ -45,7 +48,13 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"/>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="hahah"
+        android:textColor="@color/white"/>
 
 
 

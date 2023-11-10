@@ -2,8 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="main_back">#a2d9ff</color>
-    <color name="main_back2">#1B89D5</color>
+    <color name="bg_inp">#D6DCE1</color>
+    <color name="main_back2">#304848</color>
     <color name="hint">#019590</color>
     <color name="none">#00FDFDFD</color>
     <color name="green">#748B80</color>
@@ -11,6 +11,11 @@
     <color name="yellow">#FFFF00</color>
     <color name="grey">#A9A9A9</color>
     <color name="green_dark">#304848</color>
+    <color name="green_light">#98D4B3</color>
+    <color name="blue">#0823B6</color>
+    <color name="green_ruzy">#5D7963</color>
+
+
 
 
 

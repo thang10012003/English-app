@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Fragment;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.tdtu.englishvocabquiz.R;
 
 /**
  * A simple {@link Fragment} subclass.

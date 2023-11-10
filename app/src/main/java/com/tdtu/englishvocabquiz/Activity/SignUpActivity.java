@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,14 +18,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.tdtu.englishvocabquiz.databinding.ActivityMainBinding;
+import com.tdtu.englishvocabquiz.UserModel;
 import com.tdtu.englishvocabquiz.databinding.ActivitySignUpBinding;
 
-import java.security.Timestamp;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.HashMap;
 
 public class SignUpActivity extends AppCompatActivity {
     ActivitySignUpBinding binding;
@@ -83,7 +80,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 //get uid
                                 FirebaseUser user = auth.getCurrentUser();
                                 String uid = user.getUid();
-
+                                Log.e("TAG", "onComplete: "+ uid);
 
                                 //get now date
                                 LocalDate myObj = LocalDate.now();
@@ -101,7 +98,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 ref.child(uid).setValue(newUser);
 
                                 Toast.makeText(SignUpActivity.this,"Đăng ký thành công",Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(SignUpActivity.this,ProfileActivity.class);
+                                Intent intent = new Intent(SignUpActivity.this, ProfileActivity.class);
                                 //send uid
                                 intent.putExtra("uid",uid);
 

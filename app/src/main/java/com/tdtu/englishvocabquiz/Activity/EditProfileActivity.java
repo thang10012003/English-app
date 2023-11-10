@@ -1,6 +1,4 @@
-package com.tdtu.englishvocabquiz;
-
-import static kotlinx.coroutines.DelayKt.delay;
+package com.tdtu.englishvocabquiz.Activity;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -10,9 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.IntentSender;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +25,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.tdtu.englishvocabquiz.databinding.ActivityEditProfileBinding;
-import com.tdtu.englishvocabquiz.databinding.ActivityProfileBinding;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -83,7 +78,7 @@ public class EditProfileActivity extends AppCompatActivity {
         binding.reviewProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EditProfileActivity.this,ProfileActivity.class);
+                Intent intent = new Intent(EditProfileActivity.this, ProfileActivity.class);
                 startActivity(intent);
                 finish();
             }

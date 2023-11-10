@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -25,9 +24,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.tdtu.englishvocabquiz.UserModel;
 import com.tdtu.englishvocabquiz.databinding.ActivityProfileBinding;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -104,7 +103,7 @@ public class ProfileActivity extends AppCompatActivity {
         binding.changePasswordBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this,UpdatePasswordActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, UpdatePasswordActivity.class);
                 startActivity(intent);
             }
         });
