@@ -1,0 +1,317 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tdtu.englishvocabquiz"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="33" />
+10
+11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+11-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:5:5-79
+11-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:5:22-76
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:6:5-67
+12-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:7:5-79
+13-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:7:22-77
+14
+15    <permission
+15-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\856a884124d6e089223487ce304a26f5\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+16        android:name="com.tdtu.englishvocabquiz.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+16-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\856a884124d6e089223487ce304a26f5\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+17        android:protectionLevel="signature" />
+17-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\856a884124d6e089223487ce304a26f5\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+18
+19    <uses-permission android:name="com.tdtu.englishvocabquiz.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+19-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\856a884124d6e089223487ce304a26f5\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\856a884124d6e089223487ce304a26f5\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+20
+21    <application
+21-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:8:5-59:19
+22        android:allowBackup="true"
+22-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:9:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\856a884124d6e089223487ce304a26f5\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+24        android:dataExtractionRules="@xml/data_extraction_rules"
+24-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:10:9-65
+25        android:debuggable="true"
+26        android:extractNativeLibs="false"
+27        android:fullBackupContent="@xml/backup_rules"
+27-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:11:9-54
+28        android:icon="@mipmap/ic_launcher"
+28-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:12:9-43
+29        android:label="@string/app_name"
+29-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:13:9-41
+30        android:roundIcon="@mipmap/ic_launcher_round"
+30-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:14:9-54
+31        android:supportsRtl="true"
+31-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:15:9-35
+32        android:testOnly="true"
+33        android:theme="@style/Theme.EnglishVocabQuiz" >
+33-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:16:9-54
+34        <activity
+34-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:18:9-20:40
+35            android:name="com.tdtu.englishvocabquiz.Activity.HomeActivity"
+35-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:19:13-50
+36            android:exported="false" />
+36-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:20:13-37
+37        <activity
+37-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:21:9-23:40
+38            android:name="com.tdtu.englishvocabquiz.Activity.EditProfileActivity"
+38-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:22:13-57
+39            android:exported="false" />
+39-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:23:13-37
+40        <activity
+40-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:24:9-26:40
+41            android:name="com.tdtu.englishvocabquiz.Activity.MainActivity"
+41-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:25:13-50
+42            android:exported="false" />
+42-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:26:13-37
+43        <activity
+43-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:27:9-29:40
+44            android:name="com.tdtu.englishvocabquiz.Activity.ProfileActivity"
+44-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:28:13-53
+45            android:exported="false" />
+45-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:29:13-37
+46        <activity
+46-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:30:9-32:40
+47            android:name="com.tdtu.englishvocabquiz.Activity.SignUpActivity"
+47-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:31:13-52
+48            android:exported="false" />
+48-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:32:13-37
+49        <activity
+49-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:33:9-35:40
+50            android:name="com.tdtu.englishvocabquiz.Activity.UpdatePasswordActivity"
+50-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:34:13-60
+51            android:exported="false" />
+51-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:35:13-37
+52        <activity
+52-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:36:9-38:40
+53            android:name="com.tdtu.englishvocabquiz.Activity.LoginActivity"
+53-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:37:13-51
+54            android:exported="false" />
+54-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:38:13-37
+55        <activity
+55-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:39:9-42:20
+56            android:name="com.tdtu.englishvocabquiz.Activity.FlashCardActivity"
+56-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:40:13-55
+57            android:exported="true" >
+57-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:41:13-36
+58        </activity>
+59        <activity
+59-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:43:9-52:20
+60            android:name="com.tdtu.englishvocabquiz.Activity.MultipleChoiceActivity"
+60-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:44:13-60
+61            android:exported="true" >
+61-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:45:13-36
+62            <intent-filter>
+62-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:47:13-51:29
+63                <action android:name="android.intent.action.MAIN" />
+63-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:48:17-69
+63-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:48:25-66
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:50:17-77
+65-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:50:27-74
+66            </intent-filter>
+67        </activity>
+68        <activity
+68-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:53:9-58:20
+69            android:name="com.tdtu.englishvocabquiz.Activity.SplashActivity"
+69-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:54:13-52
+70            android:exported="true"
+70-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:55:13-36
+71            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+71-->D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\AndroidManifest.xml:56:13-69
+72        </activity>
+73
+74        <service
+74-->[com.google.firebase:firebase-database:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\9e2c67435290fc85633b3d0e36241f15\transformed\firebase-database-20.3.0\AndroidManifest.xml:26:9-35:19
+75            android:name="com.google.firebase.components.ComponentDiscoveryService"
+75-->[com.google.firebase:firebase-database:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\9e2c67435290fc85633b3d0e36241f15\transformed\firebase-database-20.3.0\AndroidManifest.xml:27:13-84
+76            android:directBootAware="true"
+76-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:32:13-43
+77            android:exported="false" >
+77-->[com.google.firebase:firebase-database:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\9e2c67435290fc85633b3d0e36241f15\transformed\firebase-database-20.3.0\AndroidManifest.xml:28:13-37
+78            <meta-data
+78-->[com.google.firebase:firebase-database:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\9e2c67435290fc85633b3d0e36241f15\transformed\firebase-database-20.3.0\AndroidManifest.xml:29:13-31:85
+79                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
+79-->[com.google.firebase:firebase-database:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\9e2c67435290fc85633b3d0e36241f15\transformed\firebase-database-20.3.0\AndroidManifest.xml:30:17-120
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[com.google.firebase:firebase-database:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\9e2c67435290fc85633b3d0e36241f15\transformed\firebase-database-20.3.0\AndroidManifest.xml:31:17-82
+81            <meta-data
+81-->[com.google.firebase:firebase-database:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\9e2c67435290fc85633b3d0e36241f15\transformed\firebase-database-20.3.0\AndroidManifest.xml:32:13-34:85
+82                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+82-->[com.google.firebase:firebase-database:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\9e2c67435290fc85633b3d0e36241f15\transformed\firebase-database-20.3.0\AndroidManifest.xml:33:17-109
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.firebase:firebase-database:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\9e2c67435290fc85633b3d0e36241f15\transformed\firebase-database-20.3.0\AndroidManifest.xml:34:17-82
+84            <meta-data
+84-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:69:13-71:85
+85                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+85-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:70:17-109
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:71:17-82
+87            <meta-data
+87-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\a336ff42f07b4747ae97129fd5e2e029\transformed\firebase-storage-20.3.0\AndroidManifest.xml:30:13-32:85
+88                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
+88-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\a336ff42f07b4747ae97129fd5e2e029\transformed\firebase-storage-20.3.0\AndroidManifest.xml:31:17-118
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\a336ff42f07b4747ae97129fd5e2e029\transformed\firebase-storage-20.3.0\AndroidManifest.xml:32:17-82
+90            <meta-data
+90-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\a336ff42f07b4747ae97129fd5e2e029\transformed\firebase-storage-20.3.0\AndroidManifest.xml:33:13-35:85
+91                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+91-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\a336ff42f07b4747ae97129fd5e2e029\transformed\firebase-storage-20.3.0\AndroidManifest.xml:34:17-107
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[com.google.firebase:firebase-storage:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\a336ff42f07b4747ae97129fd5e2e029\transformed\firebase-storage-20.3.0\AndroidManifest.xml:35:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-appcheck:17.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c5ab694c8db2ba71dcdcae3e00a00da0\transformed\firebase-appcheck-17.1.0\AndroidManifest.xml:25:13-27:85
+94                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
+94-->[com.google.firebase:firebase-appcheck:17.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c5ab694c8db2ba71dcdcae3e00a00da0\transformed\firebase-appcheck-17.1.0\AndroidManifest.xml:26:17-120
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-appcheck:17.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c5ab694c8db2ba71dcdcae3e00a00da0\transformed\firebase-appcheck-17.1.0\AndroidManifest.xml:27:17-82
+96            <meta-data
+96-->[com.google.firebase:firebase-appcheck:17.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c5ab694c8db2ba71dcdcae3e00a00da0\transformed\firebase-appcheck-17.1.0\AndroidManifest.xml:28:13-30:85
+97                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
+97-->[com.google.firebase:firebase-appcheck:17.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c5ab694c8db2ba71dcdcae3e00a00da0\transformed\firebase-appcheck-17.1.0\AndroidManifest.xml:29:17-117
+98                android:value="com.google.firebase.components.ComponentRegistrar" />
+98-->[com.google.firebase:firebase-appcheck:17.1.0] C:\Users\DELL\.gradle\caches\transforms-3\c5ab694c8db2ba71dcdcae3e00a00da0\transformed\firebase-appcheck-17.1.0\AndroidManifest.xml:30:17-82
+99            <meta-data
+99-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\89825d557a60639446f11dc41d6fa1f2\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:12:13-14:85
+100                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+100-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\89825d557a60639446f11dc41d6fa1f2\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:13:17-116
+101                android:value="com.google.firebase.components.ComponentRegistrar" />
+101-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\89825d557a60639446f11dc41d6fa1f2\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:14:17-82
+102            <meta-data
+102-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:35:13-37:85
+103                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+103-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:36:17-109
+104                android:value="com.google.firebase.components.ComponentRegistrar" />
+104-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:37:17-82
+105        </service>
+106
+107        <activity
+107-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:29:9-46:20
+108            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+108-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:30:13-80
+109            android:excludeFromRecents="true"
+109-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:31:13-46
+110            android:exported="true"
+110-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:32:13-36
+111            android:launchMode="singleTask"
+111-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:33:13-44
+112            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+112-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:34:13-72
+113            <intent-filter>
+113-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:35:13-45:29
+114                <action android:name="android.intent.action.VIEW" />
+114-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:36:17-69
+114-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:36:25-66
+115
+116                <category android:name="android.intent.category.DEFAULT" />
+116-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:38:17-76
+116-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:38:27-73
+117                <category android:name="android.intent.category.BROWSABLE" />
+117-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:39:17-78
+117-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:39:27-75
+118
+119                <data
+119-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:41:17-44:51
+120                    android:host="firebase.auth"
+120-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:42:21-49
+121                    android:path="/"
+121-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:43:21-37
+122                    android:scheme="genericidp" />
+122-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:44:21-48
+123            </intent-filter>
+124        </activity>
+125        <activity
+125-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:47:9-64:20
+126            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+126-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:48:13-79
+127            android:excludeFromRecents="true"
+127-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:49:13-46
+128            android:exported="true"
+128-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:50:13-36
+129            android:launchMode="singleTask"
+129-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:51:13-44
+130            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+130-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:52:13-72
+131            <intent-filter>
+131-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:53:13-63:29
+132                <action android:name="android.intent.action.VIEW" />
+132-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:36:17-69
+132-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:36:25-66
+133
+134                <category android:name="android.intent.category.DEFAULT" />
+134-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:38:17-76
+134-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:38:27-73
+135                <category android:name="android.intent.category.BROWSABLE" />
+135-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:39:17-78
+135-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:39:27-75
+136
+137                <data
+137-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:41:17-44:51
+138                    android:host="firebase.auth"
+138-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:42:21-49
+139                    android:path="/"
+139-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:43:21-37
+140                    android:scheme="recaptcha" />
+140-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\DELL\.gradle\caches\transforms-3\d097b0ff1fa47e2f55ebb00b69aec5fe\transformed\firebase-auth-22.2.0\AndroidManifest.xml:44:21-48
+141            </intent-filter>
+142        </activity>
+143        <activity
+143-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\a20986474e613a87ca4fdd07c7579ebb\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+144            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+144-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\a20986474e613a87ca4fdd07c7579ebb\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+145            android:exported="false"
+145-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\a20986474e613a87ca4fdd07c7579ebb\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+146            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+146-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\a20986474e613a87ca4fdd07c7579ebb\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+147
+148        <provider
+148-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:23:9-28:39
+149            android:name="com.google.firebase.provider.FirebaseInitProvider"
+149-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:24:13-77
+150            android:authorities="com.tdtu.englishvocabquiz.firebaseinitprovider"
+150-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:25:13-72
+151            android:directBootAware="true"
+151-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:26:13-43
+152            android:exported="false"
+152-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:27:13-37
+153            android:initOrder="100" />
+153-->[com.google.firebase:firebase-common:20.4.2] C:\Users\DELL\.gradle\caches\transforms-3\09e0b5cf6a380329d410b84a5bd1f9bd\transformed\firebase-common-20.4.2\AndroidManifest.xml:28:13-36
+154
+155        <meta-data
+155-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\11f5931a97fb253b3aa5ce8e0f2f12a9\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+156            android:name="com.google.android.gms.version"
+156-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\11f5931a97fb253b3aa5ce8e0f2f12a9\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+157            android:value="@integer/google_play_services_version" />
+157-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\11f5931a97fb253b3aa5ce8e0f2f12a9\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+158
+159        <provider
+159-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\bc0689a2d6048ef76c23ed0858268d96\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+160            android:name="androidx.startup.InitializationProvider"
+160-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\bc0689a2d6048ef76c23ed0858268d96\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+161            android:authorities="com.tdtu.englishvocabquiz.androidx-startup"
+161-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\bc0689a2d6048ef76c23ed0858268d96\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+162            android:exported="false" >
+162-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\bc0689a2d6048ef76c23ed0858268d96\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+163            <meta-data
+163-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\bc0689a2d6048ef76c23ed0858268d96\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+164                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+164-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\bc0689a2d6048ef76c23ed0858268d96\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+165                android:value="androidx.startup" />
+165-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\bc0689a2d6048ef76c23ed0858268d96\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+166            <meta-data
+166-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\1fe8031ca857315df42272aa81e69804\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+167                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+167-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\1fe8031ca857315df42272aa81e69804\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+168                android:value="androidx.startup" />
+168-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\1fe8031ca857315df42272aa81e69804\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+169        </provider>
+170    </application>
+171
+172</manifest>

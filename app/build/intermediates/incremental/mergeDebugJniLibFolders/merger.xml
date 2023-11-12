@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\git_backup\android-mobile\app\src\debug\jniLibs"/></dataSet></merger>
