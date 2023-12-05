@@ -44,10 +44,12 @@ public class LoginActivity extends AppCompatActivity {
         //database
         db = FirebaseDatabase.getInstance();
         ref = db.getReference("users");
-        //submit sign up btn
 
-        binding.emailEdt.setText("tt@gmail.com");
-        binding.passEdt.setText("123456");
+
+        //render new user have signed up
+        setPreviousData();
+
+        //submit sign up btn
         binding.loginBtn.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -61,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 String email = binding.emailEdt.getText().toString().trim();
                 String pass = binding.passEdt.getText().toString().trim();
+
                 if(!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                     if(!pass.isEmpty()){
                         auth.signInWithEmailAndPassword(email,pass)
@@ -133,6 +136,14 @@ public class LoginActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+    }
+    private void setPreviousData(){
+        Intent ii = getIntent();
+        String email = ii.getStringExtra("email");
+        String pass = ii.getStringExtra("password");
+
+        binding.emailEdt.setText(email);
+        binding.passEdt.setText(pass);
     }
     public void showLoadingDialog(){
 

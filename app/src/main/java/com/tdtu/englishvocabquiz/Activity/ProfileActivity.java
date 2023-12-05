@@ -156,7 +156,6 @@ public class ProfileActivity extends AppCompatActivity {
                 public void onSuccess(Uri uri) {
                     String imageUrl = uri.toString();
                     Glide.with(getApplicationContext()).load(imageUrl).into(binding.uploadImgView);
-
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
