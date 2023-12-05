@@ -1,189 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Activity.EditProfileActivity">
 
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitXY"
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+        android:src="@drawable/baseline_arrow_back_24"/>
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="@drawable/background_01"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/background_02"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="20dp"
+            android:background="@drawable/green_border">
 
-            <RelativeLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/backBtn">
+                android:text="Cập nhật thông tin"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:textColor="@color/green"/>
 
-                <ImageView
-                    android:id="@+id/uploadImgView"
-                    android:layout_width="140dp"
-                    android:layout_height="140dp"
-                    android:src="@drawable/baseline_person_24"
-                    android:visibility="visible"
-                    tools:visibility="visible" />
-                <ImageButton
-                    android:id="@+id/btnEdit"
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/baseline_photo_camera_back_24"
+                android:id="@+id/uploadImage"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/edtuploadName"
+                android:background="@drawable/green_border"
+                android:layout_marginTop="20dp"
+                android:padding="16dp"
+                android:hint="Tên người dùng"
+                android:ems="10"
+                android:inputType="text"
+                android:maxLines="1"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/green"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/edtUploadPhoneNumber"
+                android:background="@drawable/green_border"
+                android:layout_marginTop="20dp"
+                android:padding="16dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Số điện thoại"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/green"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giới tính"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edtuploadGender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/green"
+                android:orientation="horizontal">
+                <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_edit_24"
-                    android:layout_alignEnd="@+id/uploadImgView"
-                    android:layout_alignBottom="@id/uploadImgView"
-                    android:background="@color/none"/>
-            </RelativeLayout>
+                    android:text="Nam"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nữ"/>
 
-
-            <ImageButton
-                android:id="@+id/backBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/none"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_back" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_03"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            </RadioGroup>
 
             <Button
-                android:id="@+id/reviewProfileBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="72dp"
-                android:layout_marginTop="35dp"
-                android:layout_marginEnd="72dp"
-                android:text="Xem lại hồ sơ"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Cập nhật"
+                android:id="@+id/saveButton"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/green"
+                app:cornerRadius = "20dp"/>
 
-            <TextView
-                android:id="@+id/oldPass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="66dp"
-                android:text="Tên người dùng"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/reviewProfileBtn" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="34dp"
-                android:text="Số điện thoại"
-                android:textColor="@color/white"
+    </androidx.cardview.widget.CardView>
 
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/oldPass" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="34dp"
-                android:text="Giới tính"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-            <EditText
-                android:id="@+id/newMobileEdt"
-                android:layout_width="179dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="12dp"
-                android:ems="10"
-                android:hint="Nhập số ...."
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newNameEdt" />
-
-            <EditText
-                android:id="@+id/newNameEdt"
-                android:layout_width="179dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="56dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:hint="Nhập họ tên..."
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/reviewProfileBtn" />
-
-            <CheckBox
-                android:id="@+id/femaleCb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="9dp"
-                android:text="Nữ"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/maleCb" />
-
-            <CheckBox
-                android:id="@+id/maleCb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="17dp"
-                android:text="Nam"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <Button
-            android:id="@+id/submitBtn"
-            android:layout_width="317dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="45dp"
-            android:text="Xác nhận cập nhật"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

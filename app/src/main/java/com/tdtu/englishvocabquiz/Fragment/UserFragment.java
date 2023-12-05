@@ -1,66 +1,110 @@
 package com.tdtu.englishvocabquiz.Fragment;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.tdtu.englishvocabquiz.Activity.EditProfileActivity;
 import com.tdtu.englishvocabquiz.R;
+import com.tdtu.englishvocabquiz.Model.UserModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link UserFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class UserFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public UserFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UserFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static UserFragment newInstance(String param1, String param2) {
-        UserFragment fragment = new UserFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private String uid;
+    private UserModel userModel;
+    private TextView tvUid;
+    private TextView tvEdit;
+    private TextView tvname;
+    private TextView tvPhoneNumber;
+    private TextView tvGender;
+    private TextView tvCreateDate;
+    private SharedPreferences sharedPreferences;
+    private DatabaseReference databaseReference;
+    private ArrayList<UserModel> datalist;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user, container, false);
+        View view =  inflater.inflate(R.layout.fragment_user, container, false);
+
+        tvUid = view.findViewById(R.id.tvUid);
+        tvEdit = view.findViewById(R.id.tvEdit);
+        tvname = view.findViewById(R.id.tvNameUser);
+        tvPhoneNumber = view.findViewById(R.id.tvPhoneNumber);
+        tvGender = view.findViewById(R.id.tvGender);
+        tvCreateDate = view.findViewById(R.id.tvCreateDate);
+        databaseReference = FirebaseDatabase.getInstance().getReference("users");
+        datalist = new ArrayList<>();
+        tvEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().startActivity(new Intent(getActivity(), EditProfileActivity.class));
+            }
+        });
+        sharedPreferences = getContext().getSharedPreferences("QuizPreference", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        String uid = sharedPreferences.getString("uid","");
+
+
+
+        ValueEventListener  eventListener=  databaseReference.child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    datalist.clear();
+
+                    userModel =  snapshot.getValue(UserModel.class);
+                    datalist.add(userModel);
+
+                    editor.putString("name",userModel.getName());
+                    editor.putString("gender",userModel.getGender());
+                    editor.putString("createDate",userModel.getCreateDate());
+                    editor.putInt("posts",userModel.getPosts());
+                    editor.putString("avt", userModel.getAvt());
+                    editor.putString("mobile", userModel.getMobile());
+                    editor.commit();
+//                    userCurrModel = new UserModel(name, gender,createDate, posts, avt, uid, mobile);
+//                    snapshot.getValue("name","");
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+//        Log.e("TAG", "user: "+datalist.get(0).toString());
+        tvname.setText(sharedPreferences.getString("name", ""));
+        tvPhoneNumber.setText(sharedPreferences.getString("mobile",""));
+        tvGender.setText(sharedPreferences.getString("gender",""));
+        tvCreateDate.setText(sharedPreferences.getString("createDate",""));
+
+        return  view;
     }
 }
+//                    String createDate = snapshot.child("createDate").getValue(String.class);
+//                    String gender = snapshot.child("gender").getValue(String.class);
+//                    String avt = snapshot.child("avt").getValue(String.class);
+//                    String  mobile = snapshot.child("mobile").getValue(String.class);
+//                    String name = snapshot.child("name").getValue(String.class);
+//                    Integer post = snapshot.child("post").getValue(Integer.class);

@@ -1,33 +1,37 @@
 package com.tdtu.englishvocabquiz.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.WindowDecorActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.tdtu.englishvocabquiz.Fragment.HomeFragment;
 import com.tdtu.englishvocabquiz.Fragment.LibraryFragment;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.Fragment.SolutionsFragment;
 import com.tdtu.englishvocabquiz.Fragment.UserFragment;
+import com.tdtu.englishvocabquiz.Model.UserModel;
 import com.tdtu.englishvocabquiz.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding binding;
+    UserModel userModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
+
 
         binding.navigationBar.setOnItemSelectedListener(item -> {
             if(item.getItemId() == R.id.navigationHome){
@@ -79,7 +84,29 @@ public class HomeActivity extends AppCompatActivity {
         folder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.dismiss();
+                AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+                builder.setTitle("Tạo folder mới");
+
+                final EditText input = new EditText(HomeActivity.this);
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                builder.setPositiveButton("Tạo", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String folderName = input.getText().toString();
+//                        createNewFolder(folderName);
+                    }
+                });
+
+                builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {

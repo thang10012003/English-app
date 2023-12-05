@@ -5,14 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.tdtu.englishvocabquiz.R;
@@ -22,77 +20,41 @@ import java.lang.String;
 
 public final class ActivityEditProfileBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final ImageButton backBtn;
+  public final ImageView btnBack;
 
   @NonNull
-  public final ImageButton btnEdit;
+  public final EditText edtUploadPhoneNumber;
 
   @NonNull
-  public final ConstraintLayout constraintLayout;
+  public final RadioGroup edtuploadGender;
 
   @NonNull
-  public final ConstraintLayout constraintLayout2;
+  public final EditText edtuploadName;
 
   @NonNull
-  public final CheckBox femaleCb;
+  public final Button saveButton;
 
   @NonNull
-  public final CheckBox maleCb;
+  public final ImageView uploadImage;
 
-  @NonNull
-  public final EditText newMobileEdt;
-
-  @NonNull
-  public final EditText newNameEdt;
-
-  @NonNull
-  public final TextView oldPass;
-
-  @NonNull
-  public final Button reviewProfileBtn;
-
-  @NonNull
-  public final Button submitBtn;
-
-  @NonNull
-  public final TextView textView14;
-
-  @NonNull
-  public final TextView textView15;
-
-  @NonNull
-  public final ImageView uploadImgView;
-
-  private ActivityEditProfileBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageButton backBtn, @NonNull ImageButton btnEdit,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout2,
-      @NonNull CheckBox femaleCb, @NonNull CheckBox maleCb, @NonNull EditText newMobileEdt,
-      @NonNull EditText newNameEdt, @NonNull TextView oldPass, @NonNull Button reviewProfileBtn,
-      @NonNull Button submitBtn, @NonNull TextView textView14, @NonNull TextView textView15,
-      @NonNull ImageView uploadImgView) {
+  private ActivityEditProfileBinding(@NonNull LinearLayout rootView, @NonNull ImageView btnBack,
+      @NonNull EditText edtUploadPhoneNumber, @NonNull RadioGroup edtuploadGender,
+      @NonNull EditText edtuploadName, @NonNull Button saveButton, @NonNull ImageView uploadImage) {
     this.rootView = rootView;
-    this.backBtn = backBtn;
-    this.btnEdit = btnEdit;
-    this.constraintLayout = constraintLayout;
-    this.constraintLayout2 = constraintLayout2;
-    this.femaleCb = femaleCb;
-    this.maleCb = maleCb;
-    this.newMobileEdt = newMobileEdt;
-    this.newNameEdt = newNameEdt;
-    this.oldPass = oldPass;
-    this.reviewProfileBtn = reviewProfileBtn;
-    this.submitBtn = submitBtn;
-    this.textView14 = textView14;
-    this.textView15 = textView15;
-    this.uploadImgView = uploadImgView;
+    this.btnBack = btnBack;
+    this.edtUploadPhoneNumber = edtUploadPhoneNumber;
+    this.edtuploadGender = edtuploadGender;
+    this.edtuploadName = edtuploadName;
+    this.saveButton = saveButton;
+    this.uploadImage = uploadImage;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -117,93 +79,44 @@ public final class ActivityEditProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.backBtn;
-      ImageButton backBtn = ViewBindings.findChildViewById(rootView, id);
-      if (backBtn == null) {
+      id = R.id.btnBack;
+      ImageView btnBack = ViewBindings.findChildViewById(rootView, id);
+      if (btnBack == null) {
         break missingId;
       }
 
-      id = R.id.btnEdit;
-      ImageButton btnEdit = ViewBindings.findChildViewById(rootView, id);
-      if (btnEdit == null) {
+      id = R.id.edtUploadPhoneNumber;
+      EditText edtUploadPhoneNumber = ViewBindings.findChildViewById(rootView, id);
+      if (edtUploadPhoneNumber == null) {
         break missingId;
       }
 
-      id = R.id.constraintLayout;
-      ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout == null) {
+      id = R.id.edtuploadGender;
+      RadioGroup edtuploadGender = ViewBindings.findChildViewById(rootView, id);
+      if (edtuploadGender == null) {
         break missingId;
       }
 
-      id = R.id.constraintLayout2;
-      ConstraintLayout constraintLayout2 = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout2 == null) {
+      id = R.id.edtuploadName;
+      EditText edtuploadName = ViewBindings.findChildViewById(rootView, id);
+      if (edtuploadName == null) {
         break missingId;
       }
 
-      id = R.id.femaleCb;
-      CheckBox femaleCb = ViewBindings.findChildViewById(rootView, id);
-      if (femaleCb == null) {
+      id = R.id.saveButton;
+      Button saveButton = ViewBindings.findChildViewById(rootView, id);
+      if (saveButton == null) {
         break missingId;
       }
 
-      id = R.id.maleCb;
-      CheckBox maleCb = ViewBindings.findChildViewById(rootView, id);
-      if (maleCb == null) {
+      id = R.id.uploadImage;
+      ImageView uploadImage = ViewBindings.findChildViewById(rootView, id);
+      if (uploadImage == null) {
         break missingId;
       }
 
-      id = R.id.newMobileEdt;
-      EditText newMobileEdt = ViewBindings.findChildViewById(rootView, id);
-      if (newMobileEdt == null) {
-        break missingId;
-      }
-
-      id = R.id.newNameEdt;
-      EditText newNameEdt = ViewBindings.findChildViewById(rootView, id);
-      if (newNameEdt == null) {
-        break missingId;
-      }
-
-      id = R.id.oldPass;
-      TextView oldPass = ViewBindings.findChildViewById(rootView, id);
-      if (oldPass == null) {
-        break missingId;
-      }
-
-      id = R.id.reviewProfileBtn;
-      Button reviewProfileBtn = ViewBindings.findChildViewById(rootView, id);
-      if (reviewProfileBtn == null) {
-        break missingId;
-      }
-
-      id = R.id.submitBtn;
-      Button submitBtn = ViewBindings.findChildViewById(rootView, id);
-      if (submitBtn == null) {
-        break missingId;
-      }
-
-      id = R.id.textView14;
-      TextView textView14 = ViewBindings.findChildViewById(rootView, id);
-      if (textView14 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView15;
-      TextView textView15 = ViewBindings.findChildViewById(rootView, id);
-      if (textView15 == null) {
-        break missingId;
-      }
-
-      id = R.id.uploadImgView;
-      ImageView uploadImgView = ViewBindings.findChildViewById(rootView, id);
-      if (uploadImgView == null) {
-        break missingId;
-      }
-
-      return new ActivityEditProfileBinding((ConstraintLayout) rootView, backBtn, btnEdit,
-          constraintLayout, constraintLayout2, femaleCb, maleCb, newMobileEdt, newNameEdt, oldPass,
-          reviewProfileBtn, submitBtn, textView14, textView15, uploadImgView);
+      return new ActivityEditProfileBinding((LinearLayout) rootView, btnBack, edtUploadPhoneNumber,
+          edtuploadGender, edtuploadName, saveButton, uploadImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

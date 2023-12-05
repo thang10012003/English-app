@@ -7,10 +7,12 @@
     <color name="green_dark">#304848</color>
     <color name="green_light">#98D4B3</color>
     <color name="green_ruzy">#5D7963</color>
+    <color name="green_super_light">#A6CF98</color>
     <color name="grey">#A9A9A9</color>
     <color name="hint">#019590</color>
     <color name="main_back2">#304848</color>
     <color name="none">#00FDFDFD</color>
+    <color name="pink_orange">#FA7070</color>
     <color name="red">#C82B2B</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFFF00</color>
@@ -27,8 +29,8 @@
         
     </style>
     <style name="DialogAnimation">
-        <item name="android:windowEnterAnimation">@anim/slide_in_anim</item>
-        <item name="android:windowExitAnimation">@anim/slide_out_anim</item>
+        <item name="android:windowEnterAnimation">@animator/slide_in_anim</item>
+        <item name="android:windowExitAnimation">@animator/slide_out_anim</item>
     </style>
     <style name="Theme.EnglishVocabQuiz" parent="Base.Theme.EnglishVocabQuiz"/>
     <style name="circular">

@@ -1,11 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/green_dark"
-    tools:context=".Fragment.UserFragment">
+    tools:context=".Fragment.UserFragment"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
 
-</FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thông tin tài khoản"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_marginBottom="30dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/uploadImgView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/background_main"
+                    android:scaleType="fitXY"
+                    android:visibility="visible"
+                    android:theme="@style/circular"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="20dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_white_bg"
+                    android:padding="5dp"
+                    android:layout_alignRight="@id/uploadImgView"
+                    android:layout_alignBottom="@id/uploadImgView"
+                    android:src="@drawable/baseline_photo_camera_24"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvUid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thang Nguyen"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:outlineAmbientShadowColor="@color/green_super_light">
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:padding="15dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="THÔNG TIN CÁ NHÂN"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/tvEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chỉnh sửa"
+                        android:textColor="@color/yellow"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textSize="15sp"
+                        android:drawableRight="@drawable/baseline_edit_24"
+                        android:backgroundTint="@color/none"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    >
+                    <TextView
+                        android:layout_height="1dp"
+                        android:layout_width="match_parent"
+                        android:background="@color/grey"
+                        android:layout_weight="2"
+                        />
+                </TableRow>
+
+                <TableRow
+
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tên người dùng"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:textSize="15sp"
+                        android:textColor="@color/grey"/>
+                    <TextView
+                        android:id="@+id/tvNameUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thang Nguyen"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    >
+                    <TextView
+                        android:layout_height="1dp"
+                        android:layout_width="match_parent"
+                        android:background="@color/grey"
+                        android:layout_weight="2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                </TableRow>
+                <TableRow
+                    android:id="@+id/tbRow2"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Số điện thoại"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:textSize="15sp"
+                        android:textColor="@color/grey"/>
+                    <TextView
+                        android:id="@+id/tvPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="09090909"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    >
+                    <TextView
+                        android:layout_height="1dp"
+                        android:layout_width="match_parent"
+                        android:background="@color/grey"
+                        android:layout_weight="2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                </TableRow>
+                <TableRow
+                    android:id="@+id/tbRow3"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Giới tính"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:textSize="15sp"
+                        android:textColor="@color/grey"/>
+                    <TextView
+                        android:id="@+id/tvGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bê đê"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    >
+                    <TextView
+                        android:layout_height="1dp"
+                        android:layout_width="match_parent"
+                        android:background="@color/grey"
+                        android:layout_weight="2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                </TableRow>
+                <TableRow
+                    android:id="@+id/tbRow4"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày tạo"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:textSize="15sp"
+                        android:textColor="@color/grey"/>
+                    <TextView
+                        android:id="@+id/tvCreateDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bê đê"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:layout_height="1dp"
+                        android:layout_width="match_parent"
+                        android:background="@color/grey"
+                        android:layout_weight="2" />
+                </TableRow>
+            </TableLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/green_border">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/green_super_light"
+            android:textStyle="bold"
+            android:text="Đăng xuất"
+            android:backgroundTint="@color/none"
+            android:layout_gravity="center"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

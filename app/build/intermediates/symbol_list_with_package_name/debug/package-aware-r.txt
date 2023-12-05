@@ -41,8 +41,6 @@ anim m3_side_sheet_slide_out
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
-anim slide_in_anim
-anim slide_out_anim
 animator back_animator
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
@@ -79,6 +77,8 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+animator slide_in_anim
+animator slide_out_anim
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -1427,6 +1427,7 @@ color green
 color green_dark
 color green_light
 color green_ruzy
+color green_super_light
 color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
@@ -2058,6 +2059,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color none
 color notification_action_color_filter
 color notification_icon_bg_color
+color pink_orange
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2956,6 +2958,7 @@ drawable baseline_folder_open_24
 drawable baseline_notifications_24
 drawable baseline_person_24
 drawable baseline_person_outline_24
+drawable baseline_photo_camera_24
 drawable baseline_photo_camera_back_24
 drawable baseline_remove_24
 drawable baseline_search_24
@@ -2974,6 +2977,8 @@ drawable button_01
 drawable button_02
 drawable card_back
 drawable card_font
+drawable circle_avt
+drawable circle_white_bg
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3216,7 +3221,6 @@ id btnBack
 id btnCancel
 id btnClose
 id btnCreate
-id btnEdit
 id btnFoward
 id btnQuitTest
 id buttonPanel
@@ -3304,6 +3308,9 @@ id east
 id edge
 id editProfileBtn
 id edit_query
+id edtUploadPhoneNumber
+id edtuploadGender
+id edtuploadName
 id elastic
 id ema
 id emailEdt
@@ -3316,7 +3323,6 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
-id femaleCb
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3392,7 +3398,6 @@ id list_item
 id loginBtn
 id logoutBtn
 id m3_side_sheet
-id maleCb
 id marquee
 id masked
 id match_constraint
@@ -3471,8 +3476,6 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
-id newMobileEdt
-id newNameEdt
 id newPassEdt
 id noScroll
 id noState
@@ -3518,13 +3521,13 @@ id recyclerViewFolder
 id recyclerViewTopic
 id result
 id reverseSawtooth
-id reviewProfileBtn
 id right
 id rightToLeft
 id right_icon
 id right_side
 id rounded
 id row_index_key
+id saveButton
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3600,7 +3603,6 @@ id staticPostLayout
 id stop
 id stretch
 id submenuarrow
-id submitBtn
 id submit_area
 id supportScrollUp
 id tabMode
@@ -3618,6 +3620,9 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id tbRow2
+id tbRow3
+id tbRow4
 id text
 id text2
 id textEnd
@@ -3660,17 +3665,24 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvCountWord
+id tvCreateDate
 id tvCreatorName
+id tvEdit
 id tvFolderName
+id tvGender
 id tvName
+id tvNameUser
+id tvPhoneNumber
 id tvTitle
 id tvTopicName
+id tvUid
 id tvWelcome
 id unchecked
 id uniform
 id unlabeled
 id up
 id updateBtn
+id uploadImage
 id uploadImgView
 id useLogo
 id vertical_only

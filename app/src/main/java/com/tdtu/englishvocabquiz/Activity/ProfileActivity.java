@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.tdtu.englishvocabquiz.UserModel;
+import com.tdtu.englishvocabquiz.Model.UserModel;
 import com.tdtu.englishvocabquiz.databinding.ActivityProfileBinding;
 
 import java.time.LocalDate;

@@ -1,12 +1,4 @@
-package com.tdtu.englishvocabquiz;
-
-import android.os.Parcelable;
-
-import java.io.Serializable;
-import java.security.Timestamp;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+package com.tdtu.englishvocabquiz.Model;
 
 public class UserModel  {
     private String name;
@@ -16,9 +8,6 @@ public class UserModel  {
     private String avt;
     private String id_acc;
     private String mobile;
-    public UserModel(){
-
-    }
 
     public UserModel( String name, String gender, String createDate, int posts, String avt, String id_acc,String mobile) {
         this.name = name;
@@ -39,6 +28,15 @@ public class UserModel  {
         this.id_acc =  clone.id_acc;
         this.mobile =  clone.mobile;
 
+    }
+    public UserModel(){
+        this.name = "";
+        this.gender = "";
+        this.createDate = "";
+        this.posts = -1;
+        this.avt = "";
+        this.id_acc = "";
+        this.mobile = "";
     }
 
     public String getMobile() {
@@ -95,5 +93,18 @@ public class UserModel  {
 
     public void setId_acc(String id_acc) {
         this.id_acc = id_acc;
+    }
+
+    @Override
+    public String toString() {
+        return "UserModel{" +
+                "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", createDate='" + createDate + '\'' +
+                ", posts=" + posts +
+                ", avt='" + avt + '\'' +
+                ", id_acc='" + id_acc + '\'' +
+                ", mobile='" + mobile + '\'' +
+                '}';
     }
 }
