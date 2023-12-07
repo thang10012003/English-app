@@ -88,10 +88,12 @@
                 android:textColor="@color/green"
                 android:orientation="horizontal">
                 <RadioButton
+                    android:id="@+id/rgMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nam"/>
                 <RadioButton
+                    android:id="@+id/rgFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nữ"/>
