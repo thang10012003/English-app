@@ -32,6 +32,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.EnglishVocabQuiz" >
         <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.AddTopic"
+            android:exported="false" />
+        <activity
             android:name="com.tdtu.englishvocabquiz.Activity.HomeActivity"
             android:exported="false" />
         <activity
@@ -54,8 +57,7 @@
             android:exported="false" />
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.FlashCardActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.MainActivity"
             android:exported="true" >
@@ -68,8 +70,7 @@
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

@@ -15,6 +15,7 @@ color green_ruzy
 color green_super_light
 color grey
 color hint
+color light_grey
 color main_back2
 color none
 color pink_orange
@@ -27,8 +28,10 @@ drawable background_03
 drawable background_main
 drawable baseline_add_24
 drawable baseline_add_circle_outline_24
+drawable baseline_add_white_24
 drawable baseline_arrow_back_24
 drawable baseline_arrow_forward_24
+drawable baseline_check_24
 drawable baseline_clear_24
 drawable baseline_close_24
 drawable baseline_edit_24
@@ -41,6 +44,7 @@ drawable baseline_photo_camera_back_24
 drawable baseline_remove_24
 drawable baseline_search_24
 drawable baseline_search_black_24
+drawable baseline_settings_24
 drawable baseline_topic_24
 drawable book
 drawable button_01
@@ -74,6 +78,7 @@ id btnBack
 id btnCancel
 id btnClose
 id btnCreate
+id btnFinish
 id btnFoward
 id btnQuitTest
 id card
@@ -86,7 +91,11 @@ id constraintLayout
 id constraintLayout2
 id correctNumber
 id editProfileBtn
+id edtDescription
+id edtMean
+id edtTopic
 id edtUploadPhoneNumber
+id edtVocab
 id edtuploadGender
 id edtuploadName
 id ema
@@ -121,6 +130,7 @@ id oldPassEdt
 id passEdt
 id progress
 id progressBar
+id progress_circular
 id question
 id recyclerViewFolder
 id recyclerViewTopic
@@ -140,13 +150,17 @@ id textView2
 id textView4
 id textView5
 id textView6
+id tgMode
 id topicCount
 id tvCountWord
 id tvCreateDate
 id tvCreatorName
+id tvDescription
 id tvEdit
 id tvFolderName
 id tvGender
+id tvMode
+id tvModeTitle
 id tvName
 id tvNameUser
 id tvPhoneNumber
@@ -154,10 +168,12 @@ id tvTitle
 id tvTopicName
 id tvUid
 id tvWelcome
+id tvtopic
 id updateBtn
 id uploadImage
 id uploadImgView
 id viewPager
+layout activity_add_topic
 layout activity_change_password
 layout activity_edit_profile
 layout activity_flash_card
@@ -177,6 +193,7 @@ layout fragment_tab_topic
 layout fragment_user
 layout new_folder_item
 layout new_topic_item
+layout new_vocab_item
 layout progress_layout
 menu bottom_navigation_bar
 mipmap ic_avt_default

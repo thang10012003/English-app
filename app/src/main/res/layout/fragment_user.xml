@@ -165,6 +165,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"/>
                 </TableRow>
+
                 <TableRow
                     android:id="@+id/tbRow3"
                     android:layout_height="match_parent"

@@ -8,16 +8,24 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.tdtu.englishvocabquiz.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ProgressLayoutBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
 
-  private ProgressLayoutBinding(@NonNull LinearLayout rootView) {
+  @NonNull
+  public final CircularProgressIndicator progressCircular;
+
+  private ProgressLayoutBinding(@NonNull LinearLayout rootView,
+      @NonNull CircularProgressIndicator progressCircular) {
     this.rootView = rootView;
+    this.progressCircular = progressCircular;
   }
 
   @Override
@@ -43,10 +51,19 @@ public final class ProgressLayoutBinding implements ViewBinding {
 
   @NonNull
   public static ProgressLayoutBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.progress_circular;
+      CircularProgressIndicator progressCircular = ViewBindings.findChildViewById(rootView, id);
+      if (progressCircular == null) {
+        break missingId;
+      }
 
-    return new ProgressLayoutBinding((LinearLayout) rootView);
+      return new ProgressLayoutBinding((LinearLayout) rootView, progressCircular);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
