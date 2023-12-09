@@ -13,7 +13,7 @@
         android:color="@color/black" >
     </stroke>
 
-    <!-- The radius makes the corners rounded -->
+    <!-- chỉnh tròn -->
     <corners
         android:radius="50dp">
     </corners>

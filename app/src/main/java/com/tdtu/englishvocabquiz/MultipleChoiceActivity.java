@@ -92,9 +92,9 @@ public class MultipleChoiceActivity extends AppCompatActivity {
     //ham load cau hoi moi
     public void loadQuestion(QuestionModel questionModel, TextView question, Button ans1, Button ans2, Button ans3, Button ans4){
         question.setText(questionModel.getQuestion());
-        ans1.setText(questionModel.getAnswer().get(0));
-        ans2.setText(questionModel.getAnswer().get(1));
-        ans3.setText(questionModel.getAnswer().get(2));
-        ans4.setText(questionModel.getAnswer().get(3));
+        ans1.setText("A. "+questionModel.getAnswer().get(0));
+        ans2.setText("B. "+questionModel.getAnswer().get(1));
+        ans3.setText("C. "+questionModel.getAnswer().get(2));
+        ans4.setText("D. "+questionModel.getAnswer().get(3));
     }
 }
