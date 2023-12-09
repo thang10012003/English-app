@@ -292,6 +292,10 @@ attr circularflow_defaultAngle
 attr circularflow_defaultRadius
 attr circularflow_radiusInDP
 attr circularflow_viewCenter
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr clearsTag
 attr clickAction
 attr clockFaceBackgroundColor
@@ -1432,6 +1436,7 @@ color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color hint
+color light_grey
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2949,8 +2954,10 @@ drawable background_03
 drawable background_main
 drawable baseline_add_24
 drawable baseline_add_circle_outline_24
+drawable baseline_add_white_24
 drawable baseline_arrow_back_24
 drawable baseline_arrow_forward_24
+drawable baseline_check_24
 drawable baseline_clear_24
 drawable baseline_close_24
 drawable baseline_edit_24
@@ -2963,6 +2970,7 @@ drawable baseline_photo_camera_back_24
 drawable baseline_remove_24
 drawable baseline_search_24
 drawable baseline_search_black_24
+drawable baseline_settings_24
 drawable baseline_topic_24
 drawable book
 drawable btn_checkbox_checked_mtrl
@@ -3221,6 +3229,7 @@ id btnBack
 id btnCancel
 id btnClose
 id btnCreate
+id btnFinish
 id btnFoward
 id btnQuitTest
 id buttonPanel
@@ -3308,7 +3317,11 @@ id east
 id edge
 id editProfileBtn
 id edit_query
+id edtDescription
+id edtMean
+id edtTopic
 id edtUploadPhoneNumber
+id edtVocab
 id edtuploadGender
 id edtuploadName
 id elastic
@@ -3647,6 +3660,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id tgMode
 id time
 id title
 id titleDividerNoCustom
@@ -3667,9 +3681,12 @@ id triangle
 id tvCountWord
 id tvCreateDate
 id tvCreatorName
+id tvDescription
 id tvEdit
 id tvFolderName
 id tvGender
+id tvMode
+id tvModeTitle
 id tvName
 id tvNameUser
 id tvPhoneNumber
@@ -3677,6 +3694,7 @@ id tvTitle
 id tvTopicName
 id tvUid
 id tvWelcome
+id tvtopic
 id unchecked
 id uniform
 id unlabeled
@@ -3819,6 +3837,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_topic
 layout activity_change_password
 layout activity_edit_profile
 layout activity_flash_card
@@ -3907,6 +3926,7 @@ layout mtrl_search_bar
 layout mtrl_search_view
 layout new_folder_item
 layout new_topic_item
+layout new_vocab_item
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -5251,6 +5271,7 @@ styleable Carousel carousel_backwardTransition carousel_emptyViewsBehavior carou
 styleable CheckedTextView android_checkMark checkMarkCompat checkMarkTint checkMarkTintMode
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CircularProgressIndicator indicatorDirectionCircular indicatorInset indicatorSize
 styleable ClockFaceView clockFaceBackgroundColor clockNumberTextColor
 styleable ClockHandView clockHandColor materialCircleRadius selectorSize

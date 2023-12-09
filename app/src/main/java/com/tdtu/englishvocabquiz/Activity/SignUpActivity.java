@@ -101,7 +101,7 @@ public class SignUpActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     FirebaseUser user = auth.getCurrentUser();
                     String uid = user.getUid();
-                    Toast.makeText(SignUpActivity.this,uid.toString(),Toast.LENGTH_LONG).show();
+//                    Toast.makeText(SignUpActivity.this,uid.toString(),Toast.LENGTH_LONG).show();
 
                     updateUserFirestore(name,uid,email,pass); //show login activity when successfully
                 }
