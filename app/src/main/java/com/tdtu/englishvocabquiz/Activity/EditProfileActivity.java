@@ -101,14 +101,10 @@ public class EditProfileActivity extends AppCompatActivity {
             if(currDataUser != null || id_user != null){
                 //update user when recieve args
 
-
             }
 
 
         }
-
-
-
         //alert dialog
         alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("Thông Báo");

@@ -1,5 +1,7 @@
 package com.tdtu.englishvocabquiz.Activity;
 
+import static com.google.android.material.color.utilities.MaterialDynamicColors.error;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.tdtu.englishvocabquiz.Dialog.ResetPasswordByEmailDialog;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.tdtu.englishvocabquiz.R;
@@ -91,7 +94,6 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this,"Đăng nhập thành công",Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 
-
                                         startActivity(intent);
                                         finish();
                                     }
@@ -119,6 +121,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        handleForgotPass();
+
         //back tbn
         binding.backBtn.setOnClickListener(new View.OnClickListener(){
 
@@ -143,5 +147,14 @@ public class LoginActivity extends AppCompatActivity {
         builder.setView(R.layout.progress_layout);
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+    private void handleForgotPass(){
+        binding.btnForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ResetPasswordByEmailDialog rDialog = new ResetPasswordByEmailDialog();
+                rDialog.show(getSupportFragmentManager(), "CustomDialogFragment");
+            }
+        });
     }
 }

@@ -250,6 +250,7 @@
             android:textColor="@color/green_super_light"
             android:textStyle="bold"
             android:text="Đăng xuất"
+            android:id="@+id/btnSignOut"
             android:backgroundTint="@color/none"
             android:layout_gravity="center"/>
     </RelativeLayout>
