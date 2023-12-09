@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MultipleChoiceActivity"
     android:background="@drawable/background_01">
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/layoutTest"
     android:layout_width="match_parent"
@@ -15,7 +17,9 @@
         android:id="@+id/btnClose"
         android:layout_width="30sp"
         android:layout_height="30sp"
+
         android:background="@drawable/baseline_close_24"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="20sp"/>
@@ -25,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0/0"
+
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnClose"
         android:layout_margin="10sp"
         android:max="100"
+
         android:progress="0"/>
 
     <TextView
@@ -50,6 +56,7 @@
         android:text="question ?"
         android:gravity="center"
         android:textSize="20sp"
+
         app:layout_constraintBottom_toTopOf="@+id/btnAnswer1"
         app:layout_constraintTop_toBottomOf="@id/btnClose" />
 
@@ -93,6 +100,7 @@
             android:gravity="center"
             android:text="Hoàn Thành"
             android:textSize="50sp"
+
             app:layout_constraintBottom_toTopOf="@+id/btnQuitTest"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -104,6 +112,7 @@
             android:layout_height="wrap_content"
             android:text="Kết quả: 3/20"
             android:textSize="30sp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result"

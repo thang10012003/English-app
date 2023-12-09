@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    android:orientation="vertical"
+    tools:context=".Activity.AddTopic">
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:background="@color/green_dark"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:background="@color/none"
+            app:srcCompat="@drawable/ic_back" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạo chủ đề"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/backBtn"
+            android:layout_centerVertical="true"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/btnSetting"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_toLeftOf="@+id/btnFinish"-->
+<!--            android:src="@drawable/baseline_settings_24" />-->
+        <ImageView
+            android:id="@+id/btnFinish"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/baseline_check_24"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tvtopic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiêu đề"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:textSize="15sp"/>
+        <EditText
+            android:id="@+id/edtTopic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Chủ đề, chương,..."
+            android:textColorHint="@color/light_grey"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/tvtopic"
+            android:layout_marginBottom="20dp"/>
+        <TextView
+            android:id="@+id/tvModeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ai có thể xem"
+            android:textColor="@color/white"
+            android:layout_below="@+id/edtTopic"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="20dp"
+            android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/tvMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chỉ mình tôi"
+            android:textColor="@color/white"
+            android:layout_below="@+id/edtTopic"
+            android:layout_toLeftOf="@+id/tgMode"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+        <Switch
+            android:id="@+id/tgMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/tvMode"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mô tả chủ đề"
+            android:textColor="@color/white"
+            android:layout_below="@+id/tvModeTitle"
+            android:layout_alignParentLeft="true"
+            android:textSize="15sp"/>
+        <EditText
+            android:id="@+id/edtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_below="@+id/tvDescription"/>
+
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

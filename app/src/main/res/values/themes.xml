@@ -7,4 +7,8 @@
 
     <style name="Theme.EnglishVocabQuiz" parent="Base.Theme.EnglishVocabQuiz" />
 
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@animator/slide_in_anim</item>
+        <item name="android:windowExitAnimation">@animator/slide_out_anim</item>
+    </style>
 </resources>

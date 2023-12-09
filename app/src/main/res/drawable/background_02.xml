@@ -4,6 +4,7 @@
     <gradient
         android:startColor="@color/main_back2"
         android:endColor="@color/main_back2"
+
         />
 <!--    <corners-->
 <!--        android:bottomRightRadius="20dp"-->
@@ -11,4 +12,11 @@
 <!--        android:topLeftRadius="20sp"-->
 <!--        android:topRightRadius="20sp"-->
 <!--        ></corners>-->
+
+        ></gradient>
+    <corners
+        android:bottomRightRadius="50dp"
+        android:bottomLeftRadius="50dp"
+        ></corners>
+
 </shape>
