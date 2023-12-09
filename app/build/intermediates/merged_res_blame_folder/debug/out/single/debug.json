@@ -100,6 +100,10 @@
         "source": "com.tdtu.englishvocabquiz.app-main-36:/mipmap-mdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.tdtu.englishvocabquiz.app-merged_res-34:/layout_dialog_reset_password_by_email.xml.flat",
+        "source": "com.tdtu.englishvocabquiz.app-main-36:/layout/dialog_reset_password_by_email.xml"
+    },
+    {
         "merged": "com.tdtu.englishvocabquiz.app-merged_res-34:/layout_fragment_tab_topic.xml.flat",
         "source": "com.tdtu.englishvocabquiz.app-main-36:/layout/fragment_tab_topic.xml"
     },

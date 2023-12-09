@@ -4,6 +4,7 @@ package com.tdtu.englishvocabquiz.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,6 +21,9 @@ import java.lang.String;
 public final class FragmentUserBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
+
+  @NonNull
+  public final Button btnSignOut;
 
   @NonNull
   public final TableRow tbRow2;
@@ -51,12 +55,13 @@ public final class FragmentUserBinding implements ViewBinding {
   @NonNull
   public final ShapeableImageView uploadImgView;
 
-  private FragmentUserBinding(@NonNull LinearLayout rootView, @NonNull TableRow tbRow2,
-      @NonNull TableRow tbRow3, @NonNull TableRow tbRow4, @NonNull TextView tvCreateDate,
-      @NonNull TextView tvEdit, @NonNull TextView tvGender, @NonNull TextView tvNameUser,
-      @NonNull TextView tvPhoneNumber, @NonNull TextView tvUid,
+  private FragmentUserBinding(@NonNull LinearLayout rootView, @NonNull Button btnSignOut,
+      @NonNull TableRow tbRow2, @NonNull TableRow tbRow3, @NonNull TableRow tbRow4,
+      @NonNull TextView tvCreateDate, @NonNull TextView tvEdit, @NonNull TextView tvGender,
+      @NonNull TextView tvNameUser, @NonNull TextView tvPhoneNumber, @NonNull TextView tvUid,
       @NonNull ShapeableImageView uploadImgView) {
     this.rootView = rootView;
+    this.btnSignOut = btnSignOut;
     this.tbRow2 = tbRow2;
     this.tbRow3 = tbRow3;
     this.tbRow4 = tbRow4;
@@ -96,6 +101,12 @@ public final class FragmentUserBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnSignOut;
+      Button btnSignOut = ViewBindings.findChildViewById(rootView, id);
+      if (btnSignOut == null) {
+        break missingId;
+      }
+
       id = R.id.tbRow2;
       TableRow tbRow2 = ViewBindings.findChildViewById(rootView, id);
       if (tbRow2 == null) {
@@ -156,8 +167,8 @@ public final class FragmentUserBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentUserBinding((LinearLayout) rootView, tbRow2, tbRow3, tbRow4, tvCreateDate,
-          tvEdit, tvGender, tvNameUser, tvPhoneNumber, tvUid, uploadImgView);
+      return new FragmentUserBinding((LinearLayout) rootView, btnSignOut, tbRow2, tbRow3, tbRow4,
+          tvCreateDate, tvEdit, tvGender, tvNameUser, tvPhoneNumber, tvUid, uploadImgView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

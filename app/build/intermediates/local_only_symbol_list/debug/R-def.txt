@@ -74,8 +74,11 @@ id btnBack
 id btnCancel
 id btnClose
 id btnCreate
+id btnForgotPass
 id btnFoward
 id btnQuitTest
+id btnSendToEmail
+id btnSignOut
 id card
 id card_back
 id card_front
@@ -86,6 +89,7 @@ id constraintLayout
 id constraintLayout2
 id correctNumber
 id editProfileBtn
+id edtEmailToReset
 id edtUploadPhoneNumber
 id edtuploadGender
 id edtuploadName
@@ -125,6 +129,8 @@ id question
 id recyclerViewFolder
 id recyclerViewTopic
 id result
+id rgFemale
+id rgMale
 id saveButton
 id signInBtn
 id signUpBtn
@@ -169,6 +175,7 @@ layout activity_profile
 layout activity_sign_up
 layout activity_splash
 layout bottom_sheet_layout
+layout dialog_reset_password_by_email
 layout fragment_home
 layout fragment_library
 layout fragment_solutions

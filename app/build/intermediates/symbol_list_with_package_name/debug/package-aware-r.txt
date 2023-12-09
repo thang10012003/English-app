@@ -3221,8 +3221,11 @@ id btnBack
 id btnCancel
 id btnClose
 id btnCreate
+id btnForgotPass
 id btnFoward
 id btnQuitTest
+id btnSendToEmail
+id btnSignOut
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3308,6 +3311,7 @@ id east
 id edge
 id editProfileBtn
 id edit_query
+id edtEmailToReset
 id edtUploadPhoneNumber
 id edtuploadGender
 id edtuploadName
@@ -3521,6 +3525,8 @@ id recyclerViewFolder
 id recyclerViewTopic
 id result
 id reverseSawtooth
+id rgFemale
+id rgMale
 id right
 id rightToLeft
 id right_icon
@@ -3848,6 +3854,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_reset_password_by_email
 layout fragment_home
 layout fragment_library
 layout fragment_solutions

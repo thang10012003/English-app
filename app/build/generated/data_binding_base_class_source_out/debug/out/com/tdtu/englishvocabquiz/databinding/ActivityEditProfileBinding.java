@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +36,12 @@ public final class ActivityEditProfileBinding implements ViewBinding {
   public final EditText edtuploadName;
 
   @NonNull
+  public final RadioButton rgFemale;
+
+  @NonNull
+  public final RadioButton rgMale;
+
+  @NonNull
   public final Button saveButton;
 
   @NonNull
@@ -42,12 +49,15 @@ public final class ActivityEditProfileBinding implements ViewBinding {
 
   private ActivityEditProfileBinding(@NonNull LinearLayout rootView, @NonNull ImageView btnBack,
       @NonNull EditText edtUploadPhoneNumber, @NonNull RadioGroup edtuploadGender,
-      @NonNull EditText edtuploadName, @NonNull Button saveButton, @NonNull ImageView uploadImage) {
+      @NonNull EditText edtuploadName, @NonNull RadioButton rgFemale, @NonNull RadioButton rgMale,
+      @NonNull Button saveButton, @NonNull ImageView uploadImage) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.edtUploadPhoneNumber = edtUploadPhoneNumber;
     this.edtuploadGender = edtuploadGender;
     this.edtuploadName = edtuploadName;
+    this.rgFemale = rgFemale;
+    this.rgMale = rgMale;
     this.saveButton = saveButton;
     this.uploadImage = uploadImage;
   }
@@ -103,6 +113,18 @@ public final class ActivityEditProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rgFemale;
+      RadioButton rgFemale = ViewBindings.findChildViewById(rootView, id);
+      if (rgFemale == null) {
+        break missingId;
+      }
+
+      id = R.id.rgMale;
+      RadioButton rgMale = ViewBindings.findChildViewById(rootView, id);
+      if (rgMale == null) {
+        break missingId;
+      }
+
       id = R.id.saveButton;
       Button saveButton = ViewBindings.findChildViewById(rootView, id);
       if (saveButton == null) {
@@ -116,7 +138,7 @@ public final class ActivityEditProfileBinding implements ViewBinding {
       }
 
       return new ActivityEditProfileBinding((LinearLayout) rootView, btnBack, edtUploadPhoneNumber,
-          edtuploadGender, edtuploadName, saveButton, uploadImage);
+          edtuploadGender, edtuploadName, rgFemale, rgMale, saveButton, uploadImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.tdtu.englishvocabquiz.Dialog.ResetPasswordByEmailDialog;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.Model.UserModel;
 import com.tdtu.englishvocabquiz.databinding.ActivityLoginBinding;
@@ -90,11 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                                                     editor.putString("uid",snapshot.child("id_acc").getValue(String.class));
                                                     editor.commit();
 
-//                                                    bundle.putString("createDate",snapshot.child("createDate").getValue(String.class));
-//                                                    bundle.putString("gender",snapshot.child("gender").getValue(String.class));
-//                                                    bundle.putString("avt",snapshot.child("avt").getValue(String.class));
-//                                                    bundle.putString("mobile",snapshot.child("mobile").getValue(String.class));
-//                                                    bundle.putString("name",snapshot.child("name").getValue(String.class));
+//
 
                                                 }
                                             }
@@ -128,6 +125,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        handleForgotPass();
+
         //back tbn
         binding.backBtn.setOnClickListener(new View.OnClickListener(){
 
@@ -152,5 +151,14 @@ public class LoginActivity extends AppCompatActivity {
         builder.setView(R.layout.progress_layout);
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+    private void handleForgotPass(){
+        binding.btnForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ResetPasswordByEmailDialog rDialog = new ResetPasswordByEmailDialog();
+                rDialog.show(getSupportFragmentManager(), "CustomDialogFragment");
+            }
+        });
     }
 }

@@ -16,6 +16,10 @@
         "source": "com.tdtu.englishvocabquiz.app-main-36:/layout/fragment_library.xml"
     },
     {
+        "merged": "com.tdtu.englishvocabquiz.app-mergeDebugResources-33:/layout/dialog_reset_password_by_email.xml",
+        "source": "com.tdtu.englishvocabquiz.app-main-36:/layout/dialog_reset_password_by_email.xml"
+    },
+    {
         "merged": "com.tdtu.englishvocabquiz.app-mergeDebugResources-33:/layout/bottom_sheet_layout.xml",
         "source": "com.tdtu.englishvocabquiz.app-main-36:/layout/bottom_sheet_layout.xml"
     },

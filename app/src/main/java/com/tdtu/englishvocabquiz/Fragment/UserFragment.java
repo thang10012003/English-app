@@ -1,5 +1,7 @@
 package com.tdtu.englishvocabquiz.Fragment;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,17 +10,28 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.tdtu.englishvocabquiz.Activity.EditProfileActivity;
+import com.tdtu.englishvocabquiz.Activity.LoginActivity;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.Model.UserModel;
 
@@ -39,6 +52,16 @@ public class UserFragment extends Fragment {
     private DatabaseReference databaseReference;
     private ArrayList<UserModel> datalist;
 
+
+    private UserModel currDataUser;
+    private String ref_col = "users";
+    private String id_user;
+    private FirebaseAuth auth;
+    private FirebaseFirestore db;
+    ImageView imgUpload;
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,60 +74,72 @@ public class UserFragment extends Fragment {
         tvPhoneNumber = view.findViewById(R.id.tvPhoneNumber);
         tvGender = view.findViewById(R.id.tvGender);
         tvCreateDate = view.findViewById(R.id.tvCreateDate);
-        databaseReference = FirebaseDatabase.getInstance().getReference("users");
-        datalist = new ArrayList<>();
+         imgUpload =view.findViewById(R.id.uploadImgView);
+      getUidByAuthen();
+        db = FirebaseFirestore.getInstance();
+
+
+        if(uid != null){
+            getUserOnDatabase_byUid(uid);
+        }
+
+
+
+
+
+
+        handleSignOut( view);
         tvEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getActivity().startActivity(new Intent(getActivity(), EditProfileActivity.class));
             }
         });
-        sharedPreferences = getContext().getSharedPreferences("QuizPreference", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        String uid = sharedPreferences.getString("uid","");
-
-
-
-        ValueEventListener  eventListener=  databaseReference.child(uid).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    datalist.clear();
-
-                    userModel =  snapshot.getValue(UserModel.class);
-                    datalist.add(userModel);
-
-                    editor.putString("name",userModel.getName());
-                    editor.putString("gender",userModel.getGender());
-                    editor.putString("createDate",userModel.getCreateDate());
-                    editor.putInt("posts",userModel.getPosts());
-                    editor.putString("avt", userModel.getAvt());
-                    editor.putString("mobile", userModel.getMobile());
-                    editor.commit();
-//                    userCurrModel = new UserModel(name, gender,createDate, posts, avt, uid, mobile);
-//                    snapshot.getValue("name","");
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
-
-//        Log.e("TAG", "user: "+datalist.get(0).toString());
-        tvname.setText(sharedPreferences.getString("name", ""));
-        tvPhoneNumber.setText(sharedPreferences.getString("mobile",""));
-        tvGender.setText(sharedPreferences.getString("gender",""));
-        tvCreateDate.setText(sharedPreferences.getString("createDate",""));
 
         return  view;
     }
+    private void getUidByAuthen(){
+        auth = FirebaseAuth.getInstance();
+        uid = auth.getCurrentUser().getUid().toString();
+    }
+    private void getUserOnDatabase_byUid(String uid){
+        db.collection("users").whereEqualTo("id_acc", uid).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        UserModel user = document.toObject(UserModel.class);
+                        saveUserData(user);//get firts user needed
+                        break;
+                    }
+                } else {
+                    Log.d(TAG, "Error getting user documents by uid: ", task.getException());
+                }
+            }
+        });
+    }
+    private void handleSignOut(View view){
+        Button btnsignOut = view.findViewById(R.id.btnSignOut);
+        btnsignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                auth.signOut();
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+                getActivity().finish();
+            }
+        });
+    }
+    private void saveUserData(UserModel user){
+        currDataUser = new UserModel(user);
+        renderDataOnView( currDataUser);
+    }
+    private void renderDataOnView(UserModel user){
+        tvUid.setText(auth.getCurrentUser().getEmail());
+        tvname.setText(user.getName());
+        tvPhoneNumber.setText(user.getMobile());
+        tvGender.setText(user.getGender());
+        tvCreateDate.setText(user.getCreateDate());
+        Glide.with(getActivity()).load(user.getAvt()).into(imgUpload);
+    }
+
 }
-//                    String createDate = snapshot.child("createDate").getValue(String.class);
-//                    String gender = snapshot.child("gender").getValue(String.class);
-//                    String avt = snapshot.child("avt").getValue(String.class);
-//                    String  mobile = snapshot.child("mobile").getValue(String.class);
-//                    String name = snapshot.child("name").getValue(String.class);
-//                    Integer post = snapshot.child("post").getValue(Integer.class);
