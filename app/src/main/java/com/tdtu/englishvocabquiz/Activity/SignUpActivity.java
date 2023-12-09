@@ -168,15 +168,24 @@ public class SignUpActivity extends AppCompatActivity {
         else if (!conPass.equals(pass)){
             binding.confPassEdt.setError("Mật khẩu xác nhận không chính xác");
             return false;
-
-
-        }else if (name.isEmpty()){
-            binding.confPassEdt.setError("Vui lòng nhập họ tên !");
+        }else if (containsUppercase(pass)){
+            binding.passEdt.setError("Mật khẩu phải có ít nhất một ký tự in hoa !");
             return false;
-
-
+        }
+        else if (pass.length()>6){
+            binding.passEdt.setError("Mật khẩu phải nhiều hơn 6 ký tự !");
+            return false;
         }
         return true;
+    }
+    private static boolean containsUppercase(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (Character.isUpperCase(c)) {
+                return true;
+            }
+        }
+        return false;
     }
     private void createNewUser_old(String email, String pass){
         Log.e("TAG", "onClick: "+"success");
