@@ -32,7 +32,24 @@
         android:testOnly="true"
         android:theme="@style/Theme.EnglishVocabQuiz" >
         <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.RankingActivity"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.TypeWordActivity"
+            android:exported="false" >
+        </activity>
+        <!-- <activity -->
+        <!-- android:name=".MultipleChoiceActivity" -->
+        <!-- android:exported="false"></activity> -->
+        <activity
             android:name="com.tdtu.englishvocabquiz.Activity.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.UpdatePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.LoginActivity"
             android:exported="false" />
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.EditProfileActivity"
@@ -47,15 +64,15 @@
             android:name="com.tdtu.englishvocabquiz.Activity.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name="com.tdtu.englishvocabquiz.Activity.UpdatePasswordActivity"
+            android:name="com.tdtu.englishvocabquiz.Activity.AddTopic"
             android:exported="false" />
-        <activity
-            android:name="com.tdtu.englishvocabquiz.Activity.LoginActivity"
-            android:exported="false" />
+        <!-- <activity -->
+        <!-- android:name=".FlashCardActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> -->
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.FlashCardActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="false" />
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.MainActivity"
             android:exported="true" >
@@ -67,9 +84,8 @@
         </activity>
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

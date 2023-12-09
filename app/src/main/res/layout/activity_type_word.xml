@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.TypeWordActivity"
+    android:background="@color/green_dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_margin="20sp"
+            android:clickable="true"
+            android:background="@drawable/baseline_close_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:text="50/100"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:max="100"
+            android:progress="50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnClose" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="question ?"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="100sp"/>
+
+        <EditText
+            android:id="@+id/answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="150sp"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/question"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20sp"/>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="50sp"
+            android:layout_marginRight="30sp"
+            android:text="Next"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Hoàn Thành"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnQuitTest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/correctNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kết quả: 3/20"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/result"
+            android:layout_margin="20sp"/>
+
+        <Button
+            android:id="@+id/btnQuitTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="10sp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

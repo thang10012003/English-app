@@ -1,5 +1,7 @@
 package com.tdtu.englishvocabquiz.Activity;
 
+import static com.google.android.material.color.utilities.MaterialDynamicColors.error;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.tdtu.englishvocabquiz.Dialog.ResetPasswordByEmailDialog;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.Model.UserModel;
 import com.tdtu.englishvocabquiz.databinding.ActivityLoginBinding;
@@ -30,7 +34,9 @@ public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
     private FirebaseAuth auth;
     private FirebaseDatabase db;
+    private FirebaseFirestore fb;
     private DatabaseReference ref;
+    private CollectionReference reference;
     private UserModel userModel;
     private SharedPreferences sharedPreferences;
 
@@ -43,8 +49,11 @@ public class LoginActivity extends AppCompatActivity {
         //firebase init
         auth = FirebaseAuth.getInstance();
         //database
-        db = FirebaseDatabase.getInstance();
-        ref = db.getReference("users");
+//        db = FirebaseDatabase.getInstance();
+//        ref = db.getReference("users");
+        fb = FirebaseFirestore.getInstance();
+        reference = fb.collection("users");
+
 
 
         //render new user have signed up
@@ -76,31 +85,14 @@ public class LoginActivity extends AppCompatActivity {
                                         //get uid
                                         FirebaseUser user = auth.getCurrentUser();
                                         String uid = user.getUid();
-
+                                        // Lưu vào SharedPreferences
+                                        sharedPreferences = getSharedPreferences("QuizPreference", MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString("uid", uid);
+                                        editor.apply();
 
                                         Toast.makeText(LoginActivity.this,"Đăng nhập thành công",Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                        ref.child(uid).addValueEventListener(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                if(snapshot.exists()) {
-
-                                                    sharedPreferences = getSharedPreferences("QuizPreference", MODE_PRIVATE);
-                                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                                    editor.putString("uid",snapshot.child("id_acc").getValue(String.class));
-                                                    editor.putString("uid",snapshot.child("id_acc").getValue(String.class));
-                                                    editor.commit();
-
-//
-
-                                                }
-                                            }
-
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError error) {
-                                                Toast.makeText(LoginActivity.this,"Thất bại",Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
 
                                         startActivity(intent);
                                         finish();
@@ -109,16 +101,20 @@ public class LoginActivity extends AppCompatActivity {
                                 .addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
+                                        dialog.dismiss();
                                         Toast.makeText(LoginActivity.this,"Tài khoản hoặc mật khẩu không đúng.",Toast.LENGTH_SHORT).show();
                                     }
                                 });
                     }
                     else {
+                        dialog.dismiss();
                         binding.passEdt.setError("Mật khẩu bị trống !");
                     }
                 }else if(email.isEmpty()){
+                    dialog.dismiss();
                     binding.emailEdt.setError("Email bị trống !");
                 }else{
+                    dialog.dismiss();
                     binding.emailEdt.setError("Email sai!");
                 }
 

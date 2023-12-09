@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 import com.tdtu.englishvocabquiz.R;
 
 import java.util.ArrayList;
