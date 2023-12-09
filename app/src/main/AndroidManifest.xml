@@ -23,18 +23,21 @@
 
         </activity>
         <activity
-            android:name=".TypeWordActivity"
+            android:name=".Activity.TypeWordActivity"
             android:exported="false">
 
         </activity>
-        <activity
-            android:name=".MultipleChoiceActivity"
-            android:exported="false"></activity>
+<!--        <activity-->
+<!--            android:name=".MultipleChoiceActivity"-->
+<!--            android:exported="false"></activity>-->
         <activity
             android:name=".Activity.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.UpdatePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.EditProfileActivity"
@@ -51,10 +54,10 @@
         <activity
             android:name=".Activity.AddTopic"
             android:exported="false" />
-        <activity
-            android:name=".FlashCardActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+<!--        <activity-->
+<!--            android:name=".FlashCardActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />-->
         <activity
             android:name=".Activity.FlashCardActivity"
             android:exported="false"></activity>

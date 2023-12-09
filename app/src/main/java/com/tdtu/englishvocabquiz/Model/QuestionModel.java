@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Model;
 
 import android.os.Build;
 
@@ -23,7 +23,7 @@ public class QuestionModel {
         answer = new ArrayList<String>();
     }
 
-    public static QuestionModel generate(VocabularyModel v,ArrayList<VocabularyModel> topic,  boolean englishMode){
+    public static QuestionModel generate(VocabularyModel v, ArrayList<VocabularyModel> topic, boolean englishMode){
         QuestionModel quest = new QuestionModel();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             if(englishMode){

@@ -32,26 +32,24 @@
         android:testOnly="true"
         android:theme="@style/Theme.EnglishVocabQuiz" >
         <activity
-            android:name="com.tdtu.englishvocabquiz.RankingActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name="com.tdtu.englishvocabquiz.Activity.RankingActivity"
+            android:exported="false" >
         </activity>
         <activity
-            android:name="com.tdtu.englishvocabquiz.TypeWordActivity"
-            android:exported="true" >
+            android:name="com.tdtu.englishvocabquiz.Activity.TypeWordActivity"
+            android:exported="false" >
         </activity>
-        <activity
-            android:name="com.tdtu.englishvocabquiz.MultipleChoiceActivity"
-            android:exported="true" />
+        <!-- <activity -->
+        <!-- android:name=".MultipleChoiceActivity" -->
+        <!-- android:exported="false"></activity> -->
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.HomeActivity"
             android:exported="false" />
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.UpdatePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.LoginActivity"
             android:exported="false" />
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.EditProfileActivity"
@@ -68,13 +66,13 @@
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.AddTopic"
             android:exported="false" />
-        <activity
-            android:name="com.tdtu.englishvocabquiz.FlashCardActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- <activity -->
+        <!-- android:name=".FlashCardActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> -->
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.FlashCardActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.MainActivity"
             android:exported="true" >

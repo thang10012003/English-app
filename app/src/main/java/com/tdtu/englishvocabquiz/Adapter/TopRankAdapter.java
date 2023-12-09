@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.tdtu.englishvocabquiz.R;
+import com.tdtu.englishvocabquiz.Model.TopRankModel;
 
 import java.util.ArrayList;
 import java.util.List;

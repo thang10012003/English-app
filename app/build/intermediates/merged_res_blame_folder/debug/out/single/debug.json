@@ -1,462 +1,466 @@
 [
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/animator_front_animator.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/animator/front_animator.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxhdpi_ic_avt_default_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxhdpi\\ic_avt_default_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_main.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_main.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_edit_profile.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_edit_profile.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_remove_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_remove_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_dialog_bg.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\dialog_bg.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_change_password.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_change_password.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_close_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_close_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_person_24_black.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_person_24_black.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_wave.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\wave.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_notifications_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_notifications_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_person_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_input_01.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/input_01.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_input_01.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\input_01.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_edit_profile.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_edit_profile.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_search_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_search_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_background_02.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/background_02.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-mdpi_ic_avt_default_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-mdpi\\ic_avt_default_round.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_wave.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/wave.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_clear_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_clear_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_home.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_home.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\menu_bottom_navigation_bar.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\menu\\bottom_navigation_bar.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_add_circle_outline_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_add_circle_outline_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_share_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_share_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxxhdpi_ic_avt_default_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxxhdpi\\ic_avt_default_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_button_02.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\button_02.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_check_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_check_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxxhdpi_ic_avt_default.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxxhdpi/ic_avt_default.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_ic_user.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/ic_user.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_rounded_background.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\rounded_background.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_background_01.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/background_01.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-mdpi_ic_avt_default.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-mdpi\\ic_avt_default.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_card_back.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/card_back.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\animator_slide_out_anim.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\animator\\slide_out_anim.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_flash_card.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_flash_card.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_circle_avt.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\circle_avt.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-anydpi-v26_ic_avt_default_round.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-anydpi-v26/ic_avt_default_round.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_card_font.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\card_font.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-anydpi-v26_ic_avt_default.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-anydpi-v26\\ic_avt_default.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xhdpi_ic_avt_default.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xhdpi/ic_avt_default.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_person_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_person_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_ranking.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_ranking.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_person_outline_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_person_outline_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_person_24_black.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_person_24_black.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_green_border.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/green_border.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\ic_home.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_fragment_solutions.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/fragment_solutions.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/xml_backup_rules.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-anydpi-v26_ic_avt_default_round.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-anydpi-v26\\ic_avt_default_round.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_splash.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_splash.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_photo_camera_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_photo_camera_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-hdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_button_01.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\button_01.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_ic_logout.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/ic_logout.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_arrow_forward_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_arrow_forward_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/animator_slide_in_anim.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/animator/slide_in_anim.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_topic_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_topic_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\ic_back.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_check_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_check_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_add_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_add_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_ic_home.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/ic_home.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_new_vocab_item.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\new_vocab_item.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_edit_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_edit_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-hdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_ic_back.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/ic_back.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_add_white_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_add_white_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_book.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/book.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_background_02.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\background_02.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_sign_up.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_sign_up.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_ic_key.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\ic_key.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/color_bottom_navigation_item.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/color/bottom_navigation_item.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-anydpi-v26_ic_avt_default.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-anydpi-v26/ic_avt_default.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_arrow_back_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_arrow_back_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_add_white_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_add_white_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_fragment_tab_folder.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/fragment_tab_folder.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_ic_avt_default_background.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\ic_avt_default_background.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_close_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_close_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_notifications_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_notifications_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-mdpi_ic_avt_default.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-mdpi/ic_avt_default.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xhdpi_ic_avt_default_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xhdpi\\ic_avt_default_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_ranking.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_ranking.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\animator_slide_in_anim.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\animator\\slide_in_anim.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_share_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_share_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_circle_avt.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/circle_avt.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_fragment_user.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\fragment_user.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_home.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_search_black_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_search_black_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_add_topic.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_add_topic.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_person_outline_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_person_outline_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_background_03.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/background_03.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_fragment_library.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\fragment_library.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_multiple_choice.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_multiple_choice.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\animator_front_animator.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\animator\\front_animator.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-hdpi_ic_avt_default_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-hdpi\\ic_avt_default_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_ranking_layout.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\ranking_layout.xml"
     },
     {
         "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_type_word.xml.flat",
         "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_type_word.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_topic_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_topic_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_rounded_corner.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\rounded_corner.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_fragment_tab_folder.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\fragment_tab_folder.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-mdpi_ic_avt_default_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-mdpi/ic_avt_default_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/animator_back_animator.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/animator/back_animator.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_add_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_add_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_settings_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_settings_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_button_02.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/button_02.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_login.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_login.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxhdpi_ic_avt_default.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxhdpi\\ic_avt_default.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_ranking_layout.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/ranking_layout.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_activity_profile.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/activity_profile.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_new_topic_item.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\new_topic_item.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxhdpi_ic_avt_default_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxhdpi/ic_avt_default_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxxhdpi_ic_avt_default.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxxhdpi\\ic_avt_default.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_circle_white_bg.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/circle_white_bg.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_progress_layout.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\progress_layout.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_new_topic_item.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/new_topic_item.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_fragment_home.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_ic_key.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/ic_key.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_add_circle_outline_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_add_circle_outline_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_fragment_library.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/fragment_library.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-hdpi_ic_avt_default_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-hdpi/ic_avt_default_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\ic_logout.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_fragment_tab_topic.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/fragment_tab_topic.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_background_03.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\background_03.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_ic_user.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\ic_user.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_button_01.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/button_01.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_folder_open_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_folder_open_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_photo_camera_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_photo_camera_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-hdpi_ic_avt_default.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-hdpi\\ic_avt_default.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xhdpi_ic_avt_default_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xhdpi/ic_avt_default_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_search_black_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_search_black_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_sign_up.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/xml_data_extraction_rules.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_fragment_tab_topic.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\fragment_tab_topic.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_rounded_corner.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/rounded_corner.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_photo_camera_back_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_photo_camera_back_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xhdpi_ic_avt_default_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xhdpi/ic_avt_default_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xhdpi_ic_avt_default_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xhdpi\\ic_avt_default_round.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_background_main.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\background_main.png"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_progress_layout.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/progress_layout.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxhdpi_ic_avt_default.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxhdpi/ic_avt_default.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxxhdpi_ic_avt_default_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxxhdpi\\ic_avt_default_round.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_card_font.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/card_font.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_arrow_forward_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_arrow_forward_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_profile.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_profile.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-hdpi_ic_avt_default_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-hdpi/ic_avt_default_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_remove_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_remove_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxhdpi_ic_avt_default_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxhdpi/ic_avt_default_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\color_bottom_navigation_item.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\color\\bottom_navigation_item.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-mdpi/ic_launcher_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-hdpi_ic_avt_default_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-hdpi\\ic_avt_default_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/animator_slide_out_anim.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/animator/slide_out_anim.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_green_border.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\green_border.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_new_vocab_item.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/new_vocab_item.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_fragment_solutions.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\fragment_solutions.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_search_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_search_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_clear_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_clear_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_dialog_bg.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/dialog_bg.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_add_topic.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_add_topic.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_new_folder_item.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/new_folder_item.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_wave1.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/wave1.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xxhdpi_ic_avt_default_round.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xxhdpi\\ic_avt_default_round.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_bottom_sheet_layout.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/bottom_sheet_layout.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-mdpi_ic_avt_default_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-mdpi\\ic_avt_default_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/layout_fragment_user.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/layout/fragment_user.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_multiple_choice.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_multiple_choice.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_change_password.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_change_password.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxxhdpi_ic_avt_default_foreground.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxxhdpi/ic_avt_default_foreground.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-mdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-mdpi_ic_avt_default_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-mdpi/ic_avt_default_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_bottom_sheet_layout.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\bottom_sheet_layout.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_flash_card.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_flash_card.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_folder_open_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_folder_open_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_card_back.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\card_back.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_photo_camera_back_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_photo_camera_back_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_new_folder_item.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\new_folder_item.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\animator_back_animator.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\animator\\back_animator.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_rounded_background.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/rounded_background.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_wave1.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\wave1.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_arrow_back_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_arrow_back_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_book.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\book.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-hdpi_ic_avt_default.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-hdpi/ic_avt_default.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_circle_white_bg.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\circle_white_bg.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_ic_avt_default_background.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/ic_avt_default_background.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_background_01.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\background_01.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxxhdpi_ic_avt_default_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxxhdpi/ic_avt_default_round.webp"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\mipmap-xhdpi_ic_avt_default.webp.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\mipmap-xhdpi\\ic_avt_default.webp"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_background_main.png.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/background_main.png"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\drawable_baseline_edit_24.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\drawable\\baseline_edit_24.xml"
     },
     {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/menu_bottom_navigation_bar.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/menu/bottom_navigation_bar.xml"
-    },
-    {
-        "merged": "com.tdtu.englishvocabquiz.app-merged_res-35:/drawable_baseline_settings_24.xml.flat",
-        "source": "com.tdtu.englishvocabquiz.app-main-37:/drawable/baseline_settings_24.xml"
+        "merged": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-merged_res-35:\\layout_activity_type_word.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\daemon\\8.0\\com.tdtu.englishvocabquiz.app-main-37:\\layout\\activity_type_word.xml"
     }
 ]

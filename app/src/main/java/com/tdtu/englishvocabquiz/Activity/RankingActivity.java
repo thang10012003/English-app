@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tdtu.englishvocabquiz.R;
-import com.tdtu.englishvocabquiz.TopRankAdapter;
-import com.tdtu.englishvocabquiz.TopRankModel;
+import com.tdtu.englishvocabquiz.Adapter.TopRankAdapter;
+import com.tdtu.englishvocabquiz.Model.TopRankModel;
 
 import java.util.ArrayList;
 

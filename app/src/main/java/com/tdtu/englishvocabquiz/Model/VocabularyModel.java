@@ -1,10 +1,9 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Model;
 
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;

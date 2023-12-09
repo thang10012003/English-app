@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -11,6 +11,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.tdtu.englishvocabquiz.Model.QuestionModel;
+import com.tdtu.englishvocabquiz.Model.VocabularyModel;
+import com.tdtu.englishvocabquiz.R;
 
 import java.util.ArrayList;
 
