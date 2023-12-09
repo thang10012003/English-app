@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:2:1-61:12
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:2:1-81:12
+INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:2:1-81:12
+INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:2:1-81:12
+INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:2:1-81:12
 MERGED from [androidx.databinding:viewbinding:8.1.1] C:\Users\APC\.gradle\caches\transforms-3\e530574cc8780721330cf2e82edfeb16\transformed\viewbinding-8.1.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\APC\.gradle\caches\transforms-3\18aee80cf9811f232ccd2c40bacdfd00\transformed\material-1.9.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\APC\.gradle\caches\transforms-3\30ac672d16482f8c9d5ece0ada73a713\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -114,8 +114,8 @@ ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidM
 	android:name
 		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:7:22-77
 application
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:9:5-59:19
-INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:9:5-59:19
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:9:5-79:19
+INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:9:5-79:19
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\APC\.gradle\caches\transforms-3\18aee80cf9811f232ccd2c40bacdfd00\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\APC\.gradle\caches\transforms-3\18aee80cf9811f232ccd2c40bacdfd00\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\APC\.gradle\caches\transforms-3\30ac672d16482f8c9d5ece0ada73a713\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -180,84 +180,104 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\AP
 		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:17:9-54
 	android:dataExtractionRules
 		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:11:9-65
-activity#com.tdtu.englishvocabquiz.Activity.AddTopic
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:19:9-21:40
+activity#com.tdtu.englishvocabquiz.RankingActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:19:9-28:20
 	android:exported
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:21:13-37
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:22:13-36
 	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:20:13-46
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:21:13-44
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:23:13-27:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:24:17-69
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:26:27-74
+activity#com.tdtu.englishvocabquiz.TypeWordActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:29:9-33:20
+	android:exported
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:30:13-45
+activity#com.tdtu.englishvocabquiz.MultipleChoiceActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:34:9-36:48
+	android:exported
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:36:13-36
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:35:13-51
 activity#com.tdtu.englishvocabquiz.Activity.HomeActivity
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:22:9-24:40
-	android:exported
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:24:13-37
-	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:23:13-50
-activity#com.tdtu.englishvocabquiz.Activity.EditProfileActivity
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:25:9-27:40
-	android:exported
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:27:13-37
-	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:26:13-57
-activity#com.tdtu.englishvocabquiz.Activity.MultipleChoiceActivity
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:28:9-30:40
-	android:exported
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:30:13-37
-	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:29:13-60
-activity#com.tdtu.englishvocabquiz.Activity.ProfileActivity
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:31:9-33:40
-	android:exported
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:33:13-37
-	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:32:13-53
-activity#com.tdtu.englishvocabquiz.Activity.SignUpActivity
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:34:9-36:40
-	android:exported
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:36:13-37
-	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:35:13-52
-activity#com.tdtu.englishvocabquiz.Activity.UpdatePasswordActivity
 ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:37:9-39:40
 	android:exported
 		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:39:13-37
 	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:38:13-60
-activity#com.tdtu.englishvocabquiz.Activity.LoginActivity
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:38:13-50
+activity#com.tdtu.englishvocabquiz.Activity.UpdatePasswordActivity
 ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:40:9-42:40
 	android:exported
 		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:41:13-51
-activity#com.tdtu.englishvocabquiz.Activity.FlashCardActivity
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:43:9-45:48
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:41:13-60
+activity#com.tdtu.englishvocabquiz.Activity.EditProfileActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:43:9-45:40
 	android:exported
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:45:13-36
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:45:13-37
 	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:44:13-55
-activity#com.tdtu.englishvocabquiz.Activity.MainActivity
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:46:9-54:20
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:44:13-57
+activity#com.tdtu.englishvocabquiz.Activity.MultipleChoiceActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:46:9-48:40
 	android:exported
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:48:13-36
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:48:13-37
 	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:47:13-50
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:49:13-53:29
-action#android.intent.action.MAIN
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:50:17-69
-	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:50:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:52:17-77
-	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:52:27-74
-activity#com.tdtu.englishvocabquiz.Activity.SplashActivity
-ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:55:9-58:81
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:47:13-60
+activity#com.tdtu.englishvocabquiz.Activity.ProfileActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:49:9-51:40
 	android:exported
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:57:13-36
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:51:13-37
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:50:13-53
+activity#com.tdtu.englishvocabquiz.Activity.SignUpActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:52:9-54:40
+	android:exported
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:54:13-37
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:53:13-52
+activity#com.tdtu.englishvocabquiz.Activity.AddTopic
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:55:9-57:40
+	android:exported
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:57:13-37
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:56:13-46
+activity#com.tdtu.englishvocabquiz.FlashCardActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:58:9-61:72
+	android:exported
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:60:13-36
 	android:theme
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:58:13-69
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:61:13-69
 	android:name
-		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:56:13-52
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:59:13-46
+activity#com.tdtu.englishvocabquiz.Activity.FlashCardActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:62:9-64:48
+	android:exported
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:64:13-36
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:63:13-55
+activity#com.tdtu.englishvocabquiz.Activity.MainActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:65:9-73:20
+	android:exported
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:67:13-36
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:66:13-50
+activity#com.tdtu.englishvocabquiz.Activity.SplashActivity
+ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:74:9-77:81
+	android:exported
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:76:13-37
+	android:theme
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:77:13-69
+	android:name
+		ADDED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml:75:13-52
 uses-sdk
 INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\APC\Desktop\project_app\android-mobile\app\src\main\AndroidManifest.xml

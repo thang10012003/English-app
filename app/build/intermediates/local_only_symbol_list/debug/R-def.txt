@@ -38,6 +38,7 @@ drawable baseline_edit_24
 drawable baseline_folder_open_24
 drawable baseline_notifications_24
 drawable baseline_person_24
+drawable baseline_person_24_black
 drawable baseline_person_outline_24
 drawable baseline_photo_camera_24
 drawable baseline_photo_camera_back_24
@@ -45,6 +46,7 @@ drawable baseline_remove_24
 drawable baseline_search_24
 drawable baseline_search_black_24
 drawable baseline_settings_24
+drawable baseline_share_24
 drawable baseline_topic_24
 drawable book
 drawable button_01
@@ -69,6 +71,7 @@ drawable rounded_corner
 drawable wave
 drawable wave1
 id accAge
+id answer
 id backBtn
 id btnAnswer1
 id btnAnswer2
@@ -80,7 +83,9 @@ id btnClose
 id btnCreate
 id btnFinish
 id btnFoward
+id btnNext
 id btnQuitTest
+id btnShare
 id card
 id card_back
 id card_front
@@ -109,6 +114,7 @@ id imViewAvatar
 id imageView
 id imageView3
 id imageView4
+id imgAvatar
 id layoutFolder
 id layoutResult
 id layoutTest
@@ -125,6 +131,7 @@ id navigationSolutions
 id navigationUser
 id navigation_bar
 id newPassEdt
+id numRanking
 id oldPass
 id oldPassEdt
 id passEdt
@@ -135,6 +142,8 @@ id question
 id recyclerViewFolder
 id recyclerViewTopic
 id result
+id rgFemale
+id rgMale
 id saveButton
 id signInBtn
 id signUpBtn
@@ -142,6 +151,7 @@ id tablayout
 id tbRow2
 id tbRow3
 id tbRow4
+id textRanking
 id textView
 id textView12
 id textView14
@@ -151,6 +161,12 @@ id textView4
 id textView5
 id textView6
 id tgMode
+id topRankAvatar
+id topRankLayout
+id topRankName
+id topRankNumber
+id topRankScore
+id topRankView
 id topicCount
 id tvCountWord
 id tvCreateDate
@@ -182,8 +198,10 @@ layout activity_login
 layout activity_main
 layout activity_multiple_choice
 layout activity_profile
+layout activity_ranking
 layout activity_sign_up
 layout activity_splash
+layout activity_type_word
 layout bottom_sheet_layout
 layout fragment_home
 layout fragment_library
@@ -195,6 +213,7 @@ layout new_folder_item
 layout new_topic_item
 layout new_vocab_item
 layout progress_layout
+layout ranking_layout
 menu bottom_navigation_bar
 mipmap ic_avt_default
 mipmap ic_avt_default_foreground

@@ -2964,6 +2964,7 @@ drawable baseline_edit_24
 drawable baseline_folder_open_24
 drawable baseline_notifications_24
 drawable baseline_person_24
+drawable baseline_person_24_black
 drawable baseline_person_outline_24
 drawable baseline_photo_camera_24
 drawable baseline_photo_camera_back_24
@@ -2971,6 +2972,7 @@ drawable baseline_remove_24
 drawable baseline_search_24
 drawable baseline_search_black_24
 drawable baseline_settings_24
+drawable baseline_share_24
 drawable baseline_topic_24
 drawable book
 drawable btn_checkbox_checked_mtrl
@@ -3195,6 +3197,7 @@ id allStates
 id always
 id animateToEnd
 id animateToStart
+id answer
 id antiClockwise
 id anticipate
 id arc
@@ -3231,7 +3234,9 @@ id btnClose
 id btnCreate
 id btnFinish
 id btnFoward
+id btnNext
 id btnQuitTest
+id btnShare
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3383,6 +3388,7 @@ id image
 id imageView
 id imageView3
 id imageView4
+id imgAvatar
 id immediateStop
 id included
 id indeterminate
@@ -3498,6 +3504,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id numRanking
 id off
 id oldPass
 id oldPassEdt
@@ -3534,6 +3541,8 @@ id recyclerViewFolder
 id recyclerViewTopic
 id result
 id reverseSawtooth
+id rgFemale
+id rgMale
 id right
 id rightToLeft
 id right_icon
@@ -3639,6 +3648,7 @@ id tbRow4
 id text
 id text2
 id textEnd
+id textRanking
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -3668,6 +3678,12 @@ id title_template
 id toggle
 id top
 id topPanel
+id topRankAvatar
+id topRankLayout
+id topRankName
+id topRankNumber
+id topRankScore
+id topRankView
 id topicCount
 id touch_outside
 id transitionToEnd
@@ -3846,8 +3862,10 @@ layout activity_login
 layout activity_main
 layout activity_multiple_choice
 layout activity_profile
+layout activity_ranking
 layout activity_sign_up
 layout activity_splash
+layout activity_type_word
 layout bottom_sheet_layout
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3934,6 +3952,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout progress_layout
+layout ranking_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

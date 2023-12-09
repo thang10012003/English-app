@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz;
+package com.tdtu.englishvocabquiz.Activity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -6,6 +6,10 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.tdtu.englishvocabquiz.R;
+import com.tdtu.englishvocabquiz.TopRankAdapter;
+import com.tdtu.englishvocabquiz.TopRankModel;
 
 import java.util.ArrayList;
 
