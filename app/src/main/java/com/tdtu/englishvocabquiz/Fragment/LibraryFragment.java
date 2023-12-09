@@ -1,5 +1,6 @@
 package com.tdtu.englishvocabquiz.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,8 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.tdtu.englishvocabquiz.Activity.AddTopic;
+import com.tdtu.englishvocabquiz.Activity.EditProfileActivity;
 import com.tdtu.englishvocabquiz.Adapter.ViewPagerAdapter;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.databinding.FragmentLibraryBinding;
@@ -23,6 +27,7 @@ public class LibraryFragment extends Fragment {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     ViewPagerAdapter viewPagerAdapter;
+    ImageView btnCreate;
 
 
 
@@ -33,6 +38,7 @@ public class LibraryFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_library, container, false);
 
+        btnCreate = view.findViewById(R.id.btnCreate);
         tabLayout = view.findViewById(R.id.tablayout);
         viewPager2 = view.findViewById(R.id.viewPager);
         viewPagerAdapter = new ViewPagerAdapter(this);
@@ -62,6 +68,13 @@ public class LibraryFragment extends Fragment {
                 super.onPageSelected(position);
             }
         });
+        btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().startActivity(new Intent(getActivity(), AddTopic.class));
+            }
+        });
+
         return view;
     }
 }

@@ -38,6 +38,11 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+//allprojects {
+//    repositories {
+//        maven { url = uri("https://jitpack.io") }
+//    }
+//}
 
 dependencies {
 
@@ -52,5 +57,7 @@ dependencies {
     implementation ("com.google.firebase:firebase-database:20.3.0")
     implementation ("com.google.firebase:firebase-storage:20.3.0")
     implementation ("com.google.firebase:firebase-auth:22.3.0")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
 
 }

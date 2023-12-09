@@ -4,17 +4,29 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="20dp">
-    <ProgressBar
-        android:layout_width="0dp"
+<!--    <ProgressBar-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:indeterminateTint="@color/grey"/>-->
+<!--        <ProgressBar-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:indeterminateTint="@color/grey"/>-->
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:indeterminateTint="@color/grey"/>
+        android:indeterminate="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Vui lòng chờ..."
         android:layout_weight="4"
         android:textSize="30sp"
-        android:textColor="@color/grey"
+        android:textColor="@color/blue"
         android:gravity="center_vertical"/>
 </LinearLayout>
