@@ -55,10 +55,10 @@ public class LoginActivity extends AppCompatActivity {
         reference = fb.collection("users");
 
 
-
         //render new user have signed up
         setPreviousData();
-
+        binding.emailEdt.setText("thang@gmail.com");
+        binding.passEdt.setText("123456789");
         //submit sign up btn
         binding.loginBtn.setOnClickListener(new View.OnClickListener(){
 

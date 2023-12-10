@@ -38,11 +38,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
-//allprojects {
-//    repositories {
-//        maven { url = uri("https://jitpack.io") }
-//    }
-//}
+
 
 dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")

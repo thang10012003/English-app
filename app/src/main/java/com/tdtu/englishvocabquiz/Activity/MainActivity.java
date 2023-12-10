@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         //check user exists to enter home directly
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-            finish();
-        }
+//        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if(currentUser != null){
+//            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+//            finish();
+//        }
 
         //log in
         binding.signInBtn.setOnClickListener(new View.OnClickListener(){

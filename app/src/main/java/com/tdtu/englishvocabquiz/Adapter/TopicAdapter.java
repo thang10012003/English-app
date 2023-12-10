@@ -10,15 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.R;
 
 import java.util.ArrayList;
 
 public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHolder> {
     private Context context;
-    private ArrayList<TopicItem> list;
+    private ArrayList<TopicModel> list;
 
-    public TopicAdapter(Context context, ArrayList<TopicItem> list) {
+    public TopicAdapter(Context context, ArrayList<TopicModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,10 +32,10 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
 
     @Override
     public void onBindViewHolder(@NonNull TopicAdapter.TopicViewHolder holder, int position) {
-        TopicItem item = list.get(position);
-        holder.tvTopicName.setText(item.getFolderName());
-        holder.tvCountWord.setText(item.getCountWord() + " học phần");
-        holder.tvCreatorName.setText(item.getCreatorName());
+        TopicModel item = list.get(position);
+        holder.tvTopicName.setText(item.getTopicName());
+        holder.tvCountWord.setText(item.getNumberOfVocab() + " học phần");
+        holder.tvCreatorName.setText(item.getIdAuthor());
     }
 
     @Override

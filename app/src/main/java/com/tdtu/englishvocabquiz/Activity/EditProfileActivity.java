@@ -257,6 +257,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
                 setInfomationOfUserOnDB(currDataUser);
                 dialog.dismiss();
+                finish();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
