@@ -4,10 +4,12 @@ package com.tdtu.englishvocabquiz.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.tdtu.englishvocabquiz.R;
@@ -20,11 +22,34 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final RecyclerView recommendTopic;
+
+  @NonNull
+  public final TextView recommendTopicTitle;
+
+  @NonNull
+  public final EditText searchBar;
+
+  @NonNull
   public final TextView tvName;
 
-  private FragmentHomeBinding(@NonNull RelativeLayout rootView, @NonNull TextView tvName) {
+  @NonNull
+  public final RecyclerView yourTopic;
+
+  @NonNull
+  public final TextView yourTopicTitle;
+
+  private FragmentHomeBinding(@NonNull RelativeLayout rootView,
+      @NonNull RecyclerView recommendTopic, @NonNull TextView recommendTopicTitle,
+      @NonNull EditText searchBar, @NonNull TextView tvName, @NonNull RecyclerView yourTopic,
+      @NonNull TextView yourTopicTitle) {
     this.rootView = rootView;
+    this.recommendTopic = recommendTopic;
+    this.recommendTopicTitle = recommendTopicTitle;
+    this.searchBar = searchBar;
     this.tvName = tvName;
+    this.yourTopic = yourTopic;
+    this.yourTopicTitle = yourTopicTitle;
   }
 
   @Override
@@ -54,13 +79,44 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.recommendTopic;
+      RecyclerView recommendTopic = ViewBindings.findChildViewById(rootView, id);
+      if (recommendTopic == null) {
+        break missingId;
+      }
+
+      id = R.id.recommendTopicTitle;
+      TextView recommendTopicTitle = ViewBindings.findChildViewById(rootView, id);
+      if (recommendTopicTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.search_bar;
+      EditText searchBar = ViewBindings.findChildViewById(rootView, id);
+      if (searchBar == null) {
+        break missingId;
+      }
+
       id = R.id.tvName;
       TextView tvName = ViewBindings.findChildViewById(rootView, id);
       if (tvName == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((RelativeLayout) rootView, tvName);
+      id = R.id.yourTopic;
+      RecyclerView yourTopic = ViewBindings.findChildViewById(rootView, id);
+      if (yourTopic == null) {
+        break missingId;
+      }
+
+      id = R.id.yourTopicTitle;
+      TextView yourTopicTitle = ViewBindings.findChildViewById(rootView, id);
+      if (yourTopicTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((RelativeLayout) rootView, recommendTopic, recommendTopicTitle,
+          searchBar, tvName, yourTopic, yourTopicTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
