@@ -135,7 +135,9 @@ public class EditProfileActivity extends AppCompatActivity {
         binding.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveData();
+                validBeforeUpdate(){
+                    saveData();
+                }
             }
         });
 
@@ -217,7 +219,27 @@ public class EditProfileActivity extends AppCompatActivity {
         Glide.with(getApplicationContext()).load(user.getAvt()).into(binding.uploadImage);
 
     }
+    private boolean validBeforeUpdate(){
+        String mobile = binding.edtUploadPhoneNumber.getText().toString().trim();
+        String name = binding.edtuploadName.getText().toString().trim();
 
+        if(name.isEmpty()){
+            Toast.makeText(this, "Tên bị trống !", Toast.LENGTH_SHORT).show();
+            return false;
+
+        }
+        if(mobile.isEmpty()){
+            Toast.makeText(this, "Số điện thoại bị trống !", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(image == null){
+            Toast.makeText(this, "Hình ảnh trống !", Toast.LENGTH_SHORT).show();
+
+            return false;
+        }
+        return true;
+
+    }
     private void saveUserData(UserModel user, String thisId){
         currDataUser = new UserModel(user);
         id_user = thisId;
