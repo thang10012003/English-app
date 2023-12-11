@@ -138,6 +138,8 @@ public class EditProfileActivity extends AppCompatActivity {
                 saveData();
             }
         });
+
+        handleChangePassword();
     }
 
     private void showGenderOptionsDialog() {
@@ -192,6 +194,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         UserModel user = document.toObject(UserModel.class);
+                        renderDataOnViewFirst(user);
                         saveUserData(user,document.getId());//get firts user needed
                         break;
                     }
@@ -201,6 +204,20 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void renderDataOnViewFirst(UserModel user) {
+        binding.edtuploadName.setText(user.getName());
+        binding.edtUploadPhoneNumber.setText(user.getMobile());
+        if(user.getGender().equals("Name")){
+            binding.rgMale.isChecked();
+        }
+        if(user.getGender().equals("Nữ")){
+            binding.rgFemale.isChecked();
+        }
+        Glide.with(getApplicationContext()).load(user.getAvt()).into(binding.uploadImage);
+
+    }
+
     private void saveUserData(UserModel user, String thisId){
         currDataUser = new UserModel(user);
         id_user = thisId;
@@ -233,6 +250,14 @@ public class EditProfileActivity extends AppCompatActivity {
         if(binding.rgMale.isChecked()){
             gender="Nam";
         }
+    }
+    private void handleChangePassword(){
+        binding.tvChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ChangePasswordActivity.class));
+            }
+        });
     }
     public void saveData(){
         storageReference = FirebaseStorage.getInstance().getReference().child("avatarImages").child(image.getLastPathSegment());

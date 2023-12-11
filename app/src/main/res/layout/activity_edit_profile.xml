@@ -105,10 +105,17 @@
                 android:text="Cập nhật"
                 android:id="@+id/saveButton"
                 android:textSize="18sp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="@color/green"
                 app:cornerRadius = "20dp"/>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:text="Thay đổi mật khẩu"
+                android:id="@+id/tvChangePassword"
+                ></TextView>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

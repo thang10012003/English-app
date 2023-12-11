@@ -54,7 +54,6 @@ public class DatabaseService {
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(context, "Thêm thất bại",Toast.LENGTH_LONG).show();
                         listener.OnAddFailure();
-
                     }
                 });
     }
