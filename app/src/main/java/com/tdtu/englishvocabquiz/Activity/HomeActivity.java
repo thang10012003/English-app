@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.tdtu.englishvocabquiz.Dialog.CreateFolderDialog;
 import com.tdtu.englishvocabquiz.Fragment.HomeFragment;
 import com.tdtu.englishvocabquiz.Fragment.LibraryFragment;
 import com.tdtu.englishvocabquiz.R;
@@ -27,6 +29,8 @@ import com.tdtu.englishvocabquiz.Fragment.SolutionsFragment;
 import com.tdtu.englishvocabquiz.Fragment.UserFragment;
 import com.tdtu.englishvocabquiz.Model.UserModel;
 import com.tdtu.englishvocabquiz.databinding.ActivityHomeBinding;
+
+import org.checkerframework.checker.units.qual.C;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -79,34 +83,38 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                startActivity(new Intent(getApplicationContext(), AddTopic.class));
             }
         });
         folder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
-                builder.setTitle("Tạo folder mới");
-
-                final EditText input = new EditText(HomeActivity.this);
-                input.setInputType(InputType.TYPE_CLASS_TEXT);
-                builder.setView(input);
-
-                builder.setPositiveButton("Tạo", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String folderName = input.getText().toString();
-//                        createNewFolder(folderName);
-                    }
-                });
-
-                builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                builder.show();
+//                AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+//                builder.setTitle("Tạo folder mới");
+//
+//                final EditText input = new EditText(HomeActivity.this);
+//                input.setInputType(InputType.TYPE_CLASS_TEXT);
+//                builder.setView(input);
+//
+//                builder.setPositiveButton("Tạo", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        String folderName = input.getText().toString();
+////                        createNewFolder(folderName);
+//                    }
+//                });
+//
+//                builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.cancel();
+//                    }
+//                });
+//
+//                builder.show();
+                dialog.dismiss();
+                CreateFolderDialog createFolderDialog = new CreateFolderDialog(dialog.getContext());
+                createFolderDialog.showCreateFolderDialog();
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {
