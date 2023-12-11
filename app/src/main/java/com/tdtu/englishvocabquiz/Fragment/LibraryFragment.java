@@ -16,6 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.tdtu.englishvocabquiz.Activity.AddTopic;
 import com.tdtu.englishvocabquiz.Activity.EditProfileActivity;
 import com.tdtu.englishvocabquiz.Adapter.ViewPagerAdapter;
+import com.tdtu.englishvocabquiz.Dialog.CreateFolderDialog;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.databinding.FragmentLibraryBinding;
 
@@ -44,6 +45,7 @@ public class LibraryFragment extends Fragment {
         viewPagerAdapter = new ViewPagerAdapter(this);
         viewPager2.setAdapter(viewPagerAdapter);
 
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -71,7 +73,12 @@ public class LibraryFragment extends Fragment {
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().startActivity(new Intent(getActivity(), AddTopic.class));
+                if(viewPager2.getCurrentItem() == 0){
+                    getActivity().startActivity(new Intent(getActivity(), AddTopic.class));
+                }else {
+                    CreateFolderDialog createFolderDialog = new CreateFolderDialog(getActivity());
+                    createFolderDialog.showCreateFolderDialog();
+                }
             }
         });
 

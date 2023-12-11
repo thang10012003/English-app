@@ -1,6 +1,7 @@
 package com.tdtu.englishvocabquiz.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.tdtu.englishvocabquiz.Activity.TopicDetails;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.R;
 
@@ -36,6 +38,18 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
         holder.tvTopicName.setText(item.getTopicName());
         holder.tvCountWord.setText(item.getNumberOfVocab() + " học phần");
         holder.tvCreatorName.setText(item.getIdAuthor());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(context, TopicDetails.class);
+                intent.putExtra("TopicName",item.getTopicName());
+                intent.putExtra("NumberOfVocab",item.getNumberOfVocab());
+                intent.putExtra("IdAuthor",item.getIdAuthor());
+                context.startActivity(intent);
+
+            }
+        });
     }
 
     @Override

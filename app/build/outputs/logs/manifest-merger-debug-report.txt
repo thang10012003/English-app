@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:2:1-75:12
+ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:2:1-78:12
+INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:2:1-78:12
+INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:2:1-78:12
+INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:2:1-78:12
 MERGED from [androidx.databinding:viewbinding:8.1.1] C:\Users\DELL\.gradle\caches\transforms-3\e530574cc8780721330cf2e82edfeb16\transformed\viewbinding-8.1.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\18aee80cf9811f232ccd2c40bacdfd00\transformed\material-1.9.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\DELL\.gradle\caches\transforms-3\30ac672d16482f8c9d5ece0ada73a713\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -114,8 +114,8 @@ ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mob
 	android:name
 		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:7:22-77
 application
-ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:9:5-73:19
-INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:9:5-73:19
+ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:9:5-76:19
+INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:9:5-76:19
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\18aee80cf9811f232ccd2c40bacdfd00\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\18aee80cf9811f232ccd2c40bacdfd00\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\DELL\.gradle\caches\transforms-3\30ac672d16482f8c9d5ece0ada73a713\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -240,42 +240,48 @@ ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mob
 		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:50:13-37
 	android:name
 		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:49:13-52
-activity#com.tdtu.englishvocabquiz.Activity.AddTopic
+activity#com.tdtu.englishvocabquiz.Activity.ChangePasswordActivity
 ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:51:9-53:40
 	android:exported
 		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:53:13-37
 	android:name
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:52:13-46
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:52:13-60
+activity#com.tdtu.englishvocabquiz.Activity.AddTopic
+ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:54:9-56:40
+	android:exported
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:56:13-37
+	android:name
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:55:13-46
 activity#com.tdtu.englishvocabquiz.Activity.FlashCardActivity
-ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:57:9-59:40
+ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:60:9-62:40
 	android:exported
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:59:13-37
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:62:13-37
 	android:name
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:58:13-55
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:61:13-55
 activity#com.tdtu.englishvocabquiz.Activity.MainActivity
-ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:60:9-68:20
+ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:63:9-71:20
 	android:exported
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:62:13-36
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:65:13-36
 	android:name
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:61:13-50
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:64:13-50
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:63:13-67:29
+ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:66:13-70:29
 action#android.intent.action.MAIN
-ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:64:17-69
+ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:67:17-69
 	android:name
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:64:25-66
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:67:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:66:17-77
+ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:69:17-77
 	android:name
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:66:27-74
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:69:27-74
 activity#com.tdtu.englishvocabquiz.Activity.SplashActivity
-ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:69:9-72:72
+ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:72:9-75:72
 	android:exported
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:71:13-37
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:74:13-37
 	android:theme
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:72:13-69
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:75:13-69
 	android:name
-		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:70:13-52
+		ADDED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml:73:13-52
 uses-sdk
 INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\TDTU\2023-2024\HKI_2023-2024\Application\cuoiki\github\android-mobile\app\src\main\AndroidManifest.xml

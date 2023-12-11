@@ -138,6 +138,8 @@ public class EditProfileActivity extends AppCompatActivity {
                 saveData();
             }
         });
+
+        handleChangePassword();
     }
 
     private void showGenderOptionsDialog() {
@@ -192,6 +194,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         UserModel user = document.toObject(UserModel.class);
+                        renderDataOnViewFirst(user);
                         saveUserData(user,document.getId());//get firts user needed
                         break;
                     }
@@ -200,6 +203,40 @@ public class EditProfileActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void renderDataOnViewFirst(UserModel user) {
+        binding.edtuploadName.setText(user.getName());
+        binding.edtUploadPhoneNumber.setText(user.getMobile());
+        if(user.getGender().equals("Name")){
+            binding.rgMale.isChecked();
+        }
+        if(user.getGender().equals("Nữ")){
+            binding.rgFemale.isChecked();
+        }
+        Glide.with(getApplicationContext()).load(user.getAvt()).into(binding.uploadImage);
+
+    }
+    private boolean validBeforeUpdate(){
+        String mobile = binding.edtUploadPhoneNumber.getText().toString().trim();
+        String name = binding.edtuploadName.getText().toString().trim();
+
+        if(name.isEmpty()){
+            Toast.makeText(this, "Tên bị trống !", Toast.LENGTH_SHORT).show();
+            return false;
+
+        }
+        if(mobile.isEmpty()){
+            Toast.makeText(this, "Số điện thoại bị trống !", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(image == null){
+            Toast.makeText(this, "Hình ảnh trống !", Toast.LENGTH_SHORT).show();
+
+            return false;
+        }
+        return true;
+
     }
     private void saveUserData(UserModel user, String thisId){
         currDataUser = new UserModel(user);
@@ -233,6 +270,14 @@ public class EditProfileActivity extends AppCompatActivity {
         if(binding.rgMale.isChecked()){
             gender="Nam";
         }
+    }
+    private void handleChangePassword(){
+        binding.tvChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ChangePasswordActivity.class));
+            }
+        });
     }
     public void saveData(){
         storageReference = FirebaseStorage.getInstance().getReference().child("avatarImages").child(image.getLastPathSegment());

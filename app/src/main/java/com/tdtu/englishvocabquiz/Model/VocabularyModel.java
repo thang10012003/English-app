@@ -4,6 +4,8 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import com.tdtu.englishvocabquiz.Enum.WordType;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,6 +21,7 @@ public class VocabularyModel {
     private String img;
     private String desc;
     private String id_topic;
+    private int countAchieve;
 
     LocalDate myObj = LocalDate.now();
     String dateNow = String.valueOf(myObj);
@@ -31,7 +34,8 @@ public class VocabularyModel {
         this.id_topic = id_topic;
         this.mark = false;
         this.createDate = dateNow;
-        this.progress = "";
+        this.progress = WordType.NOT_ACHIEVED.toString();
+        this.countAchieve = 0;
     }
     public static ArrayList<VocabularyModel> generate(){
         ArrayList<VocabularyModel> data = new ArrayList<>();
@@ -130,6 +134,14 @@ public class VocabularyModel {
 
     public void setId_topic(String id_topic) {
         this.id_topic = id_topic;
+    }
+
+    public int getCountAchieve() {
+        return countAchieve;
+    }
+
+    public void setCountAchieve(int countAchieve) {
+        this.countAchieve = countAchieve;
     }
 
     public ArrayList<String> randomAnswer(ArrayList<VocabularyModel> VocaList, boolean englishMode){

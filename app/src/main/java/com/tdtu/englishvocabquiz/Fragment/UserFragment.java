@@ -34,6 +34,7 @@ import com.tdtu.englishvocabquiz.Activity.EditProfileActivity;
 import com.tdtu.englishvocabquiz.Activity.LoginActivity;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.Model.UserModel;
+import com.tdtu.englishvocabquiz.Service.UserDatabaseService;
 
 import java.util.ArrayList;
 
@@ -93,6 +94,10 @@ public class UserFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 getActivity().startActivity(new Intent(getActivity(), EditProfileActivity.class));
+
+
+
+
             }
         });
 

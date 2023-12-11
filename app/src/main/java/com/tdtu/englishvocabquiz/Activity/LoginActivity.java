@@ -28,6 +28,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.Model.UserModel;
+import com.tdtu.englishvocabquiz.Service.NetworkUtils;
 import com.tdtu.englishvocabquiz.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -57,8 +58,14 @@ public class LoginActivity extends AppCompatActivity {
 
         //render new user have signed up
         setPreviousData();
-        binding.emailEdt.setText("thang@gmail.com");
-        binding.passEdt.setText("123456789");
+
+        //if not connect internet we wil enter the home directly without login
+        if (!NetworkUtils.isNetworkConnected(getApplicationContext())) {
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         //submit sign up btn
         binding.loginBtn.setOnClickListener(new View.OnClickListener(){
 
@@ -85,13 +92,17 @@ public class LoginActivity extends AppCompatActivity {
                                         //get uid
                                         FirebaseUser user = auth.getCurrentUser();
                                         String uid = user.getUid();
-                                        // Lưu vào SharedPreferences
-                                        sharedPreferences = getSharedPreferences("QuizPreference", MODE_PRIVATE);
+
+
+                                        // Lưu vào SharedPreferences  //save the account recently
+                                        sharedPreferences = getSharedPreferences("RecentAccount", MODE_PRIVATE);
                                         SharedPreferences.Editor editor = sharedPreferences.edit();
                                         editor.putString("uid", uid);
+                                        editor.putString("email",email);
+                                        editor.putString("password",pass);
                                         editor.apply();
 
-                                        Toast.makeText(LoginActivity.this,"Đăng nhập thành công",Toast.LENGTH_LONG).show();
+                                        dialog.dismiss();
                                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 
                                         startActivity(intent);
@@ -125,7 +136,6 @@ public class LoginActivity extends AppCompatActivity {
 
         //back tbn
         binding.backBtn.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -133,15 +143,16 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     private void setPreviousData(){
-        Intent ii = getIntent();
-        String email = ii.getStringExtra("email");
-        String pass = ii.getStringExtra("password");
-
-        binding.emailEdt.setText(email);
-        binding.passEdt.setText(pass);
+        sharedPreferences = getSharedPreferences("RecentAccount", MODE_PRIVATE);
+        if(sharedPreferences != null){
+            String uid = sharedPreferences.getString("uid", null);
+            String email = sharedPreferences.getString("email", null);
+            String pass = sharedPreferences.getString("password", null);
+            binding.emailEdt.setText(email);
+            binding.passEdt.setText(pass);
+        }
     }
     public void showLoadingDialog(){
-
         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
