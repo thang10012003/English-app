@@ -64,6 +64,9 @@
             android:name="com.tdtu.englishvocabquiz.Activity.SignUpActivity"
             android:exported="false" />
         <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
             android:name="com.tdtu.englishvocabquiz.Activity.AddTopic"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".FlashCardActivity" -->

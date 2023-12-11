@@ -8,7 +8,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+
 import android.content.Intent;
+
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -20,6 +23,7 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.tdtu.englishvocabquiz.Dialog.CreateFolderDialog;
 import com.tdtu.englishvocabquiz.Fragment.HomeFragment;
@@ -28,6 +32,7 @@ import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.Fragment.SolutionsFragment;
 import com.tdtu.englishvocabquiz.Fragment.UserFragment;
 import com.tdtu.englishvocabquiz.Model.UserModel;
+import com.tdtu.englishvocabquiz.Service.NetworkUtils;
 import com.tdtu.englishvocabquiz.databinding.ActivityHomeBinding;
 
 import org.checkerframework.checker.units.qual.C;
@@ -36,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding binding;
     UserModel userModel;
+    private String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +50,15 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
 
+
+
+        //get uid of user when no internet
+        uid = checkRecentUser();
+        if(uid != null){
+            Toast.makeText(this, "Đăng nhập thành công người dùng: "+uid, Toast.LENGTH_SHORT).show();
+            //check internet
+            checkInternet();
+        }
 
         binding.navigationBar.setOnItemSelectedListener(item -> {
             if(item.getItemId() == R.id.navigationHome){
@@ -128,5 +143,19 @@ public class HomeActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+    private String checkRecentUser(){
+        SharedPreferences sharedPreferences = getSharedPreferences("RecentAccount", MODE_PRIVATE);
+        if(sharedPreferences != null){
+             uid = sharedPreferences.getString("uid", null);
+        }
+        return uid;
+    }
+    private void checkInternet(){
+        if (NetworkUtils.isNetworkConnected(getApplicationContext())) {
+            Toast.makeText(this, "Kết nối Internet thành công !", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Kết nối Internet thất bại !", Toast.LENGTH_SHORT).show();
+        }
     }
 }

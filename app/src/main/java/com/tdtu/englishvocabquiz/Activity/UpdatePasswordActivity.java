@@ -57,13 +57,7 @@ public class UpdatePasswordActivity extends AppCompatActivity {
                 }
             }
         });
-        //back btn
-        binding.backBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+
     }
 
     private void updatePassword(String oldPass, String newPass) {

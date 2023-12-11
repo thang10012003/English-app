@@ -5,6 +5,7 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.databinding.ActivityChangePasswordBinding;
 
 public class ChangePasswordActivity extends AppCompatActivity {
@@ -41,13 +43,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
        auth = FirebaseAuth.getInstance();
         //get current user
         currUser = auth.getCurrentUser();
-        //back btn
-        binding.backBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+
 
         //submit update btn
         binding.updateBtn.setOnClickListener(new View.OnClickListener(){
@@ -67,9 +63,13 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 else if(!confNewPass.equals(newPass) ){
                     binding.confNewPassEdt.setError("Mật khẩu xác nhận chưa trùng khớp !");
                 }
-
+                AlertDialog.Builder builder = new AlertDialog.Builder(ChangePasswordActivity.this);
+                builder.setCancelable(false);
+                builder.setView(R.layout.progress_layout);
+                AlertDialog dialog = builder.create();
+                dialog.show();
                     String email = currUser.getEmail().trim();
-                 AuthCredential  credential = EmailAuthProvider.getCredential("tien42@gmail.com","123123");
+                     AuthCredential  credential = EmailAuthProvider.getCredential(email,oldPass);
                     //re-auth
                     currUser.reauthenticate(credential)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -81,15 +81,18 @@ public class ChangePasswordActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful()){
                                                     Toast.makeText(ChangePasswordActivity.this,"Cập nhật thành công !",Toast.LENGTH_LONG).show();
-                                                    startActivity(new Intent(ChangePasswordActivity.this, MainActivity.class));
+                                                    //startActivity(new Intent(ChangePasswordActivity.this, MainActivity.class));
+                                                    dialog.dismiss();
                                                     finish();
                                                 }else{
+                                                    dialog.dismiss();
                                                     Toast.makeText(ChangePasswordActivity.this,"Không thể cập nhất mới mật khẩu !",Toast.LENGTH_LONG).show();
                                                 }
                                             }
                                         });
                                     }else{
                                         Log.d(TAG, "Error auth failed");
+                                        dialog.dismiss();
                                         Toast.makeText(ChangePasswordActivity.this,"Mật khẩu cũ không chính xác !",Toast.LENGTH_LONG).show();
                                     }
                                 }

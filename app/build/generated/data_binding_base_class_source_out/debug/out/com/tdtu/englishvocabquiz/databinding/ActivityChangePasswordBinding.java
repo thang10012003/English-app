@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -22,9 +21,6 @@ import java.lang.String;
 public final class ActivityChangePasswordBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
-
-  @NonNull
-  public final ImageButton backBtn;
 
   @NonNull
   public final EditText confNewPassEdt;
@@ -60,13 +56,12 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
   public final ImageView uploadImgView;
 
   private ActivityChangePasswordBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageButton backBtn, @NonNull EditText confNewPassEdt,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout2,
-      @NonNull TextView ema, @NonNull EditText newPassEdt, @NonNull EditText oldPassEdt,
-      @NonNull TextView textView14, @NonNull TextView textView4, @NonNull TextView textView5,
-      @NonNull Button updateBtn, @NonNull ImageView uploadImgView) {
+      @NonNull EditText confNewPassEdt, @NonNull ConstraintLayout constraintLayout,
+      @NonNull ConstraintLayout constraintLayout2, @NonNull TextView ema,
+      @NonNull EditText newPassEdt, @NonNull EditText oldPassEdt, @NonNull TextView textView14,
+      @NonNull TextView textView4, @NonNull TextView textView5, @NonNull Button updateBtn,
+      @NonNull ImageView uploadImgView) {
     this.rootView = rootView;
-    this.backBtn = backBtn;
     this.confNewPassEdt = confNewPassEdt;
     this.constraintLayout = constraintLayout;
     this.constraintLayout2 = constraintLayout2;
@@ -107,12 +102,6 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.backBtn;
-      ImageButton backBtn = ViewBindings.findChildViewById(rootView, id);
-      if (backBtn == null) {
-        break missingId;
-      }
-
       id = R.id.confNewPassEdt;
       EditText confNewPassEdt = ViewBindings.findChildViewById(rootView, id);
       if (confNewPassEdt == null) {
@@ -179,7 +168,7 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityChangePasswordBinding((ConstraintLayout) rootView, backBtn, confNewPassEdt,
+      return new ActivityChangePasswordBinding((ConstraintLayout) rootView, confNewPassEdt,
           constraintLayout, constraintLayout2, ema, newPassEdt, oldPassEdt, textView14, textView4,
           textView5, updateBtn, uploadImgView);
     }
