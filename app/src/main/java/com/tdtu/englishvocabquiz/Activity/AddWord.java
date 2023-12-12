@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -21,17 +22,20 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnAddTopicListener;
 import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 import com.tdtu.englishvocabquiz.R;
+import com.tdtu.englishvocabquiz.Service.TopicDatabaseService;
 import com.tdtu.englishvocabquiz.databinding.ActivityAddWordBinding;
 import com.tdtu.englishvocabquiz.databinding.ActivityTopicDetailsBinding;
 
 public class AddWord extends AppCompatActivity {
 
-    ActivityAddWordBinding binding;
-    Uri image = null;
-    StorageReference storageReference;
-    VocabularyModel word;
+    private ActivityAddWordBinding binding;
+    private Uri image = null;
+    private StorageReference storageReference;
+    private VocabularyModel newWord;
+    private TopicDatabaseService topicDatabaseService;
     private final ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) { //set img on folder on view
@@ -53,11 +57,16 @@ public class AddWord extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         storageReference = FirebaseStorage.getInstance().getReference();
-
+        topicDatabaseService = new TopicDatabaseService(this);
 
         Intent intent = getIntent();
         String TopicName = intent.getStringExtra("TopicName");
         String IdTopic = intent.getStringExtra("IdTopic");
+
+
+        newWord = new VocabularyModel();
+        newWord.setId_topic(IdTopic);
+
 
         binding.tvTopicName.setText("Topic: " + TopicName);
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +88,21 @@ public class AddWord extends AppCompatActivity {
             public void onClick(View view) {
                 String word = binding.edtWord.getText().toString();
                 String mean = binding.edtMean.getText().toString();
+
+                newWord.setEnglish(word);
+                newWord.setVietnamese(mean);
+                topicDatabaseService.addWordToTopic(IdTopic, newWord, new OnAddTopicListener() {
+                    @Override
+                    public void OnAddSuccess() {
+                        finish();
+                    }
+
+                    @Override
+                    public void OnAddFailure() {
+
+                    }
+                });
+
             }
         });
     }
@@ -97,13 +121,9 @@ public class AddWord extends AppCompatActivity {
                 while (!uriTask.isComplete());
                 Uri urlImage = uriTask.getResult();
                 String imageURL = urlImage.toString();
-//                //change profile user
-//                currDataUser.setAvt(imageURL);
-//                getDataOnViewAndChangeUser();
-//
-//                //update user in here
-//
-//                setInfomationOfUserOnDB(currDataUser);
+                //cap nhat lai anh
+                newWord.setImg(imageURL);
+
                 dialog.dismiss();
                 finish();
             }
@@ -116,4 +136,5 @@ public class AddWord extends AppCompatActivity {
         });
 
     }
+
 }

@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text="hamburger"
         android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="20sp"/>
     <ImageView
         android:id="@+id/btnMark"
@@ -24,5 +25,23 @@
         android:src="@drawable/baseline_volume_up_24"
         android:layout_toLeftOf="@+id/btnMark"
         android:layout_marginRight="20dp"/>
+    <TextView
+        android:id="@+id/tvMean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvWord"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:text="Đây là một loại bánh"/>
+    <ImageView
+        android:id="@+id/imgWord"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/tvMean"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

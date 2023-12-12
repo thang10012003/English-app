@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnAddTopicListener;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnDeleteTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnWordListReady;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
@@ -193,6 +195,8 @@ public class TopicDatabaseService {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        String documentId = documentReference.getId();
+                        addIdWord(documentId,vocab);
                         listener.OnAddSuccess();
                         Toast.makeText(context, "Thêm thành công",Toast.LENGTH_LONG).show();
                     }
@@ -204,6 +208,25 @@ public class TopicDatabaseService {
                         listener.OnAddFailure();
 
                     }
+                });
+    }
+    //cap nhat lai id cho word
+    public void addIdWord(String id, VocabularyModel vocabularyModel){
+        vocabularyModel.setId(id);
+        Map<String, Object> mapData;
+        mapData = vocabularyModel.convertToMap();
+//        mapData.keySet("id",id);
+        topicRef
+                .document(id)
+                .collection("words")
+                .document(id)
+                .update(mapData)
+                .addOnSuccessListener(aVoid -> {
+                    // Đã cập nhật dữ liệu thành công
+                    // Thực hiện các hành động khác sau khi đã cập nhật
+                })
+                .addOnFailureListener(e -> {
+                    // Xử lý khi có lỗi xảy ra khi cập nhật dữ liệu
                 });
     }
     public ArrayList<VocabularyModel> getWordFromTopic(String topicId, OnWordListReady callback){

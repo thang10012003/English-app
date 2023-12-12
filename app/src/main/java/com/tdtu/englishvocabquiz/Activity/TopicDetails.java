@@ -6,9 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.tdtu.englishvocabquiz.Dialog.ConfirmDeleteDialog;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnDeleteTopicListener;
 import com.tdtu.englishvocabquiz.Listener.User.OnGetUserListener;
+import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.Model.UserModel;
 import com.tdtu.englishvocabquiz.R;
+import com.tdtu.englishvocabquiz.Service.TopicDatabaseService;
 import com.tdtu.englishvocabquiz.Service.UserDatabaseService;
 import com.tdtu.englishvocabquiz.databinding.ActivityChangePasswordBinding;
 import com.tdtu.englishvocabquiz.databinding.ActivityTopicDetailsBinding;
@@ -16,7 +20,8 @@ import com.tdtu.englishvocabquiz.databinding.ActivityTopicDetailsBinding;
 public class TopicDetails extends AppCompatActivity {
 
     ActivityTopicDetailsBinding binding;
-    UserDatabaseService userDatabaseService = new UserDatabaseService(getApplication());
+    private UserDatabaseService userDatabaseService = new UserDatabaseService(getApplication());
+    private TopicDatabaseService topicDatabaseService = new TopicDatabaseService(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +52,18 @@ public class TopicDetails extends AppCompatActivity {
         binding.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ConfirmDeleteDialog dialog = new ConfirmDeleteDialog(TopicDetails.this, IdTopic, new OnDeleteTopicListener() {
+                    @Override
+                    public void OnDeleteSuccess() {
+                        finish();
+                    }
 
+                    @Override
+                    public void OnDeleteFailure() {
+
+                    }
+                });
+                dialog.showCreateDialog();
             }
         });
         binding.btnEdit.setOnClickListener(new View.OnClickListener() {

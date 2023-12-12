@@ -41,9 +41,9 @@ public class MultipleChoiceActivity extends AppCompatActivity {
         final Integer[] progressNumber = {0};
 
         ArrayList<VocabularyModel> topic = new ArrayList<>();
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            topic = VocabularyModel.generate();
-        }
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+//            topic = VocabularyModel.generate();
+//        }
 
         progressBar.setMax(topic.size());
         progressBar.setProgress(progressNumber[0]);

@@ -29,9 +29,9 @@ public class FlashCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flash_card);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            test = VocabularyModel.generate();
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//            test = VocabularyModel.generate();
+//        }
         // Create Animator Object
         // For this we add animator folder inside res
         // Now we will add the animator to our card

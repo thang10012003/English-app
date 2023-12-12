@@ -49,13 +49,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:text="hahah"
-        android:textColor="@color/white"/>
+
 
 
     <TextView
