@@ -25,12 +25,19 @@
             app:srcCompat="@drawable/ic_back" />
 
         <ImageView
-            android:id="@+id/btnFinish"
+            android:id="@+id/btnDelete"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/baseline_more_vert_24" />
+            android:src="@drawable/baseline_delete_24" />
+        <ImageView
+            android:id="@+id/btnEdit"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@+id/btnDelete"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_edit_24_yellow" />
 
     </RelativeLayout>
 
@@ -130,7 +137,8 @@
             android:layout_below="@+id/btnChoice"
             android:backgroundTint="@color/green_ruzy"
             android:drawableLeft="@drawable/baseline_library_books_24"
-            android:text="Gõ từ" />
+            android:text="Gõ từ"
+            android:layout_marginBottom="10dp"/>
         <TextView
             android:id="@+id/tv2"
             android:layout_width="wrap_content"
@@ -138,6 +146,17 @@
             android:text="Thẻ"
             android:layout_below="@+id/btnTypeWord"
             android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/btnAddWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm từ"
+            android:layout_below="@+id/btnTypeWord"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:drawableLeft="@drawable/baseline_add_white_24"
             android:textSize="20sp"
             android:textStyle="bold" />
         <androidx.recyclerview.widget.RecyclerView
