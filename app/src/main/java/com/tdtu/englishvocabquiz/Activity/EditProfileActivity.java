@@ -135,6 +135,7 @@ public class EditProfileActivity extends AppCompatActivity {
         binding.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if(validBeforeUpdate()){
                     saveData();
                 }
