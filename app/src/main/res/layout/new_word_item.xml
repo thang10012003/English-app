@@ -12,19 +12,22 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20sp"/>
+
     <ImageView
         android:id="@+id/btnMark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_star_border_24"
+        android:layout_alignTop="@+id/tvWord"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/tvWord"/>
+        android:src="@drawable/baseline_star_border_24" />
     <ImageView
+        android:id="@+id/btnSpeech"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_volume_up_24"
         android:layout_toLeftOf="@+id/btnMark"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginRight="20dp"
+        android:clickable="true"/>
     <TextView
         android:id="@+id/tvMean"
         android:layout_width="wrap_content"
