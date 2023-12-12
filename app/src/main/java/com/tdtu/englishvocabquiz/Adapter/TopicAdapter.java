@@ -12,14 +12,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tdtu.englishvocabquiz.Activity.TopicDetails;
+import com.tdtu.englishvocabquiz.Listener.User.OnGetUserListener;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
+import com.tdtu.englishvocabquiz.Model.UserModel;
 import com.tdtu.englishvocabquiz.R;
+import com.tdtu.englishvocabquiz.Service.UserDatabaseService;
 
 import java.util.ArrayList;
 
 public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHolder> {
     private Context context;
     private ArrayList<TopicModel> list;
+    private UserDatabaseService userDatabaseService = new UserDatabaseService(context);
 
     public TopicAdapter(Context context, ArrayList<TopicModel> list) {
         this.context = context;
@@ -37,7 +41,14 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
         TopicModel item = list.get(position);
         holder.tvTopicName.setText(item.getTopicName());
         holder.tvCountWord.setText(item.getNumberOfVocab() + " học phần");
-        holder.tvCreatorName.setText(item.getIdAuthor());
+//        holder.tvCreatorName.setText(item.getIdAuthor());
+        userDatabaseService.getUserById(item.getIdAuthor(),new OnGetUserListener() {
+            @Override
+            public void onGetReady(UserModel userModel) {
+                String AuthorName = userModel.getName();
+                holder.tvCreatorName.setText(AuthorName);
+            }
+        });
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +57,14 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
                 intent.putExtra("TopicName",item.getTopicName());
                 intent.putExtra("NumberOfVocab",item.getNumberOfVocab());
                 intent.putExtra("IdAuthor",item.getIdAuthor());
+//                userDatabaseService.getUserById(item.getIdAuthor(),new OnGetUserListener() {
+//                    @Override
+//                    public void onGetReady(UserModel userModel) {
+//                        String AuthorName = userModel.getName();
+//                        intent.putExtra("AuthorName",AuthorName);
+//                    }
+//                });
+                intent.putExtra("IdTopic",item.getIdTopic());
                 context.startActivity(intent);
 
             }

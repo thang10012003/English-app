@@ -103,8 +103,8 @@ public class EditProfileActivity extends AppCompatActivity {
 
             }
 
-
         }
+
         //alert dialog
         alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("Thông Báo");
@@ -135,9 +135,10 @@ public class EditProfileActivity extends AppCompatActivity {
         binding.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validBeforeUpdate(){
+                if(validBeforeUpdate()){
                     saveData();
                 }
+
             }
         });
 

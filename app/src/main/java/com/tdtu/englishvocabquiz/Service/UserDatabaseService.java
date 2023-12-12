@@ -13,12 +13,10 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
-import com.tdtu.englishvocabquiz.Model.TopicModel;
+import com.tdtu.englishvocabquiz.Listener.User.OnGetUserListener;
 import com.tdtu.englishvocabquiz.Model.UserModel;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class UserDatabaseService {
     private FirebaseFirestore fb = FirebaseFirestore.getInstance();
@@ -26,7 +24,10 @@ public class UserDatabaseService {
     private Context context;
     private String ref_col = "users";
     private ArrayList<UserModel> uList = new ArrayList<>();
+    private ArrayList<UserModel> userList = new ArrayList<>();
+
     private boolean returnChecked = false;
+    private UserModel user = new UserModel();
 
     public UserDatabaseService(Context context) {
         this.context = context;
@@ -68,7 +69,22 @@ public class UserDatabaseService {
         });
         return returnChecked;
     }
-
-
-
+    public UserModel getUserById(String id, OnGetUserListener callback){
+        fb.collection(ref_col).whereEqualTo("id_acc",id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        UserModel user = document.toObject(UserModel.class);
+                        UserModel getUserOut = new UserModel(user);
+                        userList.add(getUserOut);
+                        callback.onGetReady(userList.get(0));
+                    }
+                } else {
+                    // Xử lý khi không thành công
+                }
+            }
+        });
+        return user;
+        }
 }

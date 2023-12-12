@@ -55,7 +55,8 @@ public class HomeActivity extends AppCompatActivity {
         //get uid of user when no internet
         uid = checkRecentUser();
         if(uid != null){
-            Toast.makeText(this, "Đăng nhập thành công người dùng: "+uid, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Đăng nhập thành công người dùng: "+uid, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Đăng nhập thành công người dùng", Toast.LENGTH_SHORT).show();
             //check internet
             checkInternet();
         }

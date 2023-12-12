@@ -17,14 +17,20 @@
         android:theme="@style/Theme.EnglishVocabQuiz"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.AddWord"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.WordDetails"
+            android:exported="false" />
+        <activity
             android:name=".Activity.TopicDetails"
             android:exported="false" />
         <activity
             android:name=".Activity.RankingActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Activity.TypeWordActivity"
-            android:exported="false"></activity> <!-- <activity -->
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".MultipleChoiceActivity" -->
         <!-- android:exported="false"></activity> -->
         <activity

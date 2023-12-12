@@ -90,10 +90,10 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
     private void createNewDialog(){
-         builder = new AlertDialog.Builder(getApplicationContext());
+        builder = new AlertDialog.Builder(getApplicationContext());
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
-         dialog = builder.create();
+        dialog = builder.create();
     }
     private void createNewUser(String email, String pass,String name){
             auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -129,9 +129,9 @@ public class SignUpActivity extends AppCompatActivity {
 
                                 //add child to db
 ////                                ref.(uid).setValue(newUser);
-                                ref.add(newUser)
+                                ref.document(uid).set(newUser)
                                         .addOnSuccessListener(documentReference -> {
-                                            Log.d("TAG", "DocumentSnapshot written with ID: " + documentReference.getId());
+//                                            Log.d("TAG", "DocumentSnapshot written with ID: " + documentReference.getId());
 
                                             Toast.makeText(SignUpActivity.this,"Đăng ký thành công",Toast.LENGTH_LONG).show();
                                             Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
@@ -172,7 +172,7 @@ public class SignUpActivity extends AppCompatActivity {
             binding.passEdt.setError("Mật khẩu phải có ít nhất một ký tự in hoa !");
             return false;
         }
-        else if (pass.length()>6){
+        else if (pass.length()<6){
             binding.passEdt.setError("Mật khẩu phải nhiều hơn 6 ký tự !");
             return false;
         }
