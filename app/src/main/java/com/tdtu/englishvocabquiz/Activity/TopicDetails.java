@@ -1,21 +1,31 @@
 package com.tdtu.englishvocabquiz.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.tdtu.englishvocabquiz.Adapter.ListWordAdapter;
+import com.tdtu.englishvocabquiz.Adapter.TopicAdapter;
+import com.tdtu.englishvocabquiz.Adapter.VocabItem;
 import com.tdtu.englishvocabquiz.Dialog.ConfirmDeleteDialog;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnDeleteTopicListener;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnWordListReady;
 import com.tdtu.englishvocabquiz.Listener.User.OnGetUserListener;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.Model.UserModel;
+import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.Service.TopicDatabaseService;
 import com.tdtu.englishvocabquiz.Service.UserDatabaseService;
 import com.tdtu.englishvocabquiz.databinding.ActivityChangePasswordBinding;
 import com.tdtu.englishvocabquiz.databinding.ActivityTopicDetailsBinding;
+
+import java.util.*;
 
 public class TopicDetails extends AppCompatActivity {
 
@@ -82,5 +92,22 @@ public class TopicDetails extends AppCompatActivity {
             }
         });
 
+        //Word List code
+        ArrayList<VocabularyModel> vocabList = VocabularyModel.generate();
+
+        if(IdTopic != null){
+            vocabList = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
+                @Override
+                public void onListReady(ArrayList<VocabularyModel> vocabList) {
+                    RecyclerView rclWord = findViewById(R.id.rclWord);
+                    ListWordAdapter adapter = new ListWordAdapter(vocabList, getApplicationContext());
+                    rclWord.setAdapter(adapter);
+                    rclWord.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                }
+            });
+        }
+
+
+        //Word List code
     }
 }
