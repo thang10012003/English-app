@@ -66,7 +66,7 @@ public class AddWord extends AppCompatActivity {
         getItentFromSearch();//render eng and viet after search
 
         newWord = new VocabularyModel();
-        newWord.setId_topic(IdTopic);
+        newWord.setIdTopic(IdTopic);
 
 
         binding.tvTopicName.setText("Topic: " + TopicName);
@@ -137,7 +137,7 @@ public class AddWord extends AppCompatActivity {
                 Uri urlImage = uriTask.getResult();
                 String imageURL = urlImage.toString();
                 //cap nhat lai anh
-                newWord.setImg(imageURL);
+                newWord.setImgUrl(imageURL);
 
                 dialog.dismiss();
                 finish();

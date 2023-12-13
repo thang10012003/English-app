@@ -1,27 +1,39 @@
 package com.tdtu.englishvocabquiz.Activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.tdtu.englishvocabquiz.Adapter.VocabAdapter;
 import com.tdtu.englishvocabquiz.Dialog.ConfirmDeleteDialog;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnDeleteTopicListener;
+import com.tdtu.englishvocabquiz.Listener.Word.OnWordListReady;
 import com.tdtu.englishvocabquiz.Listener.User.OnGetUserListener;
-import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.Model.UserModel;
-import com.tdtu.englishvocabquiz.R;
+import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 import com.tdtu.englishvocabquiz.Service.TopicDatabaseService;
 import com.tdtu.englishvocabquiz.Service.UserDatabaseService;
-import com.tdtu.englishvocabquiz.databinding.ActivityChangePasswordBinding;
 import com.tdtu.englishvocabquiz.databinding.ActivityTopicDetailsBinding;
+
+import java.util.*;
 
 public class TopicDetails extends AppCompatActivity {
 
-    ActivityTopicDetailsBinding binding;
+    private ActivityTopicDetailsBinding binding;
     private UserDatabaseService userDatabaseService = new UserDatabaseService(getApplication());
     private TopicDatabaseService topicDatabaseService = new TopicDatabaseService(this);
+    private FirebaseFirestore firestore;
+    private CollectionReference collectionReference;
+    private ArrayList<VocabularyModel> vocabList;
+    private VocabAdapter vocabAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +46,10 @@ public class TopicDetails extends AppCompatActivity {
         String IdAuthor = intent.getStringExtra("IdAuthor");
         String IdTopic = intent.getStringExtra("IdTopic");
 //        String AuthorName = intent.getStringExtra("AuthorName");
+
+        firestore = FirebaseFirestore.getInstance();
+        collectionReference = firestore.collection("topics");
+        topicDatabaseService = new TopicDatabaseService(getApplication());
         userDatabaseService.getUserById(IdAuthor,new OnGetUserListener() {
             @Override
             public void onGetReady(UserModel userModel) {
@@ -82,5 +98,46 @@ public class TopicDetails extends AppCompatActivity {
             }
         });
 
+
+
+        vocabList = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
+            @Override
+            public void onListReady(ArrayList<VocabularyModel> vocabList) {
+                vocabAdapter = new VocabAdapter(getApplicationContext(), vocabList);
+                binding.rclWord.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                binding.rclWord.setAdapter(vocabAdapter);
+            }
+        });
+
+        collectionReference.document(IdTopic)
+                .collection("words")
+                .addSnapshotListener(new com.google.firebase.firestore.EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot querySnapshot, @Nullable FirebaseFirestoreException e) {
+
+                // Kiểm tra nếu querySnapshot không null và có chứa document mới
+                if (querySnapshot != null && !querySnapshot.isEmpty()) {
+                    //xoa list cu
+                    vocabList.clear();
+                    //cap nhat list moi
+                    vocabList = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
+                        @Override
+                        public void onListReady(ArrayList<VocabularyModel> vocabList) {
+
+                            if (vocabList != null) {
+                                vocabAdapter = new VocabAdapter(getApplicationContext(), vocabList);
+                                binding.rclWord.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                                binding.rclWord.setAdapter(vocabAdapter);
+                            }
+                        }
+                    });
+                }else {
+                    vocabList.clear();
+                }
+            }
+        });
     }
 }
+
+
+

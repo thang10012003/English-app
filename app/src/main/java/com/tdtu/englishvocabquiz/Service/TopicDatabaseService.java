@@ -4,7 +4,6 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -16,13 +15,14 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnAddTopicListener;
-import com.tdtu.englishvocabquiz.Listener.Topic.OnDeleteTopicListener;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnGetTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
-import com.tdtu.englishvocabquiz.Listener.Topic.OnWordListReady;
+import com.tdtu.englishvocabquiz.Listener.Word.OnWordListReady;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 
@@ -36,6 +36,7 @@ public class TopicDatabaseService {
     private Context context;
     private ArrayList<TopicModel> topicList = new ArrayList<>();
     private SharedPreferences sharedPreferences;
+    private TopicModel topicModel;
 
 
 
@@ -79,6 +80,25 @@ public class TopicDatabaseService {
                 .addOnFailureListener(e -> {
                     // Xử lý khi có lỗi xảy ra khi cập nhật dữ liệu
                 });
+    }
+    public TopicModel getTopicByID(String topicId, OnGetTopicListener callback ){
+        topicRef.document(topicId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        TopicModel topic = document.toObject(TopicModel.class);
+                        callback.onListReady(topic);
+                    } else {
+
+                    }
+                } else {
+
+                }
+            }
+        });
+        return  topicModel;
     }
     //lay danh sach cac topic cua user
     public ArrayList<TopicModel> getListTopic(OnTopicListReady callback){
@@ -167,9 +187,38 @@ public class TopicDatabaseService {
                 });
 
     }
+
     //cap nhat thong tin mot topic
     public void updateTopic(String topicId,TopicModel topicModel){
         Map<String,Object> updates = topicModel.convertToMap();
+        topicRef
+                .document(topicId)
+                .update(updates)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Xóa thành công
+                        Log.e("TAG", "Đã cập nhật thành công id: " + topicId);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Xử lý khi xảy ra lỗi trong quá trình xóa
+                        Log.e("TAG", "Lỗi khi cập nhật topic có id: " + topicId, e);
+                    }
+                });
+    }
+    //Cap nhat so tu
+    public void updateNumWordTopic(String topicId,TopicModel topicModel,int flag){
+
+        Map<String,Object> updates = topicModel.convertToMap();
+        if(flag == 0){
+            updates.replace("numberOfVocab",topicModel.getNumberOfVocab()+1);
+        }else {
+            updates.replace("numberOfVocab",topicModel.getNumberOfVocab()-1);
+
+        }
         topicRef
                 .document(topicId)
                 .update(updates)
@@ -196,7 +245,15 @@ public class TopicDatabaseService {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         String documentId = documentReference.getId();
-                        addIdWord(documentId,vocab);
+                        addIdWord(topicId,documentId,vocab);
+//                        updateNumWordTopic(topicId,);
+                        topicModel =  getTopicByID(topicId, new OnGetTopicListener() {
+                            @Override
+                            public void onListReady(TopicModel topicList) {
+
+                                updateNumWordTopic(topicId, topicList,0);
+                            }
+                        });
                         listener.OnAddSuccess();
                         Toast.makeText(context, "Thêm thành công",Toast.LENGTH_LONG).show();
                     }
@@ -211,24 +268,50 @@ public class TopicDatabaseService {
                 });
     }
     //cap nhat lai id cho word
-    public void addIdWord(String id, VocabularyModel vocabularyModel){
+    public void addIdWord(String topicId, String id, VocabularyModel vocabularyModel){
         vocabularyModel.setId(id);
-        Map<String, Object> mapData;
-        mapData = vocabularyModel.convertToMap();
-//        mapData.keySet("id",id);
+        Map<String, Object> mapData = vocabularyModel.convertToMap();
         topicRef
-                .document(id)
+                .document(topicId)
                 .collection("words")
                 .document(id)
                 .update(mapData)
                 .addOnSuccessListener(aVoid -> {
-                    // Đã cập nhật dữ liệu thành công
-                    // Thực hiện các hành động khác sau khi đã cập nhật
+                    Log.e("TAG", "addIdWord: " + id );
                 })
                 .addOnFailureListener(e -> {
-                    // Xử lý khi có lỗi xảy ra khi cập nhật dữ liệu
                 });
     }
+
+    public void updateFieldWord(String topicId, String id, VocabularyModel vocabularyModel ,String field, String newValue){
+        Map<String, Object> mapData = vocabularyModel.convertToMap();
+        mapData.replace(field,newValue);
+        topicRef
+                .document(topicId)
+                .collection("words")
+                .document(id)
+                .update(mapData)
+                .addOnSuccessListener(aVoid -> {
+                    Log.e("TAG", "updateFieldWord: " + id );
+                })
+                .addOnFailureListener(e -> {
+                });
+    }
+    public void updateFieldWord(String topicId, String id, VocabularyModel vocabularyModel, Boolean mark){
+        vocabularyModel.setMark(mark);
+        Map<String, Object> mapData = vocabularyModel.convertToMap();
+        topicRef
+                .document(topicId)
+                .collection("words")
+                .document(id)
+                .update(mapData)
+                .addOnSuccessListener(aVoid -> {
+                    Log.e("TAG", "updateFieldWord: " + id );
+                })
+                .addOnFailureListener(e -> {
+                });
+    }
+
     public ArrayList<VocabularyModel> getWordFromTopic(String topicId, OnWordListReady callback){
         ArrayList<VocabularyModel> wordList = new ArrayList<>();
         topicRef
@@ -242,19 +325,20 @@ public class TopicDatabaseService {
                     Log.e("TAG", "onComplete: "+"true");
     //                    topicList = new ArrayList<>();
                     for (QueryDocumentSnapshot document : task.getResult()) {
-//                        String idTopic = document.getString("idTopic");
-//                        String topicName = document.getString("topicName");
-//                        String description = document.getString("description");
-//                        int numberOfVocab = document.getLong("numberOfVocab").intValue();
-//                        Date createDate = document.getTimestamp("createDate").toDate();
-//                        String mode = document.getString("mode");
-//                        String idAuthor = document.getString("idAuthor");
+                        String idTopic = document.getString("idTopic");
+                        String id = document.getString("id");
+                        String english = document.getString("english");
+                        String vietnamese = document.getString("vietnamese");
+                        String imgUrl = document.getString("imgUrl");
+                        boolean mark = document.getBoolean("mark");
+                        Date createDate = document.getTimestamp("createDate").toDate();
+                        String progress = document.getString("progress");
+                        int countAchieve = document.getLong("countAchieve").intValue();
+                        String desc = document.getString("desc");
 
-//                        TopicModel topic = new TopicModel( idTopic,  topicName,  description, numberOfVocab,  createDate,  mode,  idAuthor);
-//                        wordList.add(topic);
-                        Log.e("TAG", document.getId() + " => " + document.getData());
+                        VocabularyModel model = new VocabularyModel( id,  english,  vietnamese,  createDate,  progress,  mark,  imgUrl,  desc,  idTopic,  countAchieve);
+                        wordList.add(model);
                     }
-    //                    Log.e("TAG","so luong phan tu" + topicList.size());
                     callback.onListReady(wordList);
                 }else{
                     callback.onListReady(null);
