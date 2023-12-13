@@ -98,18 +98,7 @@ public class TopicDetails extends AppCompatActivity {
             }
         });
 
-//        vocabList = new ArrayList<>();
-//        vocabList.add(new VocabularyModel("Cow","Con bo","34"));
-//        vocabAdapter = new VocabAdapter(getApplicationContext(), vocabList);
-//        binding.rclWord.setLayoutManager(new LinearLayoutManager(this));
-//        binding.rclWord.setAdapter(vocabAdapter);
 
-
-
-//        vocabList.add(new VocabularyModel("Cow","Con bo","34"));
-//        vocabAdapter = new VocabAdapter(getApplicationContext(), vocabList);
-//        binding.rclWord.setLayoutManager(new LinearLayoutManager(this));
-//        binding.rclWord.setAdapter(vocabAdapter);
 
         vocabList = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
             @Override
