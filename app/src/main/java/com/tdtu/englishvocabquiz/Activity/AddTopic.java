@@ -42,6 +42,7 @@ public class AddTopic extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
         binding.tgMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +89,6 @@ public class AddTopic extends AppCompatActivity {
                 }
             }
         });
-
     }
     public boolean validateData(){
         if(binding.edtTopic.getText().toString().equals("")){

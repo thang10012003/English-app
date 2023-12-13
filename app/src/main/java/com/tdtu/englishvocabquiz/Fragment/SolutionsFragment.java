@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.tdtu.englishvocabquiz.R;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SolutionsFragment#newInstance} factory method to
@@ -61,6 +62,13 @@ public class SolutionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_solutions, container, false);
+        View view = inflater.inflate(R.layout.fragment_solutions, container, false);
+
+
+
+
+
+        return view;
     }
+
 }

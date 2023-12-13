@@ -63,6 +63,7 @@ public class AddWord extends AppCompatActivity {
         String TopicName = intent.getStringExtra("TopicName");
         String IdTopic = intent.getStringExtra("IdTopic");
 
+        getItentFromSearch();//render eng and viet after search
 
         newWord = new VocabularyModel();
         newWord.setId_topic(IdTopic);
@@ -91,6 +92,7 @@ public class AddWord extends AppCompatActivity {
 
                 newWord.setEnglish(word);
                 newWord.setVietnamese(mean);
+
                 topicDatabaseService.addWordToTopic(IdTopic, newWord, new OnAddTopicListener() {
                     @Override
                     public void OnAddSuccess() {
@@ -105,14 +107,27 @@ public class AddWord extends AppCompatActivity {
 
             }
         });
+        handleShowSearchEnglishWord();
+    }
+    private void getItentFromSearch(){
+        Intent intent = getIntent();
+        if (intent != null) {
+            String eng = intent.getStringExtra("englishWord");
+            String viet = intent.getStringExtra("vietnameWord");
+            // Use the data as needed
+            binding.edtWord.setText(eng);
+            binding.edtMean.setText(viet);
+        }
     }
     public void saveData(){
         storageReference = FirebaseStorage.getInstance().getReference().child("Img_Word").child(image.getLastPathSegment());
+
         AlertDialog.Builder builder = new AlertDialog.Builder(AddWord.this);
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
         AlertDialog dialog = builder.create();
         dialog.show();
+
         //upload img on cloud storage
         storageReference.putFile(image).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -130,11 +145,18 @@ public class AddWord extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(AddWord.this, "Tải dữ liệu ảnh và dữ liệu user lên cơ sở dữ liệu không thành công !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddWord.this, "Tải dữ liệu ảnh và dữ liệu lên cơ sở dữ liệu không thành công !", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
-
     }
-
+    private void handleShowSearchEnglishWord(){
+        binding.tvSearchWordMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),SearchEnglishWordActivity.class));
+                finish();
+            }
+        });
+    }
 }

@@ -27,8 +27,8 @@ public class UserModel  {
         this.avt =  clone.avt;
         this.id_acc =  clone.id_acc;
         this.mobile =  clone.mobile;
-
     }
+
     public UserModel(){
         this.name = "";
         this.gender = "";

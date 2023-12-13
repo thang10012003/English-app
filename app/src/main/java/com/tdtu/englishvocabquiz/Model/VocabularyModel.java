@@ -35,6 +35,32 @@ public class VocabularyModel {
         this.countAchieve = 0;
 
     }
+    // Copy constructor
+    public VocabularyModel(VocabularyModel original) {
+        this.id = original.id;
+        this.english = original.english;
+        this.vietnamese = original.vietnamese;
+        this.createDate = original.createDate;
+        this.progress = original.progress;
+        this.mark = original.mark;
+        this.img = original.img;
+        this.desc = original.desc;
+        this.id_topic = original.id_topic;
+        this.countAchieve = original.countAchieve;
+    }
+    public VocabularyModel(String id, String english, String vietnamese, Date createDate, String progress, boolean mark, String img, String desc, String id_topic, int countAchieve) {
+        this.id = id;
+        this.english = english;
+        this.vietnamese = vietnamese;
+        this.createDate = createDate;
+        this.progress = progress;
+        this.mark = mark;
+        this.img = img;
+        this.desc = desc;
+        this.id_topic = id_topic;
+        this.countAchieve = countAchieve;
+    }
+
     public VocabularyModel(String id, String english, String vietnamese, String id_topic) {
         this.id = id;
         this.english = english;
@@ -60,33 +86,33 @@ public class VocabularyModel {
         map.put("countAchieve",countAchieve);
         map.put("desc",desc);
 
-
         return map;
 
     }
+
     public static ArrayList<VocabularyModel> generate(){
         ArrayList<VocabularyModel> data = new ArrayList<>();
 
-//        data.add(new VocabularyModel("001","hello", "xin chào", "", "hello là xin chào", "topic1"));
-//        data.add(new VocabularyModel("002","goodbye", "tạm biệt", "", "goodbye là tạm biệt", "topic1"));
-//        data.add(new VocabularyModel("003","one", "một", "", "one là một", "topic2"));
-//        data.add(new VocabularyModel("004","two", "hai", "", "two là hai", "topic2"));
-//        data.add(new VocabularyModel("005","three", "ba", "", "three là ba", "topic2"));
-//        data.add(new VocabularyModel("006","four", "bốn", "", "four là bốn", "topic2"));
-//        data.add(new VocabularyModel("007","five", "năm", "", "five là năm", "topic2"));
-//        data.add(new VocabularyModel("008","six", "sáu", "", "six là sáu", "topic2"));
-//        data.add(new VocabularyModel("009","seven", "bảy", "", "seven là bảy", "topic2"));
-//        data.add(new VocabularyModel("010","eight", "tám", "", "eight là tám", "topic2"));
-//        data.add(new VocabularyModel("011","nine", "chín", "", "nine là chín", "topic2"));
-//        data.add(new VocabularyModel("012","ten", "mười", "", "ten là mười", "topic2"));
-//        data.add(new VocabularyModel("013","table", "cái bàn", "", "table là cái bàn", "topic3"));
-//        data.add(new VocabularyModel("014","chair", "cái ghế", "", "chair là cái ghế", "topic3"));
-//        data.add(new VocabularyModel("015","bed", "cái giường", "", "bed là cái giường", "topic3"));
-//        data.add(new VocabularyModel("016","bag", "cái cặp", "", "bag là cái cặp", "topic3"));
-//        data.add(new VocabularyModel("017","pen", "cái bút", "", "pen là cái bút", "topic3"));
-//        data.add(new VocabularyModel("018","shoe", "chiếc giày", "", "shoe là chiếc giày", "topic3"));
-//        data.add(new VocabularyModel("019","hat", "cái nón", "", "hat là cái nón", "topic3"));
-//        data.add(new VocabularyModel("020","computer", "máy tính", "", "computer là máy tính", "topic3"));
+/*        data.add(new VocabularyModel("001","hello", "xin chào", "", "hello là xin chào", "topic1"));
+        data.add(new VocabularyModel("002","goodbye", "tạm biệt", "", "goodbye là tạm biệt", "topic1"));
+        data.add(new VocabularyModel("003","one", "một", "", "one là một", "topic2"));
+        data.add(new VocabularyModel("004","two", "hai", "", "two là hai", "topic2"));
+        data.add(new VocabularyModel("005","three", "ba", "", "three là ba", "topic2"));
+        data.add(new VocabularyModel("006","four", "bốn", "", "four là bốn", "topic2"));
+        data.add(new VocabularyModel("007","five", "năm", "", "five là năm", "topic2"));
+        data.add(new VocabularyModel("008","six", "sáu", "", "six là sáu", "topic2"));
+        data.add(new VocabularyModel("009","seven", "bảy", "", "seven là bảy", "topic2"));
+        data.add(new VocabularyModel("010","eight", "tám", "", "eight là tám", "topic2"));
+        data.add(new VocabularyModel("011","nine", "chín", "", "nine là chín", "topic2"));
+        data.add(new VocabularyModel("012","ten", "mười", "", "ten là mười", "topic2"));
+        data.add(new VocabularyModel("013","table", "cái bàn", "", "table là cái bàn", "topic3"));
+        data.add(new VocabularyModel("014","chair", "cái ghế", "", "chair là cái ghế", "topic3"));
+        data.add(new VocabularyModel("015","bed", "cái giường", "", "bed là cái giường", "topic3"));
+        data.add(new VocabularyModel("016","bag", "cái cặp", "", "bag là cái cặp", "topic3"));
+        data.add(new VocabularyModel("017","pen", "cái bút", "", "pen là cái bút", "topic3"));
+        data.add(new VocabularyModel("018","shoe", "chiếc giày", "", "shoe là chiếc giày", "topic3"));
+        data.add(new VocabularyModel("019","hat", "cái nón", "", "hat là cái nón", "topic3"));
+        data.add(new VocabularyModel("020","computer", "máy tính", "", "computer là máy tính", "topic3"));*/
 
         return data;
     }

@@ -53,6 +53,8 @@ dependencies {
     implementation ("com.google.firebase:firebase-storage:20.3.0")
     implementation ("com.google.firebase:firebase-auth:22.3.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.google.code.gson:gson:2.8.7")
+    implementation ("com.loopj.android:android-async-http:1.4.11")
 
 
 }
