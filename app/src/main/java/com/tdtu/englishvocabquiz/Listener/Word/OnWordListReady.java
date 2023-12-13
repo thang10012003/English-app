@@ -1,4 +1,4 @@
-package com.tdtu.englishvocabquiz.Listener.Topic;
+package com.tdtu.englishvocabquiz.Listener.Word;
 
 import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.Model.VocabularyModel;

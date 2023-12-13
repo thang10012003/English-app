@@ -21,45 +21,60 @@ public class VocabularyModel {
     private Date createDate;
     private String progress;
     private boolean mark;
-    private String img;
+    private String imgUrl;
     private String desc;
-    private String id_topic;
+    private String idTopic;
     private int countAchieve;
 
-//    LocalDate myObj = LocalDate.now();
-//    String dateNow = String.valueOf(myObj);
     public VocabularyModel(){
         this.mark = false;
         createDate = Calendar.getInstance().getTime();
         this.progress = WordType.NOT_ACHIEVED.toString();
         this.countAchieve = 0;
+        this.english = "";
+        this.vietnamese = "";
+        this.imgUrl = "";
+        this.desc = "";
+        this.idTopic = "";
 
     }
-    public VocabularyModel(String id, String english, String vietnamese, String id_topic) {
-        this.id = id;
+    public VocabularyModel( String english, String vietnamese, String idTopic) {
         this.english = english;
         this.vietnamese = vietnamese;
-        this.img = "";
+        this.imgUrl = "";
         this.desc = "";
-        this.id_topic = id_topic;
+        this.idTopic = idTopic;
         this.mark = false;
         this.createDate = Calendar.getInstance().getTime();;
         this.progress = WordType.NOT_ACHIEVED.toString();
         this.countAchieve = 0;
     }
+
+    public VocabularyModel(String id, String english, String vietnamese, Date createDate, String progress, boolean mark, String imgUrl, String desc, String idTopic, int countAchieve) {
+        this.id = id;
+        this.english = english;
+        this.vietnamese = vietnamese;
+        this.createDate = createDate;
+        this.progress = progress;
+        this.mark = mark;
+        this.imgUrl = imgUrl;
+        this.desc = desc;
+        this.idTopic = idTopic;
+        this.countAchieve = countAchieve;
+    }
+
     public Map<String, Object> convertToMap(){
         Map<String, Object> map = new HashMap<>();
-        map.put("idTopic",id_topic);
-        map.put("idWord",id);
-        map.put("word",english);
-        map.put("mean",vietnamese);
-        map.put("imgUrl",img);
+        map.put("idTopic",idTopic);
+        map.put("id",id);
+        map.put("english",english);
+        map.put("vietnamese",vietnamese);
+        map.put("imgUrl",imgUrl);
         map.put("mark",mark);
         map.put("createDate",createDate);
         map.put("progress",progress);
         map.put("countAchieve",countAchieve);
         map.put("desc",desc);
-
 
         return map;
 
@@ -139,12 +154,12 @@ public class VocabularyModel {
         this.mark = mark;
     }
 
-    public String getImg() {
-        return img;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImgUrl(String img) {
+        this.imgUrl = imgUrl;
     }
 
     public String getDesc() {
@@ -155,12 +170,12 @@ public class VocabularyModel {
         this.desc = desc;
     }
 
-    public String getId_topic() {
-        return id_topic;
+    public String getIdTopic() {
+        return idTopic;
     }
 
-    public void setId_topic(String id_topic) {
-        this.id_topic = id_topic;
+    public void setIdTopic(String idTopic) {
+        this.idTopic = idTopic;
     }
 
     public int getCountAchieve() {
@@ -184,5 +199,21 @@ public class VocabularyModel {
            }
         }
         return answer;
+    }
+
+    @Override
+    public String toString() {
+        return "VocabularyModel{" +
+                "id='" + id + '\'' +
+                ", english='" + english + '\'' +
+                ", vietnamese='" + vietnamese + '\'' +
+                ", createDate=" + createDate +
+                ", progress='" + progress + '\'' +
+                ", mark=" + mark +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", desc='" + desc + '\'' +
+                ", idTopic='" + idTopic + '\'' +
+                ", countAchieve=" + countAchieve +
+                '}';
     }
 }

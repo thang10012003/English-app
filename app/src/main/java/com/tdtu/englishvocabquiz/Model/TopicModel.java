@@ -32,6 +32,7 @@ public class TopicModel {
         this.mode = mode;
         this.idAuthor = idUser;
     }
+    public TopicModel(){}
     public Map<String, Object> convertToMap(){
         Map<String, Object> map = new HashMap<>();
         map.put("idTopic",idTopic);
