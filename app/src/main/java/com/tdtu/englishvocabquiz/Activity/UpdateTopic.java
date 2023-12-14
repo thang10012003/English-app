@@ -61,6 +61,11 @@ public class UpdateTopic extends AppCompatActivity {
                 finish();
             }
         });
-
+        binding.backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 }

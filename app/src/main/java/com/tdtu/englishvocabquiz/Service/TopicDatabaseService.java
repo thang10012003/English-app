@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -111,7 +112,8 @@ public class TopicDatabaseService {
     //lay danh sach cac topic cua user
     public ArrayList<TopicModel> getListTopic(OnTopicListReady callback){
         sharedPreferences = context.getSharedPreferences("QuizPreference", MODE_PRIVATE);
-        String authorId = sharedPreferences.getString("uid","" );
+//        String authorId = sharedPreferences.getString("uid","" );
+        String authorId = FirebaseAuth.getInstance().getUid();
 
         topicRef.whereEqualTo("idAuthor", authorId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -144,7 +146,7 @@ public class TopicDatabaseService {
     //lay cac topic tru topic cua user
     public ArrayList<TopicModel> getListTopicExceptId(OnTopicListReady callback){
         sharedPreferences = context.getSharedPreferences("QuizPreference", MODE_PRIVATE);
-        String authorId = sharedPreferences.getString("uid","" );
+        String authorId = FirebaseAuth.getInstance().getUid();
 
         topicRef.whereNotEqualTo("idAuthor", authorId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
