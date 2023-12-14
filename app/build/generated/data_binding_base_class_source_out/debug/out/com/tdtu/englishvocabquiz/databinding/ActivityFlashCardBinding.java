@@ -5,9 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -23,19 +21,10 @@ public final class ActivityFlashCardBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ToggleButton btnAuto;
-
-  @NonNull
   public final ImageButton btnBack;
 
   @NonNull
-  public final ImageButton btnClose;
-
-  @NonNull
   public final ImageButton btnFoward;
-
-  @NonNull
-  public final ImageButton btnSpeak;
 
   @NonNull
   public final ConstraintLayout card;
@@ -46,28 +35,15 @@ public final class ActivityFlashCardBinding implements ViewBinding {
   @NonNull
   public final TextView cardFront;
 
-  @NonNull
-  public final TextView progress;
-
-  @NonNull
-  public final ProgressBar progressBar;
-
-  private ActivityFlashCardBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ToggleButton btnAuto, @NonNull ImageButton btnBack, @NonNull ImageButton btnClose,
-      @NonNull ImageButton btnFoward, @NonNull ImageButton btnSpeak, @NonNull ConstraintLayout card,
-      @NonNull TextView cardBack, @NonNull TextView cardFront, @NonNull TextView progress,
-      @NonNull ProgressBar progressBar) {
+  private ActivityFlashCardBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton btnBack,
+      @NonNull ImageButton btnFoward, @NonNull ConstraintLayout card, @NonNull TextView cardBack,
+      @NonNull TextView cardFront) {
     this.rootView = rootView;
-    this.btnAuto = btnAuto;
     this.btnBack = btnBack;
-    this.btnClose = btnClose;
     this.btnFoward = btnFoward;
-    this.btnSpeak = btnSpeak;
     this.card = card;
     this.cardBack = cardBack;
     this.cardFront = cardFront;
-    this.progress = progress;
-    this.progressBar = progressBar;
   }
 
   @Override
@@ -97,33 +73,15 @@ public final class ActivityFlashCardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnAuto;
-      ToggleButton btnAuto = ViewBindings.findChildViewById(rootView, id);
-      if (btnAuto == null) {
-        break missingId;
-      }
-
       id = R.id.btnBack;
       ImageButton btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
         break missingId;
       }
 
-      id = R.id.btnClose;
-      ImageButton btnClose = ViewBindings.findChildViewById(rootView, id);
-      if (btnClose == null) {
-        break missingId;
-      }
-
       id = R.id.btnFoward;
       ImageButton btnFoward = ViewBindings.findChildViewById(rootView, id);
       if (btnFoward == null) {
-        break missingId;
-      }
-
-      id = R.id.btnSpeak;
-      ImageButton btnSpeak = ViewBindings.findChildViewById(rootView, id);
-      if (btnSpeak == null) {
         break missingId;
       }
 
@@ -145,20 +103,8 @@ public final class ActivityFlashCardBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.progress;
-      TextView progress = ViewBindings.findChildViewById(rootView, id);
-      if (progress == null) {
-        break missingId;
-      }
-
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
-        break missingId;
-      }
-
-      return new ActivityFlashCardBinding((ConstraintLayout) rootView, btnAuto, btnBack, btnClose,
-          btnFoward, btnSpeak, card, cardBack, cardFront, progress, progressBar);
+      return new ActivityFlashCardBinding((ConstraintLayout) rootView, btnBack, btnFoward, card,
+          cardBack, cardFront);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

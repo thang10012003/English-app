@@ -1,7 +1,6 @@
 package com.tdtu.englishvocabquiz.Activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,22 +10,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.tdtu.englishvocabquiz.Listener.Word.OnWordListReady;
 import com.tdtu.englishvocabquiz.Model.QuestionModel;
 import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 import com.tdtu.englishvocabquiz.R;
-import com.tdtu.englishvocabquiz.Service.TopicDatabaseService;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class MultipleChoiceActivity extends AppCompatActivity {
 
-    ArrayList<VocabularyModel> topic = new ArrayList<>();
-    private TopicDatabaseService topicDatabaseService;
-    private QuestionModel questionModel = new QuestionModel();
-    private int numCorrect = 0;//so cau dung
-    private Integer progressNumber = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,53 +36,53 @@ public class MultipleChoiceActivity extends AppCompatActivity {
         Button btnAnswer2 = findViewById(R.id.btnAnswer2);
         Button btnAnswer3 = findViewById(R.id.btnAnswer3);
         Button btnAnswer4 = findViewById(R.id.btnAnswer4);
-        Button btnQuitTest = findViewById(R.id.btnQuitTest);
+        Button quitTest = findViewById(R.id.btnQuitTest);
 
-        String IdTopic = getIntent().getStringExtra("IdTopic");
-        Boolean englishMode = getIntent().getBooleanExtra("englishMode", false);
-        Boolean shuffle = getIntent().getBooleanExtra("shuffle", false);
+        final Integer[] progressNumber = {0};
 
-        topicDatabaseService = new TopicDatabaseService(getApplication());
+        ArrayList<VocabularyModel> topic = new ArrayList<>();
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+//            topic = VocabularyModel.generate();
+//        }
 
-        topic = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
-            @Override
-            public void onListReady(ArrayList<VocabularyModel> vocabList) {
-                if(shuffle) Collections.shuffle(topic);
-                if (topic.size() != 0) {
-                    progressBar.setMax(topic.size());
-                    progressBar.setProgress(progressNumber);
-                    numProgress.setText("0/" + topic.size());
-                    questionModel = QuestionModel.generate(topic.get(0), topic, englishMode);
-                    loadQuestion(questionModel, question, btnAnswer1, btnAnswer2, btnAnswer3, btnAnswer4);
-                }
-            }
-        });
+        progressBar.setMax(topic.size());
+        progressBar.setProgress(progressNumber[0]);
+        numProgress.setText("0/"+topic.size());
+
+        final QuestionModel[] questionModel = {QuestionModel.generate(topic.get(0), topic, true)};
+        loadQuestion(questionModel[0],question,btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4);
+
+        ArrayList<VocabularyModel> finalTopic = topic;
+        ArrayList<VocabularyModel> finalTopic1 = topic;
+        final int[] numCorrect = {0};//so cau dung
+
         //su kien chon dap an
         View.OnClickListener choose = v -> {
             //ghi cau tra loi
             if(v.getId() == R.id.btnAnswer1){
-                questionModel.setChoice(questionModel.getAnswer().get(0));
+                questionModel[0].setChoice(btnAnswer1.getText().toString());
             }
             else if(v.getId() == R.id.btnAnswer2){
-                questionModel.setChoice(questionModel.getAnswer().get(1));
+                questionModel[0].setChoice(btnAnswer2.getText().toString());
             }
             else if(v.getId() == R.id.btnAnswer3){
-                questionModel.setChoice(questionModel.getAnswer().get(2));
+                questionModel[0].setChoice(btnAnswer3.getText().toString());
             }
             else if(v.getId() == R.id.btnAnswer4){
-                questionModel.setChoice(questionModel.getAnswer().get(3));
+                questionModel[0].setChoice(btnAnswer4.getText().toString());
             }
-            progressNumber++;//
-            String TAG = "tag";
-            if(questionModel.getChoice().equalsIgnoreCase(questionModel.getCorrectAnswer())) numCorrect++;// neu tra loi dung thi cong vao
-            if (progressNumber <topic.size()){//neu chua toi cau cuoi thi di tiep
-                questionModel = QuestionModel.generate(topic.get(progressNumber), topic,englishMode);
-                loadQuestion(questionModel,question,btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4);
-                numProgress.setText(progressNumber+"/"+ topic.size());
-                progressBar.setProgress(progressNumber);
+            progressNumber[0]++;//
+
+            if(questionModel[0].getChoice().equals(questionModel[0].getCorrectAnswer())) numCorrect[0]++;// neu tra loi dung thi cong vao
+
+            if (progressNumber[0] <finalTopic1.size()){//neu chua toi cau cuoi thi di tiep
+                questionModel[0] = QuestionModel.generate(finalTopic.get(progressNumber[0]), finalTopic,true);
+                loadQuestion(questionModel[0],question,btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4);
+                numProgress.setText(progressNumber[0]+"/"+ finalTopic1.size());
+                progressBar.setProgress(progressNumber[0]);
             }
             else{// toi cau cuoi thi hien ket qua
-                correctNumber.setText("Kết quả: "+numCorrect+"/"+topic.size());
+                correctNumber.setText("Kết quả: "+numCorrect[0]+"/"+finalTopic1.size());
                 layoutTest.setVisibility(View.GONE);
                 layoutResult.setVisibility(View.VISIBLE);
             }
@@ -101,19 +92,6 @@ public class MultipleChoiceActivity extends AppCompatActivity {
         btnAnswer2.setOnClickListener(choose);
         btnAnswer3.setOnClickListener(choose);
         btnAnswer4.setOnClickListener(choose);
-        btnClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        btnQuitTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
     }
     //ham load cau hoi moi
     public void loadQuestion(QuestionModel questionModel, TextView question, Button ans1, Button ans2, Button ans3, Button ans4){

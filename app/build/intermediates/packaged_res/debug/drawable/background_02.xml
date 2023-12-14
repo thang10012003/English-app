@@ -14,8 +14,8 @@
 
         </gradient>
     <corners
-        android:bottomRightRadius="0dp"
-        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="50dp"
+        android:bottomLeftRadius="50dp"
         ></corners>
 
 </shape>

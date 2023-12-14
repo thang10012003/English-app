@@ -4,46 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.FlashCardActivity"
-    android:background="@drawable/background_02">
 
-    <ImageButton
-        android:id="@+id/btnClose"
-        android:layout_width="30sp"
-        android:layout_height="30sp"
-        android:background="@drawable/baseline_close_24"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_margin="20sp"/>
+    tools:context=".FlashCardActivity"
+    android:background="@drawable/background_01">
 
-    <TextView
-        android:id="@+id/progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20sp"
-        android:text="50/100"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:max="100"
-        android:progress="50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnClose"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card"
-        android:layout_width="300sp"
-        android:layout_height="500sp"
+        android:layout_width="330sp"
+        android:layout_height="430sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -56,7 +25,6 @@
             android:gravity="center"
             android:text="Back Card"
             android:textSize="40sp"
-            android:textColor="@color/black"
             android:background="@drawable/card_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -72,7 +40,6 @@
             android:gravity="center"
             android:text="Front Card"
             android:textSize="40sp"
-            android:textColor="@color/black"
             android:background="@drawable/card_font"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -80,26 +47,8 @@
             app:layout_constraintTop_toTopOf="parent"
             android:clickable="true"
             android:layout_margin="30sp"/>
-        <ImageButton
-            android:id="@+id/btnSpeak"
-            android:layout_width="30sp"
-            android:layout_height="30sp"
-            android:background="@drawable/baseline_volume_up_24"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_margin="10sp"
-            android:clickable="true"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ToggleButton
-        android:id="@+id/btnAuto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOn="Auto: ON"
-        android:textOff="Auto: OFF"
-        app:layout_constraintLeft_toRightOf="@id/btnBack"
-        app:layout_constraintRight_toLeftOf="@id/btnFoward"
-        app:layout_constraintTop_toTopOf="@id/btnFoward"/>
 
     <ImageButton
         android:id="@+id/btnFoward"

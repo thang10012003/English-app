@@ -4,7 +4,9 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Environment;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,22 +15,27 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.opencsv.CSVWriter;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnAddTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnGetTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
+import com.tdtu.englishvocabquiz.Listener.Word.OnGetWordListener;
 import com.tdtu.englishvocabquiz.Listener.Word.OnWordListReady;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 public class TopicDatabaseService {
@@ -104,7 +111,7 @@ public class TopicDatabaseService {
     //lay danh sach cac topic cua user
     public ArrayList<TopicModel> getListTopic(OnTopicListReady callback){
         sharedPreferences = context.getSharedPreferences("QuizPreference", MODE_PRIVATE);
-        String authorId = FirebaseAuth.getInstance().getUid();
+        String authorId = sharedPreferences.getString("uid","" );
 
         topicRef.whereEqualTo("idAuthor", authorId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -210,6 +217,7 @@ public class TopicDatabaseService {
                     }
                 });
     }
+
     //Cap nhat so tu
     public void updateNumWordTopic(String topicId,TopicModel topicModel,int flag){
 
@@ -283,10 +291,27 @@ public class TopicDatabaseService {
                 .addOnFailureListener(e -> {
                 });
     }
+    //cap nhat tu theo field
+    public void updateFieldWord(String topicId, String id, VocabularyModel vocabularyModel,String field, String newValue){
+        Boolean mark;
+        Map<String, Object> mapData;
+        switch (field){
+            case "mark":
+                mark = Boolean.parseBoolean(newValue);
+                vocabularyModel.setMark(mark);
+                mapData = vocabularyModel.convertToMap();
+                break;
+            case "english":
+                vocabularyModel.setEnglish(newValue);
+                mapData = vocabularyModel.convertToMap();
+                break;
+            default:
+                mapData = vocabularyModel.convertToMap();
+                mapData.replace(field,newValue);
+                break;
+        }
 
-    public void updateFieldWord(String topicId, String id, VocabularyModel vocabularyModel ,String field, String newValue){
-        Map<String, Object> mapData = vocabularyModel.convertToMap();
-        mapData.replace(field,newValue);
+
         topicRef
                 .document(topicId)
                 .collection("words")
@@ -298,20 +323,7 @@ public class TopicDatabaseService {
                 .addOnFailureListener(e -> {
                 });
     }
-    public void updateFieldWord(String topicId, String id, VocabularyModel vocabularyModel, Boolean mark){
-        vocabularyModel.setMark(mark);
-        Map<String, Object> mapData = vocabularyModel.convertToMap();
-        topicRef
-                .document(topicId)
-                .collection("words")
-                .document(id)
-                .update(mapData)
-                .addOnSuccessListener(aVoid -> {
-                    Log.e("TAG", "updateFieldWord: " + id );
-                })
-                .addOnFailureListener(e -> {
-                });
-    }
+
 
     public ArrayList<VocabularyModel> getWordFromTopic(String topicId, OnWordListReady callback){
         ArrayList<VocabularyModel> wordList = new ArrayList<>();
@@ -348,4 +360,50 @@ public class TopicDatabaseService {
         });
         return wordList;
     }
+    //xoa 1 tu trong topic
+    public void deleteWordById(String topicId, String id){
+        topicRef
+                .document(topicId)
+                .collection("words")
+                .document(id)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Xóa thành công
+                        Log.e("TAG", "Đã xóa word có id: " + id);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Xử lý khi xảy ra lỗi trong quá trình xóa
+                        Log.e("TAG", "Lỗi khi xóa word có id: " + id, e);
+                    }
+                });
+
+    }
+    //lay tu bang id
+    public VocabularyModel getWordByID(String topicId, String id, OnGetWordListener callback ){
+        topicRef.document(topicId).
+        collection("words").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        VocabularyModel vocab = document.toObject(VocabularyModel.class);
+                        callback.onGetReady(vocab);
+                    } else {
+
+                    }
+                } else {
+
+                }
+            }
+        });
+        return  new VocabularyModel();
+    }
+    //xuat csv cua topic
+
 }
