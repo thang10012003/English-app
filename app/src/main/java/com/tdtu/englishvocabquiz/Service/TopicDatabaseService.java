@@ -128,7 +128,7 @@ public class TopicDatabaseService {
                         int numberOfVocab = document.getLong("numberOfVocab").intValue();
                         Date createDate = document.getTimestamp("createDate").toDate();
                         String mode = document.getString("mode");
-                        String idAuthor = document.getString("idAuthor");
+                        String idAuthor = FirebaseAuth.getInstance().getUid();
 
                         TopicModel topic = new TopicModel( idTopic,  topicName,  description, numberOfVocab,  createDate,  mode,  idAuthor);
                         topicList.add(topic);
@@ -161,7 +161,7 @@ public class TopicDatabaseService {
                         int numberOfVocab = document.getLong("numberOfVocab").intValue();
                         Date createDate = document.getTimestamp("createDate").toDate();
                         String mode = document.getString("mode");
-                        String idAuthor = document.getString("idAuthor");
+                        String idAuthor = FirebaseAuth.getInstance().getUid();
 
                         TopicModel topic = new TopicModel( idTopic,  topicName,  description, numberOfVocab,  createDate,  mode,  idAuthor);
                         topicList.add(topic);
