@@ -219,7 +219,26 @@ public class TopicDatabaseService {
                     }
                 });
     }
+    //cap nhat tu theo field
+    public void updateFieldTopic(String topicId,TopicModel topicModel ,String field, String newValue){
+        if(newValue.equals("0")){
 
+            topicModel.setNumberOfVocab(topicModel.getNumberOfVocab()+1);
+        }else {
+            topicModel.setNumberOfVocab(topicModel.getNumberOfVocab()-1);
+        }
+        Map<String, Object> mapData = topicModel.convertToMap();
+
+
+        topicRef
+                .document(topicId)
+                .update(mapData)
+                .addOnSuccessListener(aVoid -> {
+
+                })
+                .addOnFailureListener(e -> {
+                });
+    }
     //Cap nhat so tu
     public void updateNumWordTopic(String topicId,TopicModel topicModel,int flag){
 
