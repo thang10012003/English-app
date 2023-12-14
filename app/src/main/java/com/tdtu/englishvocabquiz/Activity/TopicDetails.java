@@ -245,7 +245,7 @@ public class TopicDetails extends AppCompatActivity {
 
                 // Trong phương thức của bạn, ví dụ trong một phương thức onClick cho một nút:
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("test/csv"); // Chỉ chọn file có định dạng CSV
+                intent.setType("application/csv"); // Chỉ chọn file có định dạng CSV
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 startActivityForResult(intent, PICK_CSV_FILE);
             }

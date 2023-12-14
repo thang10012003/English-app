@@ -22,26 +22,12 @@
         android:layout_gravity="center"
         android:textStyle="bold"
         android:layout_marginBottom="50dp"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_alignParentStart="true"
-            android:text="THUẬT NGỮ"/>
-        <TextView
-            android:id="@+id/tvSearchWordMore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Tìm từ "
-            android:layout_alignParentEnd="true"
-            android:drawableRight="@drawable/ic_key"
-            ></TextView>
-    </RelativeLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="THUẬT NGỮ"/>
     <EditText
         android:id="@+id/edtWord"
         android:layout_width="match_parent"

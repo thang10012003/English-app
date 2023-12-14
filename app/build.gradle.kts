@@ -53,14 +53,6 @@ dependencies {
     implementation ("com.google.firebase:firebase-storage:20.3.0")
     implementation ("com.google.firebase:firebase-auth:22.3.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
-    implementation ("com.google.code.gson:gson:2.8.7")
-    implementation ("com.loopj.android:android-async-http:1.4.11")
-    // define a BOM and its version
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
-
-    // define any required OkHttp artifacts without version
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.okhttp3:logging-interceptor")
-
+    implementation ("com.opencsv:opencsv:4.6")
 
 }
