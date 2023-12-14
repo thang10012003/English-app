@@ -42,6 +42,7 @@ public class TopicDetails extends AppCompatActivity {
     private ArrayList<VocabularyModel> vocabList;
     private VocabAdapter vocabAdapter;
     private CSVWriter writer = null;
+    String featureType = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,7 +109,36 @@ public class TopicDetails extends AppCompatActivity {
             }
         });
 
+/////////////////////// go to study feature
+        binding.btnCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), OptionActivity.class);
+                intent1.putExtra("IdTopic" ,IdTopic);
+                intent1.putExtra("featureType" ,"card");
+                startActivity(intent1);
+            }
+        });
+        binding.btnChoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), OptionActivity.class);
+                intent1.putExtra("IdTopic" ,IdTopic);
+                intent1.putExtra("featureType" ,"choice");
+                startActivity(intent1);
+            }
+        });
 
+        binding.btnTypeWord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), OptionActivity.class);
+                intent1.putExtra("IdTopic" ,IdTopic);
+                intent1.putExtra("featureType" ,"typeWord");
+                startActivity(intent1);
+            }
+        });
+        ////////////////////////
 
         vocabList = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
             @Override
@@ -156,12 +186,12 @@ public class TopicDetails extends AppCompatActivity {
                 }
             }
         });
-        binding.btnCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+//        binding.btnCard.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 //        String csvFileName = "MyCsvFile.csv";
         String csvFileName = TopicName + ".csv";
         File csvFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), csvFileName);

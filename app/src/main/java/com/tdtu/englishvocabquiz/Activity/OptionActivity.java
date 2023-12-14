@@ -1,15 +1,11 @@
 package com.tdtu.englishvocabquiz.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RadioButton;
 
-import com.tdtu.englishvocabquiz.R;
-import com.tdtu.englishvocabquiz.databinding.ActivityAddTopicBinding;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.tdtu.englishvocabquiz.databinding.ActivityOptionBinding;
 
 public class OptionActivity extends AppCompatActivity {
