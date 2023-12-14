@@ -139,7 +139,7 @@
             android:backgroundTint="@color/green_ruzy"
             android:drawableLeft="@drawable/baseline_library_books_24"
             android:text="Gõ từ"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="20dp"/>
         <TextView
             android:id="@+id/tv2"
             android:layout_width="wrap_content"
@@ -160,6 +160,14 @@
             android:drawableLeft="@drawable/baseline_add_white_24"
             android:textSize="20sp"
             android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/btnUpload"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_toLeftOf="@+id/btnAddWord"
+            android:src="@drawable/baseline_file_upload_24"
+            android:layout_marginRight="20dp"
+            android:layout_alignBottom="@+id/btnAddWord"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rclWord"
             android:layout_width="match_parent"
