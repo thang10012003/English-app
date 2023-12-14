@@ -3,6 +3,8 @@ package com.tdtu.englishvocabquiz.Service;
 import android.content.Context;
 import android.speech.tts.TextToSpeech;
 
+import java.util.Locale;
+
 
 public class CustomTextToSpeech {
     private Context context;
@@ -29,6 +31,7 @@ public class CustomTextToSpeech {
 
     public void speak() {
         if (textToSpeech != null) {
+            textToSpeech.setLanguage(Locale.ENGLISH);
             textToSpeech.speak(word, TextToSpeech.QUEUE_FLUSH, null, null);
         }
     }

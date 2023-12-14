@@ -53,6 +53,6 @@ dependencies {
     implementation ("com.google.firebase:firebase-storage:20.3.0")
     implementation ("com.google.firebase:firebase-auth:22.3.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
-
+    implementation ("com.opencsv:opencsv:4.6")
 
 }
