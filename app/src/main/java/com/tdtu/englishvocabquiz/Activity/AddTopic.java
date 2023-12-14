@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.tdtu.englishvocabquiz.Dialog.ProgressDialog;
 import com.tdtu.englishvocabquiz.Enum.TopicType;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnAddTopicListener;
@@ -67,6 +68,7 @@ public class AddTopic extends AppCompatActivity {
                     String mode = binding.tgMode.isChecked()? TopicType.PUBLIC.toString() :TopicType.PRIVATE.toString();
                     String description = binding.edtDescription.getText().toString();
                     String idAuthor = sharedPreferences.getString("uid","");
+                    //String idAuthor = FirebaseAuth.getInstance().getUid();
                     int numberOfVocab = 0;
                     Date createDate = Calendar.getInstance().getTime();
                     TopicModel topic = new TopicModel(topicName, description, numberOfVocab,  createDate,  mode,  idAuthor);
