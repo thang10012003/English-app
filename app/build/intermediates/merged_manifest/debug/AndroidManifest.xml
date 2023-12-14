@@ -32,10 +32,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.EnglishVocabQuiz" >
         <activity
-            android:name="com.tdtu.englishvocabquiz.Activity.UpdateWord"
-            android:exported="false" />
-        <activity
-            android:name="com.tdtu.englishvocabquiz.Activity.UpdateTopic"
+            android:name="com.tdtu.englishvocabquiz.Activity.OptionActivity"
             android:exported="false" />
         <activity
             android:name="com.tdtu.englishvocabquiz.Activity.AddWord"

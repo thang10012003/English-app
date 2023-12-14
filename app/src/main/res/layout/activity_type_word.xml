@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:visibility="visible">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/btnClose"
             android:layout_width="30sp"
             android:layout_height="30sp"
