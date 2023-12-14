@@ -43,6 +43,7 @@ public class AddTopic extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
         binding.tgMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +67,8 @@ public class AddTopic extends AppCompatActivity {
                     String topicName = binding.edtTopic.getText().toString();
                     String mode = binding.tgMode.isChecked()? TopicType.PUBLIC.toString() :TopicType.PRIVATE.toString();
                     String description = binding.edtDescription.getText().toString();
-                    String idAuthor = FirebaseAuth.getInstance().getUid();
+                    String idAuthor = sharedPreferences.getString("uid","");
+                    //String idAuthor = FirebaseAuth.getInstance().getUid();
                     int numberOfVocab = 0;
                     Date createDate = Calendar.getInstance().getTime();
                     TopicModel topic = new TopicModel(topicName, description, numberOfVocab,  createDate,  mode,  idAuthor);
@@ -89,7 +91,6 @@ public class AddTopic extends AppCompatActivity {
                 }
             }
         });
-
     }
     public boolean validateData(){
         if(binding.edtTopic.getText().toString().equals("")){

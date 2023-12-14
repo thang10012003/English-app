@@ -59,8 +59,8 @@ public class LoginActivity extends AppCompatActivity {
         //render new user have signed up
         setPreviousData();
 
-        binding.emailEdt.setText("thang@gmail.com");
-        binding.passEdt.setText("123456789");
+       /* binding.emailEdt.setText("thang@gmail.com");
+        binding.passEdt.setText("123456789");*/
 
         //if not connect internet we wil enter the home directly without login
         if (!NetworkUtils.isNetworkConnected(getApplicationContext())) {
