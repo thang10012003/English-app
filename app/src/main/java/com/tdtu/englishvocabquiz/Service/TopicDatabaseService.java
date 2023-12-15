@@ -56,7 +56,7 @@ public class TopicDatabaseService {
     //them topic
     public void addTopic(TopicModel topicModel, OnAddTopicListener listener){
         topicRef
-                .add(topicModel)
+                .add(topicModel.convertToMap())
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
