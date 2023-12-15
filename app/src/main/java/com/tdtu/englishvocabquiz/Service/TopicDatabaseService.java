@@ -119,7 +119,7 @@ public class TopicDatabaseService {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    Log.e("TAG", "onComplete: "+"true");
+                    Log.e("TAG", "onComplete TOPIC: "+"true TOPIC");
 //                    topicList = new ArrayList<>();
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         String idTopic = document.getString("idTopic");

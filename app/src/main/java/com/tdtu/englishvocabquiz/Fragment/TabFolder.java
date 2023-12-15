@@ -7,10 +7,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -58,6 +60,23 @@ public class TabFolder extends Fragment {
         reference = db.collection("folders");
 
         listFolder = new ArrayList<>();
+//        listFolder.add(new FolderModel());
+//        listFolder.add(new FolderModel());
+//        folderAdapter = new FolderAdapter(getContext(), listFolder);
+//        recyclerViewFolder.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        recyclerViewFolder.setAdapter(folderAdapter);
+
+
+//        listFolder =  folderDatabaseService.getListModel(new OnFolderListReady() {
+//            @Override
+//            public void onListReady(ArrayList<FolderModel> folderlist) {
+//                folderAdapter = new FolderAdapter(getContext(), listFolder);
+//                recyclerViewFolder.setLayoutManager(new LinearLayoutManager(getActivity()));
+//                recyclerViewFolder.setAdapter(folderAdapter);
+//                Log.e("TAG", "onListReady: FIRESTORE " + listFolder.size());
+//            }
+//        });
+//        Log.e("TAG", "onCreateView: LIST SIZE: " +  );
 
 
         reference.addSnapshotListener(new com.google.firebase.firestore.EventListener<QuerySnapshot>() {

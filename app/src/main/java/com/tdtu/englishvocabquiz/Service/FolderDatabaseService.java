@@ -24,6 +24,9 @@ import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
 import com.tdtu.englishvocabquiz.Model.FolderModel;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
 
+import org.apache.commons.collections.ArrayStack;
+import org.checkerframework.checker.units.qual.A;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
@@ -34,7 +37,8 @@ public class FolderDatabaseService {
     private String idAuthor = FirebaseAuth.getInstance().getUid();
 
     private Context context;
-    private ArrayList<FolderModel> folderList;
+    private ArrayList<FolderModel> folderList = new ArrayList<>();
+    private FolderModel folderModel;
 
     public FolderDatabaseService(Context context) {
         this.context = context;
@@ -82,29 +86,36 @@ public class FolderDatabaseService {
     public ArrayList<FolderModel> getListModel(OnFolderListReady callback){
         String authorId = FirebaseAuth.getInstance().getUid();
 
+
         folderRef.whereEqualTo("idAuthor", authorId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    Log.e("TAG", "onComplete: "+"true");
-//                    topicList = new ArrayList<>();
+                    Log.e("TAG", "onCompleteFOLDER: "+"true");
+//                    folderList = new ArrayList<>();
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         String id = document.getString("id");
                         String topicName = document.getString("nameFolder");
                         Date createDate = document.getTimestamp("createDate").toDate();
                         String idAuthor = document.getString("idAuthor");
 
-                        FolderModel folderModel = new FolderModel(id,topicName,idAuthor);
+                        folderModel = new FolderModel(id,topicName,idAuthor);
+//                        FolderModel folderModel = new FolderModel();
                         folderList.add(folderModel);
                         Log.e("TAG", document.getId() + " => " + document.getData());
                     }
-//                    Log.e("TAG","so luong phan tu" + topicList.size());
+//                    Log.e("TAG","so luong phan tu" + folderList.size());
+//                    ArrayList<FolderModel> list = new ArrayList<>();
                     callback.onListReady(folderList);
+//                    callback.onListReady(list);
                 }else{
                     callback.onListReady(null);
                 }
             }
         });
+//        ArrayList<FolderModel> list = new ArrayList<>();
+//        list.add(new FolderModel());
         return folderList;
+//        return list;
     }
 }

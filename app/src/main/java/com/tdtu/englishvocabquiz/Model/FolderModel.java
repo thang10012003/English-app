@@ -12,6 +12,9 @@ public class FolderModel {
     private Date createDate;
 
     public FolderModel() {
+        id = "";
+        name = "";
+        idAuthor = "";
         createDate = Calendar.getInstance().getTime();
     }
     public FolderModel( String name, String idAuthor) {
@@ -57,5 +60,15 @@ public class FolderModel {
 
     public void setIdAuthor(String idAuthor) {
         this.idAuthor = idAuthor;
+    }
+
+    @Override
+    public String toString() {
+        return "FolderModel{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", idAuthor='" + idAuthor + '\'' +
+                ", createDate=" + createDate +
+                '}';
     }
 }

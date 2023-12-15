@@ -38,7 +38,7 @@ public class TabTopic extends Fragment {
     private ArrayList<TopicModel> listTopic;
     private TopicDatabaseService databaseService;
     private FirebaseFirestore db;
-    CollectionReference collectionReference;
+    private CollectionReference collectionReference;
 
 
     public TabTopic() {
@@ -80,7 +80,7 @@ public class TabTopic extends Fragment {
                                 topicAdapter = new TopicAdapter(getContext(), listTopic);
                                 recyclerViewTopic.setLayoutManager(new LinearLayoutManager(getActivity()));
                                 recyclerViewTopic.setAdapter(topicAdapter);
-                                
+
                             }
                         }
                     });
