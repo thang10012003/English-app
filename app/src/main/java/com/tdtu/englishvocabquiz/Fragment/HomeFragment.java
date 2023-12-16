@@ -3,85 +3,120 @@ package com.tdtu.englishvocabquiz.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.tdtu.englishvocabquiz.Adapter.TopicAdapter;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.R;
+import com.tdtu.englishvocabquiz.Service.TopicDatabaseService;
 import com.tdtu.englishvocabquiz.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class HomeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private TopicDatabaseService topicDatabaseService;
+    private TopicDatabaseService topicDatabaseServiceRec;
+    private ArrayList<TopicModel> recommendTopicList = new ArrayList<>();
+    private ArrayList<TopicModel> yourTopicList = new ArrayList<>();
+    private FirebaseFirestore db;
+    private CollectionReference collectionReference;
+
+    private RecyclerView recommendTopic;
+    private RecyclerView yourTopic;
+    private TopicAdapter yourTopicAdapter;
+    private TopicAdapter recTopicAdapter;
+
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-
-    }
-    RecyclerView recommendTopic;
-    RecyclerView yourTopic;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        db = FirebaseFirestore.getInstance();
+        collectionReference = db.collection("topics");
         /// code list of topic
         recommendTopic = view.findViewById(R.id.recommendTopic);
         yourTopic = view.findViewById(R.id.yourTopic);
+        topicDatabaseService = new TopicDatabaseService(getActivity());
+        topicDatabaseServiceRec = new TopicDatabaseService(getActivity());
 
-        ArrayList<TopicModel> modelList = new ArrayList<>();
-        modelList.add(new TopicModel("topic1", "test topic", 2, new Date(), "en", "vu"));
-        modelList.add(new TopicModel("topic2", "test topic 2", 3, new Date(), "vn", "vu"));
-        TopicAdapter adapter = new TopicAdapter(getContext(), modelList);
+        collectionReference.addSnapshotListener(new com.google.firebase.firestore.EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot querySnapshot, @Nullable FirebaseFirestoreException e) {
 
-        yourTopic.setAdapter(adapter);
-        yourTopic.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        recommendTopic.setAdapter(adapter);
-        recommendTopic.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+                // Kiểm tra nếu querySnapshot không null và có chứa document mới
+                if (querySnapshot != null && !querySnapshot.isEmpty()) {
+                    //xoa list cu
+                    recommendTopicList.clear();
+                    //cap nhat list moi
+                    recommendTopicList = topicDatabaseServiceRec.getListTopicExceptId(new OnTopicListReady() {
+                        @Override
+                        public void onListReady(ArrayList<TopicModel> topicList) {
+                            if(topicList != null){
+                                recTopicAdapter = new TopicAdapter(getContext(), recommendTopicList);
+//                                yourTopic.setLayoutManager(new LinearLayoutManager(getActivity()));
+                                recommendTopic.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+                                recommendTopic.setAdapter(recTopicAdapter);
 
-        /// code list of topic
+                            }
+                        }
+                    });
+                }else {
+                    recommendTopicList.clear();
+                    recommendTopic.setAdapter(recTopicAdapter);
+                }
+            }
+        });
+        collectionReference.addSnapshotListener(new com.google.firebase.firestore.EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot querySnapshot, @Nullable FirebaseFirestoreException e) {
 
-        // Inflate the layout for this fragment
-        return view;//inflater.inflate(R.layout.fragment_home, container, false);
+                // Kiểm tra nếu querySnapshot không null và có chứa document mới
+                if (querySnapshot != null && !querySnapshot.isEmpty()) {
+                    //xoa list cu
+                    yourTopicList.clear();
+                    //cap nhat list moi
+                    yourTopicList = topicDatabaseService.getListTopic(new OnTopicListReady() {
+                        @Override
+                        public void onListReady(ArrayList<TopicModel> topicList) {
+                            if(topicList != null){
+                                yourTopicAdapter = new TopicAdapter(getContext(), yourTopicList);
+//                                yourTopic.setLayoutManager(new LinearLayoutManager(getActivity()));
+                                yourTopic.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+                                yourTopic.setAdapter(yourTopicAdapter);
+
+                            }
+                        }
+                    });
+                }else {
+                    yourTopicList.clear();
+                    yourTopic.setAdapter(yourTopicAdapter);
+                }
+            }
+        });
+
+        return view;
 
 
     }

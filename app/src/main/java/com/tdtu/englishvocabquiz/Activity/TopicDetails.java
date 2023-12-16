@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -21,6 +22,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.tdtu.englishvocabquiz.Adapter.VocabAdapter;
 import com.tdtu.englishvocabquiz.Dialog.ConfirmDeleteDialog;
+import com.tdtu.englishvocabquiz.Listener.Folder.OnDeleteFolderListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnAddTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnDeleteTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Word.OnWordListReady;
@@ -57,7 +59,6 @@ public class TopicDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityTopicDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         Intent intent = getIntent();
         String TopicName = intent.getStringExtra("TopicName");
         String NumberOfVocab = String.valueOf(intent.getIntExtra("NumberOfVocab",1));
@@ -83,28 +84,62 @@ public class TopicDetails extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        binding.btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ConfirmDeleteDialog dialog = new ConfirmDeleteDialog(TopicDetails.this, IdTopic, new OnDeleteTopicListener() {
-                    @Override
-                    public void OnDeleteSuccess() {
-                        finish();
-                    }
+        String folder = intent.getStringExtra("folder");
+        if(folder == null){
+            binding.btnDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ConfirmDeleteDialog dialog = new ConfirmDeleteDialog(TopicDetails.this, IdTopic, new OnDeleteTopicListener() {
+                        @Override
+                        public void OnDeleteSuccess() {
+                            finish();
+                        }
 
-                    @Override
-                    public void OnDeleteFailure() {
+                        @Override
+                        public void OnDeleteFailure() {
 
-                    }
-                });
-                dialog.showCreateDialogTopic();
-            }
-        });
+                        }
+                    });
+                    dialog.showCreateDialogTopic();
+                }
+            });
+        }else {
+            binding.btnDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String idFolder = intent.getStringExtra("folder");
+                    ConfirmDeleteDialog dialog = new ConfirmDeleteDialog(TopicDetails.this, idFolder, new OnDeleteFolderListener() {
+                        @Override
+                        public void OnDeleteSuccess() {
+                            finish();
+                        }
+
+                        @Override
+                        public void OnDeleteFailure() {
+
+                        }
+                    },IdTopic);
+                    dialog.showCreateDialogFolderDeleteTopic();
+                }
+            });
+        }
+
+
         binding.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(getApplicationContext(), UpdateTopic.class);
                 intent1.putExtra("IdTopic",IdTopic);
+                startActivity(intent1);
+            }
+        });
+        binding.btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(TopicDetails.this,MoveTopicTopFolder.class);
+                intent1.putExtra("IdTopic",IdTopic);
+                String id = FirebaseAuth.getInstance().getUid().toString();
+                intent1.putExtra("IdAuthor",id);
                 startActivity(intent1);
             }
         });
@@ -192,6 +227,8 @@ public class TopicDetails extends AppCompatActivity {
                     });
                 }else {
                     vocabList.clear();
+                    binding.rclWord.setAdapter(vocabAdapter);
+
                 }
             }
         });

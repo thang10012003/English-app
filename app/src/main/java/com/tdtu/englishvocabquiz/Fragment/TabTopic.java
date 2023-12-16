@@ -86,6 +86,7 @@ public class TabTopic extends Fragment {
                     });
                 }else {
                     listTopic.clear();
+                    recyclerViewTopic.setAdapter(topicAdapter);
                 }
             }
         });

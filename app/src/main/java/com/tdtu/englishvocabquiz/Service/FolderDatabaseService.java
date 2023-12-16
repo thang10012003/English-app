@@ -15,20 +15,28 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.tdtu.englishvocabquiz.Listener.Folder.OnAddFolderListener;
 import com.tdtu.englishvocabquiz.Listener.Folder.OnFolderListReady;
+import com.tdtu.englishvocabquiz.Listener.Folder.OnGetFolderListener;
+import com.tdtu.englishvocabquiz.Listener.Folder.OnGetListIdTopicListener;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnAddTopicListener;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnGetTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
+import com.tdtu.englishvocabquiz.Listener.Word.OnWordListReady;
 import com.tdtu.englishvocabquiz.Model.FolderModel;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
+import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 
 import org.apache.commons.collections.ArrayStack;
 import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 public class FolderDatabaseService {
@@ -37,6 +45,7 @@ public class FolderDatabaseService {
     private String idAuthor = FirebaseAuth.getInstance().getUid();
 
     private Context context;
+    private  String authorId;
     private ArrayList<FolderModel> folderList = new ArrayList<>();
     private FolderModel folderModel;
 
@@ -46,7 +55,7 @@ public class FolderDatabaseService {
 
     public void addFolder(String nameFolder, OnAddFolderListener listener){
         FolderModel folderModel = new FolderModel();
-        folderModel.setName(nameFolder);
+        folderModel.setNameFolder(nameFolder);
         folderModel.setIdAuthor(idAuthor);
         folderRef
             .add(folderModel.convertToMap())
@@ -84,7 +93,7 @@ public class FolderDatabaseService {
                 });
     }
     public ArrayList<FolderModel> getListModel(OnFolderListReady callback){
-        String authorId = FirebaseAuth.getInstance().getUid();
+        authorId = FirebaseAuth.getInstance().getUid();
 
 
         folderRef.whereEqualTo("idAuthor", authorId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -117,5 +126,124 @@ public class FolderDatabaseService {
 //        list.add(new FolderModel());
         return folderList;
 //        return list;
+    }
+    //xoa 1 folder
+    public void deleteFolder(String folderId){
+        folderRef
+                .document(folderId)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Xóa thành công
+                        Log.e("TAG", "Đã xóa topic có id: " + folderId);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Xử lý khi xảy ra lỗi trong quá trình xóa
+                        Log.e("TAG", "Lỗi khi xóa topic có id: " + folderId, e);
+                    }
+                });
+    }
+
+    public void addTopicToFolder(String folderId, String topicId){
+        Map<String,Object> map = new HashMap<>();
+        map.put("idTopic",topicId);
+        folderRef.document(folderId)
+                .collection("topics")
+                .document(topicId)
+                .set(map)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Document đã được tạo thành công
+                        Log.d("TAG", "Document đã được tạo thành công!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Đã có lỗi xảy ra khi tạo document
+                        Log.w("TAG", "Lỗi khi tạo document", e);
+                    }
+                });
+
+    }
+    public void getFolderById(String folderId, OnGetFolderListener callback){
+
+        folderRef.document(folderId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        FolderModel folder = document.toObject(FolderModel.class);
+                        callback.onGetReady(folder);
+                    } else {
+
+                    }
+                } else {
+
+                }
+            }
+        });
+    }
+    public void getTopicFromFolder(String folderId, OnGetListIdTopicListener callback){
+        authorId = FirebaseAuth.getInstance().getUid();
+        ArrayList<TopicModel> topicList = new ArrayList<>();
+        ArrayList<String> topicIdList = new ArrayList<>();
+        TopicDatabaseService topicDatabaseService = new TopicDatabaseService(context);
+        folderRef
+            .document(folderId)
+            .collection("topics")
+            .get()
+            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()) {
+                        Log.e("TAG", "onComplete: "+"true");
+                        //                    topicList = new ArrayList<>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            String idTopic = document.getString("idTopic");
+
+                            topicIdList.add(idTopic);
+//                            TopicModel  topicModel =  topicDatabaseService.getTopicByID(idTopic, new OnGetTopicListener() {
+//                                @Override
+//                                public void onListReady(TopicModel topicModel1) {
+//                                    topicList.add(topicModel1);
+//                                }
+//                            });
+
+                        }
+//                        callback.onListReady(topicList);
+                        callback.onListReady(topicIdList);
+                    }else{
+                        callback.onListReady(null);
+                    }
+                }
+            });
+    }
+    public void deleteTopicFromFolder(String folderId,String topicId){
+        folderRef
+                .document(folderId)
+                .collection("topics")
+                .document(topicId)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Xóa thành công
+                        Log.e("TAG", "Đã xóa topic có id: " + folderId);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Xử lý khi xảy ra lỗi trong quá trình xóa
+                        Log.e("TAG", "Lỗi khi xóa topic có id: " + folderId, e);
+                    }
+                });
     }
 }

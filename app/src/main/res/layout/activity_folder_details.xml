@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_green_light"
+    android:background="@color/green_sea"
     android:orientation="vertical"
-    tools:context=".Activity.TopicDetails">
+    tools:context=".Activity.FolderDetails">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="@color/none"
+        android:background="@color/green_dark"
         android:padding="10dp">
 
         <ImageButton
@@ -23,6 +23,15 @@
             android:layout_centerVertical="true"
             android:background="@color/none"
             app:srcCompat="@drawable/ic_back" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thư mục"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:layout_toRightOf="@+id/backBtn"
+            android:layout_centerVertical="true"/>
 
         <ImageView
             android:id="@+id/btnDelete"
@@ -38,13 +47,6 @@
             android:layout_toLeftOf="@+id/btnDelete"
             android:layout_centerVertical="true"
             android:src="@drawable/baseline_edit_24_yellow" />
-        <ImageView
-            android:id="@+id/btnShare"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_toLeftOf="@id/btnEdit"
-            android:layout_centerVertical="true"
-            android:src="@drawable/baseline_share_24" />
 
     </RelativeLayout>
 
@@ -61,18 +63,10 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginBottom="10dp"
-            android:text="Tiêu đề"
+            android:text="Món ăn"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/btnExport"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBottom="@id/tvtopic"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/baseline_file_download_24" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivAvtAuthor"
@@ -106,81 +100,26 @@
             android:background="@color/grey" />
 
         <TextView
-            android:id="@+id/tvNumWord"
+            android:id="@+id/tvNumTopic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/tvNameAuthor"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/tv1"
-            android:text="3 thuật ngữ"
+            android:text="-1 chủ đề"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_below="@+id/ivAvtAuthor"
-            android:backgroundTint="@color/green_ruzy"
-            android:drawableLeft="@drawable/baseline_library_books_24"
-            android:text="Flashcard"
-            />
-
-        <Button
-            android:id="@+id/btnChoice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_below="@+id/btnCard"
-            android:backgroundTint="@color/green_ruzy"
-            android:drawableLeft="@drawable/baseline_library_books_24"
-            android:text="Trắc nghiệm" />
-        <Button
-            android:id="@+id/btnTypeWord"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_below="@+id/btnChoice"
-            android:backgroundTint="@color/green_ruzy"
-            android:drawableLeft="@drawable/baseline_library_books_24"
-            android:text="Gõ từ"
-            android:layout_marginBottom="20dp"/>
-        <TextView
-            android:id="@+id/tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thẻ"
-            android:layout_below="@+id/btnTypeWord"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/btnAddWord"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thêm từ"
-            android:layout_below="@+id/btnTypeWord"
-            android:textColor="@color/white"
-            android:layout_alignParentRight="true"
-            android:drawableLeft="@drawable/baseline_add_white_24"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <ImageView
-            android:id="@+id/btnUpload"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_toLeftOf="@+id/btnAddWord"
-            android:src="@drawable/baseline_file_upload_24"
-            android:layout_marginRight="20dp"
-            android:layout_alignBottom="@+id/btnAddWord"/>
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rclWord"
+            android:id="@+id/rclTopic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_below="@+id/tv2"/>
+            android:layout_below="@+id/ivAvtAuthor"/>
+
+
+
+
 
 
     </RelativeLayout>
