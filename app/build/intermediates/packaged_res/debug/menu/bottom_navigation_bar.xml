@@ -7,12 +7,12 @@
         android:icon="@drawable/baseline_search_24" />
     <item
         android:id="@+id/navigationSolutions"
-        android:title="Lời giải"
-        android:icon="@drawable/book"/>
+        android:title="Hỏi đáp"
+        android:icon="@drawable/book_of_black_cover_closed"/>
     <item
         android:id="@+id/navigationAdd"
         android:title=""
-        android:icon="@drawable/baseline_add_circle_outline_24" />
+        android:icon="@drawable/baseline_add_circle_24" />
     <item
         android:id="@+id/navigationLibrary"
         android:title="Thư viện"

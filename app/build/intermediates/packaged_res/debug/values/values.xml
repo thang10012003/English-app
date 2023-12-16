@@ -4,6 +4,7 @@
     <color name="black">#FF000000</color>
     <color name="blue">#0823B6</color>
     <color name="green">#748B80</color>
+    <color name="green_blue">#7DA5A5</color>
     <color name="green_dark">#304848</color>
     <color name="green_light">#98D4B3</color>
     <color name="green_ruzy">#5D7963</color>
@@ -17,6 +18,7 @@
     <color name="pink_orange">#FA7070</color>
     <color name="red">#C82B2B</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_green">#DAEBEB</color>
     <color name="yellow">#FFFF00</color>
     <string name="app_name">EnglishVocabQuiz</string>
     <string name="gcm_defaultSenderId" translatable="false">614150985499</string>

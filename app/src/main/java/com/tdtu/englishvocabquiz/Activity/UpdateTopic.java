@@ -36,6 +36,7 @@ public class UpdateTopic extends AppCompatActivity {
                 binding.edtTopic.setText(topicModel.getTopicName().toString());
                 if(topicModel.getMode().toString().equals(TopicType.PUBLIC.toString())){
                     binding.tgMode.setChecked(true);
+                    binding.tgMode.setText("Mọi người");
                 }else {
                     binding.tgMode.setChecked(false);
                 }
@@ -59,6 +60,16 @@ public class UpdateTopic extends AppCompatActivity {
                     }
                 });
                 finish();
+            }
+        });
+        binding.tgMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(binding.tgMode.isChecked()){
+                    binding.tvMode.setText("Mọi người");
+                }else {
+                    binding.tvMode.setText("Chỉ mình tôi");
+                }
             }
         });
         binding.backBtn.setOnClickListener(new View.OnClickListener() {

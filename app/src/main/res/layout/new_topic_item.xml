@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/icFolder"
         android:text="Food"
-        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColor="@color/green_dark"
         android:textSize="20sp"/>
 
     <TextView
@@ -26,7 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="2 thuật ngữ"
-        android:textColor="@color/grey" />
+        android:textStyle="bold"
+        android:textColor="@color/green_blue" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,8 +48,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/icAvatar"
             android:text="Hoang Vu"
-            android:textColor="@color/white"
-            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/green_blue"
+            android:textSize="15sp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"/>
     </LinearLayout>

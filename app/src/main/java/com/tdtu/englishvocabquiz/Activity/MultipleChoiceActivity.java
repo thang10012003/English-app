@@ -1,6 +1,7 @@
 package com.tdtu.englishvocabquiz.Activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,8 +11,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.tdtu.englishvocabquiz.Listener.Word.OnWordListReady;
 import com.tdtu.englishvocabquiz.Model.QuestionModel;
+import com.tdtu.englishvocabquiz.Model.ResultModel;
 import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 import com.tdtu.englishvocabquiz.R;
 import com.tdtu.englishvocabquiz.Service.TopicDatabaseService;
@@ -91,6 +94,9 @@ public class MultipleChoiceActivity extends AppCompatActivity {
             }
             else{// toi cau cuoi thi hien ket qua
                 correctNumber.setText("Kết quả: "+numCorrect+"/"+topic.size());
+                ResultModel resultModel = new ResultModel(FirebaseAuth.getInstance().getUid(), numCorrect);
+                Log.e("TAG", "onCreate: RESULT MODEL"+resultModel.toString() );
+                topicDatabaseService.addResultTopic(IdTopic,resultModel);
                 layoutTest.setVisibility(View.GONE);
                 layoutResult.setVisibility(View.VISIBLE);
             }

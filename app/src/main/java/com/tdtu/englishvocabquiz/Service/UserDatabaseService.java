@@ -78,9 +78,10 @@ public class UserDatabaseService {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         UserModel user = document.toObject(UserModel.class);
-                        UserModel getUserOut = new UserModel(user);
-                        userList.add(getUserOut);
-                        callback.onGetReady(userList.get(0));
+//                        UserModel getUserOut = new UserModel(user);
+//                        userList.add(getUserOut);
+//                        userList.add(user);
+                        callback.onGetReady(user);
                     }
                 } else {
                     // Xử lý khi không thành công

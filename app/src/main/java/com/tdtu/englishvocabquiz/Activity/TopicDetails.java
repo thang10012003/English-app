@@ -84,25 +84,43 @@ public class TopicDetails extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        binding.btnRanking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(TopicDetails.this, RankingActivity.class);
+                intent1.putExtra("idTopic",IdTopic);
+                startActivity(intent1);
+            }
+        });
         String folder = intent.getStringExtra("folder");
         if(folder == null){
-            binding.btnDelete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ConfirmDeleteDialog dialog = new ConfirmDeleteDialog(TopicDetails.this, IdTopic, new OnDeleteTopicListener() {
-                        @Override
-                        public void OnDeleteSuccess() {
-                            finish();
-                        }
+            if(FirebaseAuth.getInstance().getUid().equals(IdAuthor)){
+                binding.btnDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ConfirmDeleteDialog dialog = new ConfirmDeleteDialog(TopicDetails.this, IdTopic, new OnDeleteTopicListener() {
+                            @Override
+                            public void OnDeleteSuccess() {
+                                finish();
+                            }
 
-                        @Override
-                        public void OnDeleteFailure() {
+                            @Override
+                            public void OnDeleteFailure() {
 
-                        }
-                    });
-                    dialog.showCreateDialogTopic();
+                            }
+                        });
+                        dialog.showCreateDialogTopic();
+                    }
+                });
+            }else {
+                binding.btnDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getApplicationContext(),"Chỉ người tạo mới có thể xóa",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
                 }
-            });
         }else {
             binding.btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,15 +142,24 @@ public class TopicDetails extends AppCompatActivity {
             });
         }
 
+        if(FirebaseAuth.getInstance().getUid().equals(IdAuthor)){
+            binding.btnEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent1 = new Intent(getApplicationContext(), UpdateTopic.class);
+                    intent1.putExtra("IdTopic",IdTopic);
+                    startActivity(intent1);
+                }
+            });
+        }else {
+            binding.btnEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getApplicationContext(),"Chỉ người tạo mới có thể chỉnh sửa",Toast.LENGTH_SHORT).show();
 
-        binding.btnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(getApplicationContext(), UpdateTopic.class);
-                intent1.putExtra("IdTopic",IdTopic);
-                startActivity(intent1);
-            }
-        });
+                }
+            });
+        }
         binding.btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/green_dark"
+    android:background="@color/white_green"
     android:padding="20dp"
     android:layout_marginBottom="20dp">
     <TextView
@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hamburger"
-        android:textColor="@color/white"
+        android:textColor="@color/green_dark"
         android:textStyle="bold"
         android:textSize="20sp"/>
 
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvWord"
-        android:textColor="@color/white"
+        android:textColor="@color/green_dark"
         android:textSize="20sp"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="10dp"

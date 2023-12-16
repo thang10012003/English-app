@@ -20,14 +20,18 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 //import com.opencsv.CSVWriter;
+import com.tdtu.englishvocabquiz.Enum.TopicType;
+import com.tdtu.englishvocabquiz.Listener.Result.OnGetResultListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnAddTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnGetTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
 import com.tdtu.englishvocabquiz.Listener.Word.OnGetWordListener;
 import com.tdtu.englishvocabquiz.Listener.Word.OnWordListReady;
+import com.tdtu.englishvocabquiz.Model.ResultModel;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.Model.VocabularyModel;
 
@@ -150,7 +154,9 @@ public class TopicDatabaseService {
 //        sharedPreferences = context.getSharedPreferences("QuizPreference", MODE_PRIVATE);
         String authorId = FirebaseAuth.getInstance().getUid().toString();
 
-        topicRef.whereNotEqualTo("idAuthor", authorId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        topicRef.whereNotEqualTo("idAuthor", authorId)
+//                .whereEqualTo("mode", "PUBLIC")
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
@@ -165,9 +171,11 @@ public class TopicDatabaseService {
                         String mode = document.getString("mode");
                         String idAuthor = document.getString("idAuthor");
 
-                        TopicModel topic = new TopicModel( idTopic,  topicName,  description, numberOfVocab,  createDate,  mode,  idAuthor);
-                        topicList.add(topic);
-                        Log.e("TAG", document.getId() + " => " + document.getData());
+                        if (mode.equals(TopicType.PUBLIC.toString())){
+                            TopicModel topic = new TopicModel( idTopic,  topicName,  description, numberOfVocab,  createDate,  mode,  idAuthor);
+                            topicList.add(topic);
+                            Log.e("TAG", document.getId() + " => " + document.getData());
+                        }
                     }
 //                    Log.e("TAG","so luong phan tu" + topicList.size());
                     callback.onListReady(topicList);
@@ -427,6 +435,49 @@ public class TopicDatabaseService {
         });
         return  new VocabularyModel();
     }
-    //xuat csv cua topic
+    public void addResultTopic(String idTopic,  ResultModel resultModel){
+        topicRef
+                .document(idTopic)
+                .collection("results")
+                .add(resultModel)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(context, "Thêm thành công",Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(context, "Thêm thất bại",Toast.LENGTH_LONG).show();
+                    }
+                });
+
+    }
+    public void getListResultDes(String idTopic, OnGetResultListener callback){
+        ArrayList<ResultModel> resultList = new ArrayList<>();
+        topicRef
+                .document(idTopic)
+                .collection("results")
+                .orderBy("numRight", Query.Direction.DESCENDING)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            Log.e("TAG", "onComplete: "+"true");
+                            //                    topicList = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                ResultModel resultModel = document.toObject(ResultModel.class);
+
+                                resultList.add(resultModel);
+                            }
+                            callback.onGetReady(resultList);
+                        }else{
+                            callback.onGetReady(null);
+                        }
+                    }
+                });
+    }
 
 }

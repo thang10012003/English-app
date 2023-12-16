@@ -42,7 +42,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
 
     @Override
     public void onBindViewHolder(@NonNull TopicAdapter.TopicViewHolder holder, int position) {
-        TopicModel item = list.get(holder.getAdapterPosition());
+        TopicModel item = list.get(position);
         holder.tvTopicName.setText(item.getTopicName());
         holder.tvCountWord.setText(item.getNumberOfVocab() + " học phần");
 //        holder.tvCreatorName.setText(item.getIdAuthor());
@@ -53,6 +53,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
                 holder.tvCreatorName.setText(AuthorName);
             }
         });
+//        holder.tvCreatorName.setText(item.getIdAuthor());
 
         if (context instanceof HomeActivity){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
