@@ -70,7 +70,9 @@ public class UserDatabaseService {
         return returnChecked;
     }
     public UserModel getUserById(String id, OnGetUserListener callback){
-        fb.collection(ref_col).whereEqualTo("id_acc",id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        fb.collection("users")
+                .whereEqualTo("id_acc",id)
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {

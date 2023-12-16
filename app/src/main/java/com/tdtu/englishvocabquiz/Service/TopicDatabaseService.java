@@ -111,11 +111,13 @@ public class TopicDatabaseService {
     }
     //lay danh sach cac topic cua user
     public ArrayList<TopicModel> getListTopic(OnTopicListReady callback){
-        sharedPreferences = context.getSharedPreferences("QuizPreference", MODE_PRIVATE);
+//        sharedPreferences = context.getSharedPreferences("QuizPreference", MODE_PRIVATE);
 //        String authorId = sharedPreferences.getString("uid","" );
         String authorId = FirebaseAuth.getInstance().getUid();
 
-        topicRef.whereEqualTo("idAuthor", authorId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        topicRef.whereEqualTo("idAuthor", authorId)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
@@ -128,7 +130,7 @@ public class TopicDatabaseService {
                         int numberOfVocab = document.getLong("numberOfVocab").intValue();
                         Date createDate = document.getTimestamp("createDate").toDate();
                         String mode = document.getString("mode");
-                        String idAuthor = FirebaseAuth.getInstance().getUid();
+                        String idAuthor = document.getString("idAuthor");
 
                         TopicModel topic = new TopicModel( idTopic,  topicName,  description, numberOfVocab,  createDate,  mode,  idAuthor);
                         topicList.add(topic);
@@ -145,8 +147,8 @@ public class TopicDatabaseService {
     }
     //lay cac topic tru topic cua user
     public ArrayList<TopicModel> getListTopicExceptId(OnTopicListReady callback){
-        sharedPreferences = context.getSharedPreferences("QuizPreference", MODE_PRIVATE);
-        String authorId = FirebaseAuth.getInstance().getUid();
+//        sharedPreferences = context.getSharedPreferences("QuizPreference", MODE_PRIVATE);
+        String authorId = FirebaseAuth.getInstance().getUid().toString();
 
         topicRef.whereNotEqualTo("idAuthor", authorId).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -161,7 +163,7 @@ public class TopicDatabaseService {
                         int numberOfVocab = document.getLong("numberOfVocab").intValue();
                         Date createDate = document.getTimestamp("createDate").toDate();
                         String mode = document.getString("mode");
-                        String idAuthor = FirebaseAuth.getInstance().getUid();
+                        String idAuthor = document.getString("idAuthor");
 
                         TopicModel topic = new TopicModel( idTopic,  topicName,  description, numberOfVocab,  createDate,  mode,  idAuthor);
                         topicList.add(topic);

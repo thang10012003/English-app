@@ -7,34 +7,39 @@ import java.util.Map;
 
 public class FolderModel {
     private String id;
-    private String name;
+    private String nameFolder;
     private String idAuthor;
     private Date createDate;
+    private int numTopic;
 
     public FolderModel() {
         id = "";
-        name = "";
+        nameFolder = "";
         idAuthor = "";
         createDate = Calendar.getInstance().getTime();
+        numTopic = 0;
     }
     public FolderModel( String name, String idAuthor) {
-        this.name = name;
+        this.nameFolder = name;
         this.idAuthor = idAuthor;
         this.createDate = Calendar.getInstance().getTime();
+        this.numTopic = 0;
     }
     public FolderModel(String id, String name, String idAuthor) {
         this.id = id;
-        this.name = name;
+        this.nameFolder = name;
         this.idAuthor = idAuthor;
         this.createDate = Calendar.getInstance().getTime();
+        this.numTopic = 0;
     }
 
     public Map<String, Object> convertToMap(){
         Map<String, Object> map = new HashMap<>();
         map.put("id",id);
-        map.put("nameFolder",name);
+        map.put("nameFolder",nameFolder);
         map.put("idAuthor",idAuthor);
         map.put("createDate",createDate);
+        map.put("numTopic",numTopic);
         return map;
 
     }
@@ -46,12 +51,12 @@ public class FolderModel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNameFolder() {
+        return nameFolder;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameFolder(String nameFolder) {
+        this.nameFolder = nameFolder;
     }
 
     public String getIdAuthor() {
@@ -66,9 +71,25 @@ public class FolderModel {
     public String toString() {
         return "FolderModel{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + nameFolder + '\'' +
                 ", idAuthor='" + idAuthor + '\'' +
                 ", createDate=" + createDate +
+                ", numTopic=" + numTopic +
                 '}';
+    }
+
+    public int getNumTopic() {
+        return numTopic;
+    }
+
+    public void setNumTopic(int numTopic) {
+        this.numTopic = numTopic;
+    }
+
+    public void addNumTopic(){
+        this.numTopic = this.numTopic + 1;
+    }
+    public void minusNumTopic(){
+        this.numTopic = this.numTopic - 1;
     }
 }
