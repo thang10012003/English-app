@@ -32,6 +32,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.EnglishVocabQuiz" >
         <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.GptChatActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.SearchEnglishWordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tdtu.englishvocabquiz.Activity.SignUpActivity"
+            android:exported="false" />
+        <activity
             android:name="com.tdtu.englishvocabquiz.Activity.MoveTopicTopFolder"
             android:exported="false" />
         <activity

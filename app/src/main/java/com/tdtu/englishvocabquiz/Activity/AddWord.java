@@ -67,6 +67,8 @@ public class AddWord extends AppCompatActivity {
         newWord = new VocabularyModel();
         newWord.setIdTopic(IdTopic);
 
+        getItentFromSearch();//render eng and viet after search
+        handleShowSearchEnglishWord();
 
         binding.tvTopicName.setText("Topic: " + TopicName);
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +105,25 @@ public class AddWord extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+    }
+    private void getItentFromSearch(){
+        Intent intent = getIntent();
+        if (intent != null) {
+            String eng = intent.getStringExtra("englishWord");
+            String viet = intent.getStringExtra("vietnameWord");
+            // Use the data as needed
+            binding.edtWord.setText(eng);
+            binding.edtMean.setText(viet);
+        }
+    }
+    private void handleShowSearchEnglishWord(){
+        binding.tvSearchWordMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),SearchEnglishWordActivity.class));
+                finish();
             }
         });
     }
