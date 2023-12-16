@@ -56,7 +56,7 @@ public class TopicDatabaseService {
     //them topic
     public void addTopic(TopicModel topicModel, OnAddTopicListener listener){
         topicRef
-                .add(topicModel)
+                .add(topicModel.convertToMap())
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
@@ -119,7 +119,7 @@ public class TopicDatabaseService {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    Log.e("TAG", "onComplete: "+"true");
+                    Log.e("TAG", "onComplete TOPIC: "+"true TOPIC");
 //                    topicList = new ArrayList<>();
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         String idTopic = document.getString("idTopic");
@@ -219,7 +219,26 @@ public class TopicDatabaseService {
                     }
                 });
     }
+    //cap nhat tu theo field
+    public void updateFieldTopic(String topicId,TopicModel topicModel ,String field, String newValue){
+        if(newValue.equals("0")){
 
+            topicModel.setNumberOfVocab(topicModel.getNumberOfVocab()+1);
+        }else {
+            topicModel.setNumberOfVocab(topicModel.getNumberOfVocab()-1);
+        }
+        Map<String, Object> mapData = topicModel.convertToMap();
+
+
+        topicRef
+                .document(topicId)
+                .update(mapData)
+                .addOnSuccessListener(aVoid -> {
+
+                })
+                .addOnFailureListener(e -> {
+                });
+    }
     //Cap nhat so tu
     public void updateNumWordTopic(String topicId,TopicModel topicModel,int flag){
 

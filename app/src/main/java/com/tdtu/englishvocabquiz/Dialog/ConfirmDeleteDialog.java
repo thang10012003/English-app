@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 import com.tdtu.englishvocabquiz.Listener.Topic.OnDeleteTopicListener;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnGetTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Word.OnDeleteWordListener;
+import com.tdtu.englishvocabquiz.Model.TopicModel;
 import com.tdtu.englishvocabquiz.Service.TopicDatabaseService;
 
 public class ConfirmDeleteDialog {
@@ -62,6 +64,18 @@ public class ConfirmDeleteDialog {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 topicDatabaseService.deleteWordById(IdTopic,idWord);
+//                topicDatabaseService.updateNumWordTopic(IdTopic, topicDatabaseService.getTopicByID(IdTopic, new OnGetTopicListener() {
+//                    @Override
+//                    public void onListReady(TopicModel topicModel) {
+//
+//                    }
+//                }),1);
+                TopicModel topicModel = topicDatabaseService.getTopicByID(IdTopic, new OnGetTopicListener() {
+                    @Override
+                    public void onListReady(TopicModel topicModel) {
+                        topicDatabaseService.updateNumWordTopic(IdTopic, topicModel,1);
+                    }
+                });
                 listenerWord.OnDeleteSuccess();
             }
         });

@@ -4,7 +4,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -15,9 +17,11 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.tdtu.englishvocabquiz.Adapter.VocabAdapter;
 import com.tdtu.englishvocabquiz.Dialog.ConfirmDeleteDialog;
+import com.tdtu.englishvocabquiz.Listener.Topic.OnAddTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnDeleteTopicListener;
 import com.tdtu.englishvocabquiz.Listener.Word.OnWordListReady;
 import com.tdtu.englishvocabquiz.Listener.User.OnGetUserListener;
@@ -27,9 +31,13 @@ import com.tdtu.englishvocabquiz.Service.TopicDatabaseService;
 import com.tdtu.englishvocabquiz.Service.UserDatabaseService;
 import com.tdtu.englishvocabquiz.databinding.ActivityTopicDetailsBinding;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class TopicDetails extends AppCompatActivity {
@@ -42,7 +50,8 @@ public class TopicDetails extends AppCompatActivity {
     private ArrayList<VocabularyModel> vocabList;
     private VocabAdapter vocabAdapter;
     private CSVWriter writer = null;
-    String featureType = "";
+    private static final int PICK_CSV_FILE = 1;
+//    String featureType = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,7 +147,7 @@ public class TopicDetails extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-        ////////////////////////
+
 
         vocabList = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
             @Override
@@ -186,12 +195,7 @@ public class TopicDetails extends AppCompatActivity {
                 }
             }
         });
-//        binding.btnCard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
+
 //        String csvFileName = "MyCsvFile.csv";
         String csvFileName = TopicName + ".csv";
         File csvFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), csvFileName);
@@ -214,8 +218,6 @@ public class TopicDetails extends AppCompatActivity {
                                 String[] rowData = new String[]{
                                         vocab.getEnglish(),
                                         vocab.getVietnamese(),
-                                        vocab.getDesc(),
-                                        vocab.getImgUrl(),
                                 };
                                 data.add(rowData); // Thêm mảng String[] vào danh sách dữ liệu
                             }
@@ -236,6 +238,114 @@ public class TopicDetails extends AppCompatActivity {
                 }
             }
         });
+        binding.btnUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                // Trong phương thức của bạn, ví dụ trong một phương thức onClick cho một nút:
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("application/csv"); // Chỉ chọn file có định dạng CSV
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                startActivityForResult(intent, PICK_CSV_FILE);
+            }
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_CSV_FILE && resultCode == RESULT_OK && data != null) {
+            Uri uri = data.getData(); // Nhận URI của file đã chọn
+            String path = uri.getPath(); // Lấy đường dẫn từ URI
+
+            // Xử lý đường dẫn file ở đây, ví dụ:
+//            readCSVFile(path);
+            readCSVFromUri(uri);
+        }else {
+            if(resultCode == RESULT_CANCELED){
+                finish();
+            }
+        }
+    }
+
+    private void readCSVFile(String filePath) {
+        // Đọc file CSV từ đường dẫn filePath
+        // Tiếp tục xử lý dữ liệu từ file CSV ở đây
+        String csvFile = filePath; // Đường dẫn tới file CSV của bạn
+        Intent intent = getIntent();
+        String IdTopic = intent.getStringExtra("IdTopic");
+        topicDatabaseService = new TopicDatabaseService(getApplicationContext());
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                // Xử lý từng dòng của file CSV ở đây
+                String[] data = line.split(","); // Tách các giá trị bằng dấu phẩy (có thể thay đổi tùy theo dấu ngăn cách trong file CSV)
+
+//                // Ví dụ: in ra từng giá trị trong mỗi dòng
+//                for (String value : data) {
+//                    System.out.print(value + " | ");
+//                }
+//                System.out.println(); // Xuống dòng cho dòng tiếp theo
+                VocabularyModel vocabularyModel = new VocabularyModel();
+                vocabularyModel.setEnglish(data[0]);
+                vocabularyModel.setVietnamese(data[1]);
+                vocabularyModel.setIdTopic(IdTopic);
+                topicDatabaseService.addWordToTopic(IdTopic, vocabularyModel, new OnAddTopicListener() {
+                    @Override
+                    public void OnAddSuccess() {
+                        Toast.makeText(TopicDetails.this, "Import thanh cong", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void OnAddFailure() {
+
+                    }
+                });
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void readCSVFromUri(Uri uri) {
+        Intent intent = getIntent();
+        String IdTopic = intent.getStringExtra("IdTopic");
+        topicDatabaseService = new TopicDatabaseService(getApplicationContext());
+        try {
+            ContentResolver contentResolver = getContentResolver();
+            InputStream inputStream = contentResolver.openInputStream(uri);
+
+            if (inputStream != null) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    // Xử lý từng dòng của file CSV ở đây
+                    String[] values = line.split(","); // Tách giá trị dựa trên dấu phẩy (hoặc ký tự ngăn cách khác)
+                    // Xử lý các giá trị trong mỗi dòng
+                    VocabularyModel vocabularyModel = new VocabularyModel();
+                    vocabularyModel.setEnglish(values[0]);
+                    vocabularyModel.setVietnamese(values[1]);
+                    vocabularyModel.setIdTopic(IdTopic);
+                    topicDatabaseService.addWordToTopic(IdTopic, vocabularyModel, new OnAddTopicListener() {
+                        @Override
+                        public void OnAddSuccess() {
+                            Toast.makeText(TopicDetails.this, "Import thanh cong", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void OnAddFailure() {
+
+                        }
+                    });
+
+                }
+                inputStream.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

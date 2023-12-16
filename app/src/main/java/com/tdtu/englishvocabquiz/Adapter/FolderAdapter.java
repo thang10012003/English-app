@@ -10,15 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.tdtu.englishvocabquiz.Model.FolderModel;
 import com.tdtu.englishvocabquiz.R;
 
 import java.util.ArrayList;
 
 public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderViewHolder> {
     private Context context;
-    private ArrayList<FolderItem> list;
+    private ArrayList<FolderModel> list;
 
-    public FolderAdapter(Context context, ArrayList<FolderItem> list) {
+    public FolderAdapter(Context context, ArrayList<FolderModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,9 +32,9 @@ public class FolderAdapter extends RecyclerView.Adapter<FolderAdapter.FolderView
 
     @Override
     public void onBindViewHolder(@NonNull FolderAdapter.FolderViewHolder holder, int position) {
-        FolderItem item = list.get(position);
-        holder.tvFolderName.setText(item.getFolderName());
-        holder.tvCreatorName.setText(item.getCreatorName());
+        FolderModel item = list.get(position);
+        holder.tvFolderName.setText(item.getName());
+        holder.tvCreatorName.setText(item.getIdAuthor());
     }
 
     @Override
