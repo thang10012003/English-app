@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -22,9 +23,18 @@ public final class FragmentSolutionsBinding implements ViewBinding {
   @NonNull
   public final Button btnGptChat;
 
-  private FragmentSolutionsBinding(@NonNull FrameLayout rootView, @NonNull Button btnGptChat) {
+  @NonNull
+  public final TextView tv1;
+
+  @NonNull
+  public final TextView tvTitle;
+
+  private FragmentSolutionsBinding(@NonNull FrameLayout rootView, @NonNull Button btnGptChat,
+      @NonNull TextView tv1, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnGptChat = btnGptChat;
+    this.tv1 = tv1;
+    this.tvTitle = tvTitle;
   }
 
   @Override
@@ -60,7 +70,19 @@ public final class FragmentSolutionsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSolutionsBinding((FrameLayout) rootView, btnGptChat);
+      id = R.id.tv1;
+      TextView tv1 = ViewBindings.findChildViewById(rootView, id);
+      if (tv1 == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTitle;
+      TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentSolutionsBinding((FrameLayout) rootView, btnGptChat, tv1, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

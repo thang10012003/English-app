@@ -4,12 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green_dark"
+    android:padding="20dp"
     tools:context=".Fragment.SolutionsFragment">
-    <Button
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Trợ lý ảo"
-        android:drawableLeft="@drawable/ic_robot"
-        android:id="@+id/btnGptChat"
-        ></Button>
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trò chuyện cùng trợ lý ảo"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="Ấn vào để giao tiếp"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvTitle"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trợ lý ảo"
+            android:drawableLeft="@drawable/ic_robot"
+            android:id="@+id/btnGptChat"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:backgroundTint="@color/green_ruzy"
+            android:layout_below="@+id/tv1"
+            ></Button>
+    </RelativeLayout>
+
 </FrameLayout>
