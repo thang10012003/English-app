@@ -8,7 +8,8 @@ public class ResultModel {
         this.idAuthor = idAuthor;
         this.numRight = numRight;
     }
-
+    public ResultModel() {
+    }
     public String getIdAuthor() {
         return idAuthor;
     }

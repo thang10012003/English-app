@@ -257,7 +257,6 @@ public class TopicDatabaseService {
             updates.replace("numberOfVocab",topicModel.getNumberOfVocab()+1);
         }else {
             updates.replace("numberOfVocab",topicModel.getNumberOfVocab()-1);
-
         }
         topicRef
                 .document(topicId)
@@ -266,16 +265,19 @@ public class TopicDatabaseService {
                     @Override
                     public void onSuccess(Void aVoid) {
                         // Xóa thành công
-                        Log.e("TAG", "Đã cập nhật thành công id: " + topicId);
+//                        Log.e("TAG", "Đã cập nhật thành công id: " + topicId);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         // Xử lý khi xảy ra lỗi trong quá trình xóa
-                        Log.e("TAG", "Lỗi khi cập nhật topic có id: " + topicId, e);
+//                        Log.e("TAG", "Lỗi khi cập nhật topic có id: " + topicId, e);
                     }
                 });
+
+
+
     }
     public void addWordToTopic(String topicId,VocabularyModel vocab, OnAddTopicListener listener){
         topicRef.document(topicId)
@@ -286,7 +288,6 @@ public class TopicDatabaseService {
                     public void onSuccess(DocumentReference documentReference) {
                         String documentId = documentReference.getId();
                         addIdWord(topicId,documentId,vocab);
-//                        updateNumWordTopic(topicId,);
                         topicModel =  getTopicByID(topicId, new OnGetTopicListener() {
                             @Override
                             public void onListReady(TopicModel topicList) {
@@ -403,6 +404,13 @@ public class TopicDatabaseService {
                     public void onSuccess(Void aVoid) {
                         // Xóa thành công
                         Log.e("TAG", "Đã xóa word có id: " + id);
+                        topicModel =  getTopicByID(topicId, new OnGetTopicListener() {
+                            @Override
+                            public void onListReady(TopicModel topicList) {
+
+//                                updateNumWordTopic(topicId, topicList,1);
+                            }
+                        });
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -475,6 +483,39 @@ public class TopicDatabaseService {
                             callback.onGetReady(resultList);
                         }else{
                             callback.onGetReady(null);
+                        }
+                    }
+                });
+    }
+    public  void SearchingTopic(String keyword,OnTopicListReady callback){
+        String authorId = FirebaseAuth.getInstance().getUid().toString();
+
+        topicRef
+//                .whereEqualTo("mode", "PUBLIC")
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            ArrayList<TopicModel> list = new ArrayList<>();
+                            Log.e("TAG", "onComplete: "+"true");
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                String idTopic = document.getString("idTopic");
+                                String topicName = document.getString("topicName");
+                                String description = document.getString("description");
+                                int numberOfVocab = document.getLong("numberOfVocab").intValue();
+                                Date createDate = document.getTimestamp("createDate").toDate();
+                                String mode = document.getString("mode");
+                                String idAuthor = document.getString("idAuthor");
+
+                                if (mode.equals(TopicType.PUBLIC.toString()) && topicName.toLowerCase().contains(keyword.toLowerCase())){
+                                    TopicModel topic = new TopicModel( idTopic,  topicName,  description, numberOfVocab,  createDate,  mode,  idAuthor);
+                                    list.add(topic);
+//                                    Log.e("TAG", document.getId() + " => " + document.getData());
+                                }
+                            }
+                            callback.onListReady(list);
+                        }else{
+                            callback.onListReady(null);
                         }
                     }
                 });

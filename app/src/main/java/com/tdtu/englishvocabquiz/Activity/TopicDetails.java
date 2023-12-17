@@ -181,28 +181,62 @@ public class TopicDetails extends AppCompatActivity {
         });
 
 /////////////////////// go to study feature
+
         binding.btnCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), OptionActivity.class);
-                intent1.putExtra("IdTopic" ,IdTopic);
-                intent1.putExtra("featureType" ,"card");
-                startActivity(intent1);
+                vocabList = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
+                    @Override
+                    public void onListReady(ArrayList<VocabularyModel> vocabList) {
+                        if(vocabList.size()<1){
+                            Toast.makeText(getApplicationContext(), "Yêu cầu topic có tối thiểu 1 từ để có thể thực hiện chức năng này", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Intent intent1 = new Intent(getApplicationContext(), OptionActivity.class);
+                            intent1.putExtra("IdTopic" ,IdTopic);
+                            intent1.putExtra("featureType" ,"card");
+                            startActivity(intent1);
+                        }
+                    }
+                });
+
             }
         });
         binding.btnChoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), OptionActivity.class);
-                intent1.putExtra("IdTopic" ,IdTopic);
-                intent1.putExtra("featureType" ,"choice");
-                startActivity(intent1);
+                vocabList = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
+                    @Override
+                    public void onListReady(ArrayList<VocabularyModel> vocabList) {
+                        if(vocabList.size()<4){
+                            Toast.makeText(getApplicationContext(), "Yêu cầu topic có tối thiểu 4 từ để có thể thực hiện chức năng này", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Intent intent1 = new Intent(getApplicationContext(), OptionActivity.class);
+                            intent1.putExtra("IdTopic" ,IdTopic);
+                            intent1.putExtra("featureType" ,"choice");
+                            startActivity(intent1);
+                        }
+                    }
+                });
+
             }
         });
 
         binding.btnTypeWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vocabList = topicDatabaseService.getWordFromTopic(IdTopic, new OnWordListReady() {
+                    @Override
+                    public void onListReady(ArrayList<VocabularyModel> vocabList) {
+                        if(vocabList.size()<1){
+                            Toast.makeText(getApplicationContext(), "Yêu cầu topic có tối thiểu 1 từ để có thể thực hiện chức năng này", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+
+                        }
+                    }
+                });
                 Intent intent1 = new Intent(getApplicationContext(), OptionActivity.class);
                 intent1.putExtra("IdTopic" ,IdTopic);
                 intent1.putExtra("featureType" ,"typeWord");
@@ -309,7 +343,7 @@ public class TopicDetails extends AppCompatActivity {
 
                 // Trong phương thức của bạn, ví dụ trong một phương thức onClick cho một nút:
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("application/csv"); // Chỉ chọn file có định dạng CSV
+                intent.setType("*/*"); // Chỉ chọn file có định dạng CSV
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 startActivityForResult(intent, PICK_CSV_FILE);
             }
@@ -332,51 +366,50 @@ public class TopicDetails extends AppCompatActivity {
             }
         }
     }
-
-    private void readCSVFile(String filePath) {
-        // Đọc file CSV từ đường dẫn filePath
-        // Tiếp tục xử lý dữ liệu từ file CSV ở đây
-        String csvFile = filePath; // Đường dẫn tới file CSV của bạn
-        Intent intent = getIntent();
-        String IdTopic = intent.getStringExtra("IdTopic");
-        topicDatabaseService = new TopicDatabaseService(getApplicationContext());
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                // Xử lý từng dòng của file CSV ở đây
-                String[] data = line.split(","); // Tách các giá trị bằng dấu phẩy (có thể thay đổi tùy theo dấu ngăn cách trong file CSV)
-
-//                // Ví dụ: in ra từng giá trị trong mỗi dòng
-//                for (String value : data) {
-//                    System.out.print(value + " | ");
-//                }
-//                System.out.println(); // Xuống dòng cho dòng tiếp theo
-                VocabularyModel vocabularyModel = new VocabularyModel();
-                vocabularyModel.setEnglish(data[0]);
-                vocabularyModel.setVietnamese(data[1]);
-                vocabularyModel.setIdTopic(IdTopic);
-                topicDatabaseService.addWordToTopic(IdTopic, vocabularyModel, new OnAddTopicListener() {
-                    @Override
-                    public void OnAddSuccess() {
-                        Toast.makeText(TopicDetails.this, "Import thanh cong", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void OnAddFailure() {
-
-                    }
-                });
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
+//
+//    private void readCSVFile(String filePath) {
+//        // Đọc file CSV từ đường dẫn filePath
+//        // Tiếp tục xử lý dữ liệu từ file CSV ở đây
+//        String csvFile = filePath; // Đường dẫn tới file CSV của bạn
+//        Intent intent = getIntent();
+//        String IdTopic = intent.getStringExtra("IdTopic");
+//        topicDatabaseService = new TopicDatabaseService(getApplicationContext());
+//
+//        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+//            String line;
+//            while ((line = br.readLine()) != null) {
+//                // Xử lý từng dòng của file CSV ở đây
+//                String[] data = line.split(","); // Tách các giá trị bằng dấu phẩy (có thể thay đổi tùy theo dấu ngăn cách trong file CSV)
+//
+////                // Ví dụ: in ra từng giá trị trong mỗi dòng
+////                for (String value : data) {
+////                    System.out.print(value + " | ");
+////                }
+////                System.out.println(); // Xuống dòng cho dòng tiếp theo
+//                VocabularyModel vocabularyModel = new VocabularyModel();
+//                vocabularyModel.setEnglish(data[0]);
+//                vocabularyModel.setVietnamese(data[1]);
+//                vocabularyModel.setIdTopic(IdTopic);
+//                topicDatabaseService.addWordToTopic(IdTopic, vocabularyModel, new OnAddTopicListener() {
+//                    @Override
+//                    public void OnAddSuccess() {
+//                        Toast.makeText(TopicDetails.this, "Import thanh cong", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void OnAddFailure() {
+//
+//                    }
+//                });
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
     public void readCSVFromUri(Uri uri) {
         Intent intent = getIntent();
         String IdTopic = intent.getStringExtra("IdTopic");
-        topicDatabaseService = new TopicDatabaseService(getApplicationContext());
         try {
             ContentResolver contentResolver = getContentResolver();
             InputStream inputStream = contentResolver.openInputStream(uri);
@@ -385,12 +418,13 @@ public class TopicDetails extends AppCompatActivity {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
                 String line;
                 while ((line = reader.readLine()) != null) {
+                    topicDatabaseService = new TopicDatabaseService(getApplicationContext());
                     // Xử lý từng dòng của file CSV ở đây
                     String[] values = line.split(","); // Tách giá trị dựa trên dấu phẩy (hoặc ký tự ngăn cách khác)
                     // Xử lý các giá trị trong mỗi dòng
                     VocabularyModel vocabularyModel = new VocabularyModel();
-                    vocabularyModel.setEnglish(values[0]);
-                    vocabularyModel.setVietnamese(values[1]);
+                    vocabularyModel.setEnglish(values[0].replaceAll("\"", ""));
+                    vocabularyModel.setVietnamese(values[1].replaceAll("\"", ""));
                     vocabularyModel.setIdTopic(IdTopic);
                     topicDatabaseService.addWordToTopic(IdTopic, vocabularyModel, new OnAddTopicListener() {
                         @Override

@@ -2,6 +2,11 @@ package com.tdtu.englishvocabquiz.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,19 +45,29 @@ public class RankingActivity extends AppCompatActivity {
 
         topRankModelList = new ArrayList<>();
 
-//        ArrayList<TopRankModel> generateList = TopRankModel.generate(20);
+//        topRankModelList = TopRankModel.generate(20);
         topicDatabaseService = new TopicDatabaseService(getApplicationContext());
         userDatabaseService = new UserDatabaseService(getApplicationContext());
-        TopRankAdapter adapter = new TopRankAdapter(topRankModelList);
-        topRankView.setAdapter(adapter);
-        topRankView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         topicDatabaseService.getListResultDes(idTopic, new OnGetResultListener() {
             @Override
             public void onGetReady(ArrayList<ResultModel> resultModel) {
-                for(i = 0; i<resultModel.size();i+=1){
+//                                        Log.e("TAG", "list size: "+resultModel.size());
+//                                        Log.e("TAG", "list size: "+resultModel.get(0).getNumRight());
+//                                        Log.e("TAG", "list size: "+resultModel.get(1).getNumRight());
 
+                if(resultModel!=null && resultModel.size() >0){
 
+                        TopRankAdapter adapter = new TopRankAdapter(getApplicationContext(), resultModel);
+                        topRankView.setAdapter(adapter);
+                        topRankView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 }
+
+            }
+        });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 

@@ -38,6 +38,8 @@ public class SearchEnglishWordActivity extends AppCompatActivity implements Sugg
         View view = binding.getRoot();
         setContentView(view);
 
+
+
         handleRenderVocabByOptionsAndSearch();//set up to choose word
 
         if (originalList != null) {
@@ -107,9 +109,17 @@ public class SearchEnglishWordActivity extends AppCompatActivity implements Sugg
     @Override
     public void onItemClick(VocabularyModel item) {
         Toast.makeText(this, item.getVietnamese(), Toast.LENGTH_SHORT).show();
+
+        Intent intent = getIntent();
+        String TopicName = intent.getStringExtra("TopicName");
+        String IdTopic = intent.getStringExtra("IdTopic");
+
         Intent ii = new Intent(getApplicationContext(),AddWord.class);
         ii.putExtra("englishWord",item.getEnglish());
         ii.putExtra("vietnameWord",item.getVietnamese());
+        ii.putExtra("TopicName",TopicName);
+        ii.putExtra("IdTopic",IdTopic);
+
         startActivity(ii);
         finish();
     }

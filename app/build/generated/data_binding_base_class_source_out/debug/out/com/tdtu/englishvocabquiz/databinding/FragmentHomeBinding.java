@@ -4,6 +4,7 @@ package com.tdtu.englishvocabquiz.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,6 +21,9 @@ import java.lang.String;
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final Button btnSearch;
 
   @NonNull
   public final RecyclerView recommendTopic;
@@ -39,11 +43,12 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final TextView yourTopicTitle;
 
-  private FragmentHomeBinding(@NonNull RelativeLayout rootView,
+  private FragmentHomeBinding(@NonNull RelativeLayout rootView, @NonNull Button btnSearch,
       @NonNull RecyclerView recommendTopic, @NonNull TextView recommendTopicTitle,
       @NonNull EditText searchBar, @NonNull TextView tvName, @NonNull RecyclerView yourTopic,
       @NonNull TextView yourTopicTitle) {
     this.rootView = rootView;
+    this.btnSearch = btnSearch;
     this.recommendTopic = recommendTopic;
     this.recommendTopicTitle = recommendTopicTitle;
     this.searchBar = searchBar;
@@ -79,6 +84,12 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnSearch;
+      Button btnSearch = ViewBindings.findChildViewById(rootView, id);
+      if (btnSearch == null) {
+        break missingId;
+      }
+
       id = R.id.recommendTopic;
       RecyclerView recommendTopic = ViewBindings.findChildViewById(rootView, id);
       if (recommendTopic == null) {
@@ -115,8 +126,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((RelativeLayout) rootView, recommendTopic, recommendTopicTitle,
-          searchBar, tvName, yourTopic, yourTopicTitle);
+      return new FragmentHomeBinding((RelativeLayout) rootView, btnSearch, recommendTopic,
+          recommendTopicTitle, searchBar, tvName, yourTopic, yourTopicTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

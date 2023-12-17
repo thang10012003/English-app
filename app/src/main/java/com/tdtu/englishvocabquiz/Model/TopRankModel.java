@@ -14,6 +14,12 @@ public class TopRankModel {
         this.rank = (rank>=1)?rank:-1;
         this.score = (score>=0)?score:-1;
     }
+    public TopRankModel( String user, Integer rank, Integer score) {
+//        this.topic = topic;
+        this.userName = user;
+        this.rank = (rank>=1)?rank:-1;
+        this.score = (score>=0)?score:-1;
+    }
 
     public String getTopic() {
         return topic;

@@ -1,6 +1,7 @@
 package com.tdtu.englishvocabquiz.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,11 +13,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.tdtu.englishvocabquiz.Activity.SearchTopic;
 import com.tdtu.englishvocabquiz.Adapter.TopicAdapter;
 import com.tdtu.englishvocabquiz.Listener.Topic.OnTopicListReady;
 import com.tdtu.englishvocabquiz.Model.TopicModel;
@@ -42,6 +46,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView yourTopic;
     private TopicAdapter yourTopicAdapter;
     private TopicAdapter recTopicAdapter;
+    private EditText edtKeyword;
+    private Button btnSearch;
 
 
     public HomeFragment() {
@@ -58,6 +64,8 @@ public class HomeFragment extends Fragment {
         /// code list of topic
         recommendTopic = view.findViewById(R.id.recommendTopic);
         yourTopic = view.findViewById(R.id.yourTopic);
+        btnSearch = view.findViewById(R.id.btnSearch);
+        edtKeyword = view.findViewById(R.id.search_bar);
         topicDatabaseService = new TopicDatabaseService(getActivity());
         topicDatabaseServiceRec = new TopicDatabaseService(getActivity());
 
@@ -112,6 +120,16 @@ public class HomeFragment extends Fragment {
                 }else {
                     yourTopicList.clear();
                     yourTopic.setAdapter(yourTopicAdapter);
+                }
+            }
+        });
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!edtKeyword.getText().toString().equals("")){
+                    Intent intent = new Intent(getActivity(), SearchTopic.class);
+                    intent.putExtra("keyword",edtKeyword.getText().toString());
+                    startActivity(intent);
                 }
             }
         });

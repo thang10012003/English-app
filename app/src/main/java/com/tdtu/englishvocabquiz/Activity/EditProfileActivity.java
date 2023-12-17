@@ -137,7 +137,11 @@ public class EditProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(validBeforeUpdate()){
-                    saveData();
+                    if(image!=null){
+                        saveData();
+                    }else{
+                        saveDataWithoutImg();
+                    }
                 }
 
             }
@@ -174,23 +178,6 @@ public class EditProfileActivity extends AppCompatActivity {
                     }
                 });
     }
-    private void getAllUserOnDatabase(){
-        db.collection("users")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                  UserModel user = document.toObject(UserModel.class);
-                                  Log.d(TAG, user.getId_acc());
-                            }
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
-    }
     private void getUserOnDatabase_byUid(String uid){
         db.collection("users").whereEqualTo("id_acc", uid).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -220,6 +207,7 @@ public class EditProfileActivity extends AppCompatActivity {
         }
         Glide.with(getApplicationContext()).load(user.getAvt()).into(binding.uploadImage);
 
+
     }
     private boolean validBeforeUpdate(){
         String mobile = binding.edtUploadPhoneNumber.getText().toString().trim();
@@ -232,11 +220,6 @@ public class EditProfileActivity extends AppCompatActivity {
         }
         if(mobile.isEmpty()){
             Toast.makeText(this, "Số điện thoại bị trống !", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if(image == null){
-            Toast.makeText(this, "Hình ảnh trống !", Toast.LENGTH_SHORT).show();
-
             return false;
         }
         return true;
@@ -282,6 +265,23 @@ public class EditProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),ChangePasswordActivity.class));
             }
         });
+    }
+    public void saveDataWithoutImg(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(EditProfileActivity.this);
+        builder.setCancelable(false);
+        builder.setView(R.layout.progress_layout);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        getDataOnViewAndChangeUser();
+        //update user in here
+        setInfomationOfUserOnDB(currDataUser);
+        dialog.dismiss();
+
+
+
+        finish();
+
     }
     public void saveData(){
         storageReference = FirebaseStorage.getInstance().getReference().child("avatarImages").child(image.getLastPathSegment());

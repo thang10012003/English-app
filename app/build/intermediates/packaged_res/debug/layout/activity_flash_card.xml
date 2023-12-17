@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.FlashCardActivity"
-    android:background="@drawable/background_02">
+    android:background="@color/green_dark">
 
     <ImageButton
         android:id="@+id/btnClose"
@@ -84,7 +84,7 @@
             android:id="@+id/btnSpeak"
             android:layout_width="30sp"
             android:layout_height="30sp"
-            android:background="@drawable/baseline_volume_up_24"
+            android:background="@drawable/baseline_volume_up_24_1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_margin="10sp"

@@ -50,6 +50,7 @@ public class AddWord extends AppCompatActivity {
             }
         }
     });
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,6 +114,8 @@ public class AddWord extends AppCompatActivity {
         if (intent != null) {
             String eng = intent.getStringExtra("englishWord");
             String viet = intent.getStringExtra("vietnameWord");
+         /*   TopicName = intent.getStringExtra("TopicNameSearch");
+            IdTopic = intent.getStringExtra("IdTopicSearch");*/
             // Use the data as needed
             binding.edtWord.setText(eng);
             binding.edtMean.setText(viet);
@@ -122,7 +125,15 @@ public class AddWord extends AppCompatActivity {
         binding.tvSearchWordMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),SearchEnglishWordActivity.class));
+                Intent intent = getIntent();
+                String TopicName = intent.getStringExtra("TopicName");
+                String IdTopic = intent.getStringExtra("IdTopic");
+
+                Intent ii =new Intent(getApplicationContext(),SearchEnglishWordActivity.class);
+                ii.putExtra("TopicName",TopicName);
+                ii.putExtra("IdTopic",IdTopic);
+                startActivity(ii);
+
                 finish();
             }
         });
