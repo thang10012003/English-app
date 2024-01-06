@@ -30,6 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.tdtu.englishvocabquiz.Activity.ChangePasswordActivity;
 import com.tdtu.englishvocabquiz.Activity.EditProfileActivity;
 import com.tdtu.englishvocabquiz.Activity.LoginActivity;
 import com.tdtu.englishvocabquiz.R;
@@ -48,7 +49,7 @@ public class UserFragment extends Fragment {
     private TextView tvname;
     private TextView tvPhoneNumber;
     private TextView tvGender;
-    private TextView tvCreateDate;
+    private TextView tvCreateDate, tvChangePassword;
     private SharedPreferences sharedPreferences;
     private DatabaseReference databaseReference;
     private ArrayList<UserModel> datalist;
@@ -76,6 +77,7 @@ public class UserFragment extends Fragment {
         tvGender = view.findViewById(R.id.tvGender);
         tvCreateDate = view.findViewById(R.id.tvCreateDate);
          imgUpload =view.findViewById(R.id.uploadImgView);
+         tvChangePassword = view.findViewById(R.id.btnChangePass);
       getUidByAuthen();
         db = FirebaseFirestore.getInstance();
 
@@ -98,6 +100,12 @@ public class UserFragment extends Fragment {
 
 
 
+            }
+        });
+        tvChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().startActivity(new Intent(getActivity(),ChangePasswordActivity.class));
             }
         });
 

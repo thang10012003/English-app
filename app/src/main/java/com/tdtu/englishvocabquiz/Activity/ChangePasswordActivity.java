@@ -40,7 +40,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         //firebase init
-       auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         //get current user
         currUser = auth.getCurrentUser();
 
